@@ -1,7 +1,7 @@
 {
-  "name": "ラクヨコ調査室",
-  "short_name": "ラクヨコ調査室",
-  "description": "楽天ラクヨコの注文条件を買う前に確認する非公式ツール",
+  "name": "買いもの標準",
+  "short_name": "買いもの標準",
+  "description": "条件を比べて、納得して選ぶ購入判断メディア",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7f6ef",
