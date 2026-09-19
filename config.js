@@ -3,7 +3,7 @@
 window.SITE_CONFIG = {
   updatedAt: "2026-09-20",
   affiliateLinks: {
-    home: "",
+    home: "https://a.r10.to/h58Tck",
     search: ""
   }
 };
