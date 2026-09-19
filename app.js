@@ -24,14 +24,17 @@
       const afterCoupon = Math.max(0, subtotal - coupon);
       const effective = Math.max(0, afterCoupon - points) + regionFee;
       result.classList.remove("caution", "danger");
-      if (subtotal < 2100) {
+      if (subtotal > 16666) {
         result.classList.add("danger");
-        result.innerHTML = `<strong>商品をあと${yen(2100 - subtotal)}追加</strong><br>公式案内の注文下限2,100円に達していません。参考実質負担は${yen(effective)}です。`;
+        result.innerHTML = `<strong>注文上限を${yen(subtotal - 16666)}超えています</strong><br>クーポン適用前の商品合計を16,666円以下に分けてください。`;
+      } else if (subtotal < 2100) {
+        result.classList.add("danger");
+        result.innerHTML = `<strong>商品をあと${yen(2100 - subtotal)}追加</strong><br>商品合計が注文下限2,100円に達していません。参考実質負担は${yen(effective)}です。`;
       } else if (afterCoupon < 2100) {
         result.classList.add("caution");
-        result.innerHTML = `<strong>クーポン後はあと${yen(2100 - afterCoupon)}不足する可能性</strong><br>商品合計は下限以上ですが、公開されている注文操作報告では割引後2,100円以上が必要でした。注文画面で確認してください。`;
+        result.innerHTML = `<strong>クーポン後はあと${yen(2100 - afterCoupon)}不足</strong><br>公式条件では、クーポン適用後・ポイント利用前の金額が2,100円以上必要です。`;
       } else {
-        result.innerHTML = `<strong>2つの基準で注文下限を満たします</strong><br>商品合計${yen(subtotal)}／クーポン後${yen(afterCoupon)}。参考実質負担は${yen(effective)}です。`;
+        result.innerHTML = `<strong>公式の注文金額条件を満たします</strong><br>商品合計${yen(subtotal)}／クーポン後${yen(afterCoupon)}。参考実質負担は${yen(effective)}です。`;
       }
     };
     form.addEventListener("input", render);
