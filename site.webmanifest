@@ -1,0 +1,12 @@
+{
+  "name": "ラクヨコ調査室",
+  "short_name": "ラクヨコ調査室",
+  "description": "楽天ラクヨコの注文条件を買う前に確認する非公式ツール",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f6ef",
+  "theme_color": "#073f2f",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "rakuyoko-research",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node --check app.js && node --check config.js && node --check build.mjs"
+  }
+}
