@@ -1,7 +1,7 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-const required = ["SITE_URL", "CONTACT_EMAIL", "RAKUYOKO_AFFILIATE_HOME_URL"];
+const required = ["SITE_URL", "CONTACT_URL"];
 const missing = required.filter((key) => !process.env[key]);
 if (missing.length) {
   console.error(`公開設定が不足しています: ${missing.join(", ")}`);
@@ -10,13 +10,10 @@ if (missing.length) {
 }
 
 const siteUrl = process.env.SITE_URL.replace(/\/$/, "");
-const contactEmail = process.env.CONTACT_EMAIL;
-const affiliateUrl = process.env.RAKUYOKO_AFFILIATE_HOME_URL;
-for (const [label, value] of [["SITE_URL", siteUrl], ["RAKUYOKO_AFFILIATE_HOME_URL", affiliateUrl]]) {
+const contactUrl = process.env.CONTACT_URL;
+const affiliateUrl = process.env.RAKUYOKO_AFFILIATE_HOME_URL || "";
+for (const [label, value] of [["SITE_URL", siteUrl], ["CONTACT_URL", contactUrl], ...(affiliateUrl ? [["RAKUYOKO_AFFILIATE_HOME_URL", affiliateUrl]] : [])]) {
   try { new URL(value); } catch { console.error(`${label}が有効なURLではありません。`); process.exit(1); }
-}
-if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(contactEmail)) {
-  console.error("CONTACT_EMAILが有効なメールアドレスではありません。"); process.exit(1);
 }
 
 const root = resolve(".");
@@ -31,9 +28,9 @@ for (const file of textFiles) {
   const path = resolve(output, file);
   let content = await readFile(path, "utf8");
   content = content.replaceAll("https://example.com", siteUrl);
-  if (file === "config.js") content = content.replace('home: ""', `home: ${JSON.stringify(affiliateUrl)}`);
+  if (file === "config.js" && affiliateUrl) content = content.replace('home: ""', `home: ${JSON.stringify(affiliateUrl)}`);
   if (file === "about.html") {
-    content = content.replace("連絡用メールアドレスはドメイン取得後に記載します。公開時にこの案内を正式な問い合わせ先へ差し替えます。", `問い合わせ先：<a href="mailto:${contactEmail}">${contactEmail}</a>`);
+    content = content.replace("連絡用メールアドレスはドメイン取得後に記載します。公開時にこの案内を正式な問い合わせ先へ差し替えます。", `問い合わせ窓口：<a href="${contactUrl}">GitHub Issues</a>`);
   }
   await writeFile(path, content, "utf8");
 }

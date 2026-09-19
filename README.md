@@ -8,11 +8,11 @@
 
 1. `config.js` に楽天アフィリエイト管理画面で発行した完全なURLを設定する
 2. 全HTML、`robots.txt`、`sitemap.xml` の `https://example.com` を本番URLへ置換する
-3. `about.html` に運営者情報と連絡先を記載する
+3. GitHubのリポジトリ変数 `SITE_URL` と `CONTACT_URL` を設定する
 4. 楽天アフィリエイトへ本サイトを登録する
 5. 広告リンクが通常リンクではなくアフィリエイトURLへ遷移することを確認する
 6. 公開後にSearch Consoleとアクセス解析を設定する
-7. `about.html` の公開前注意書きを正式な問い合わせ先へ差し替える
+7. 楽天側で媒体登録後、Secret `RAKUYOKO_AFFILIATE_HOME_URL` を設定する
 
 ## ローカル確認
 
