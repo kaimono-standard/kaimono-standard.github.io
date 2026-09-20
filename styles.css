@@ -411,3 +411,136 @@ th { color: var(--ink); background: #eae5dc; }
   .product-entry { grid-template-columns: 52px 1fr; gap: 15px; }
   .product-rank { font-size: 2rem; }
 }
+
+/* Commerce editorial — R Select under ¥700 */
+.pr-disclosure { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: #6b665f; font-size: .75rem; }
+.pr-disclosure span { flex: 0 0 auto; padding: 2px 7px; color: #fff; background: #1b1b19; font-size: .62rem; font-weight: 800; letter-spacing: .08em; white-space: nowrap; }
+.commerce-hero { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr); min-height: 610px; margin-bottom: 0; color: #f8f2e9; background: #191917; border: 1px solid #191917; }
+.commerce-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(42px, 7vw, 84px); }
+.commerce-label { margin: 0 0 34px; color: #e9553e; font-family: Arial, sans-serif; font-size: .72rem; font-weight: 800; letter-spacing: .2em; }
+.commerce-hero h1 { margin: 0; color: #fffaf2; font-family: "Yu Gothic UI", "Yu Gothic", sans-serif; font-size: clamp(3rem, 6vw, 5.6rem); font-weight: 900; line-height: 1.04; letter-spacing: -.065em; }
+.commerce-hero h1 span { display: block; margin-bottom: 13px; color: #e9553e; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: .41em; font-weight: 600; letter-spacing: .02em; }
+.commerce-hero .lead { max-width: 600px; margin: 34px 0 0; color: #c9c5bc; font-size: .98rem; line-height: 1.9; }
+.hero-actions { display: flex; align-items: center; gap: 27px; margin-top: 36px; }
+.commerce-button { color: #191917; background: #fffaf2; border-color: #fffaf2; }
+.commerce-button:hover { color: #fff; background: #e9553e; border-color: #e9553e; }
+.text-cta { color: #fffaf2; border-bottom: 1px solid #716f68; font-size: .82rem; font-weight: 700; }
+.text-cta:hover { color: #e9553e; }
+.commerce-hero-board { display: grid; grid-template-rows: auto repeat(5, 1fr); padding: 34px; background: #e9553e; border-left: 1px solid rgba(255,255,255,.25); }
+.board-title { margin: 0 0 12px; color: #56180f; font-family: Arial, sans-serif; font-size: .68rem; font-weight: 900; letter-spacing: .2em; }
+.commerce-hero-board a { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 13px; color: #191917; border-top: 1px solid rgba(25,25,23,.28); }
+.commerce-hero-board a:hover { color: #fff; }
+.commerce-hero-board span { font-family: Georgia, serif; font-size: .76rem; }
+.commerce-hero-board strong { font-family: Arial, sans-serif; font-size: clamp(.88rem, 1.45vw, 1.2rem); letter-spacing: .04em; }
+.commerce-hero-board em { font-family: Georgia, serif; font-size: 1.1rem; font-style: normal; font-weight: 700; }
+.commerce-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 0 88px; border-right: 1px solid #c9c2b7; border-bottom: 1px solid #c9c2b7; border-left: 1px solid #c9c2b7; background: #fff; }
+.commerce-facts div { padding: 17px 24px; border-right: 1px solid #d8d1c7; }
+.commerce-facts div:last-child { border-right: 0; }
+.commerce-facts small { display: block; color: #7a746b; font-size: .64rem; letter-spacing: .08em; }
+.commerce-facts strong { font-family: Arial, sans-serif; font-size: .9rem; letter-spacing: .05em; }
+.commerce-body { max-width: 1060px; margin: 0 auto; }
+.editorial-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(42px, 8vw, 100px); align-items: start; margin-bottom: 80px; padding-bottom: 70px; border-bottom: 1px solid #b9b2a7; }
+.editorial-intro h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.35; }
+.editorial-intro > div:last-child { padding-top: 35px; color: #5d5851; }
+.editorial-intro ul { display: grid; gap: 0; margin: 28px 0 0; padding: 0; color: #242320; border-top: 1px solid #cfc8bd; list-style: none; }
+.editorial-intro li { padding: 11px 0; border-bottom: 1px solid #cfc8bd; font-size: .86rem; font-weight: 700; }
+.quick-picks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 0; border: 1px solid #1f1f1c; }
+.pick-card { display: flex; min-height: 245px; padding: 19px; flex-direction: column; color: #181816; border-right: 1px solid rgba(24,24,22,.45); }
+.pick-card:last-child { border-right: 0; }
+.pick-card:hover { color: #fff; filter: saturate(1.15); }
+.pick-card span { font-size: .62rem; font-weight: 800; letter-spacing: .1em; }
+.pick-card strong { margin-top: auto; font-family: "Yu Gothic UI", "Yu Gothic", sans-serif; font-size: clamp(1.04rem, 1.7vw, 1.4rem); font-weight: 900; line-height: 1.35; letter-spacing: -.04em; }
+.pick-card em { margin-top: 16px; font-family: Georgia, serif; font-size: 1.12rem; font-style: normal; }
+.pick-coral { background: #ef674f; }
+.pick-blue { background: #7fa1de; }
+.pick-gold { background: #ddb850; }
+.pick-violet { background: #a397c7; }
+.pick-green { background: #8da898; }
+.commerce-caption { margin: 12px 0 100px; color: #746e65; font-size: .72rem; text-align: right; }
+.commerce-section-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 31px; padding-bottom: 18px; border-bottom: 5px solid #1b1b19; scroll-margin-top: 110px; }
+.commerce-section-head p { margin: 0; color: #df4c37; font-family: Arial, sans-serif; font-size: .7rem; font-weight: 900; letter-spacing: .18em; }
+.commerce-section-head h2 { margin: 0; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.25; text-align: right; }
+.commerce-item { --tone: #ef674f; display: grid; grid-template-columns: minmax(300px, .92fr) minmax(0, 1.08fr); min-height: 520px; margin-bottom: 34px; background: #fff; border: 1px solid #bbb3a8; scroll-margin-top: 110px; }
+.tone-coral { --tone: #ef674f; }
+.tone-blue { --tone: #7fa1de; }
+.tone-gold { --tone: #ddb850; }
+.tone-violet { --tone: #a397c7; }
+.tone-green { --tone: #8da898; }
+.product-visual { position: relative; display: grid; min-height: 430px; padding: 42px; place-items: center; overflow: hidden; color: #191917; background: var(--tone); border-right: 1px solid #9c958b; }
+.product-visual::after { position: absolute; inset: 18px; border: 1px solid rgba(25,25,23,.28); content: ""; pointer-events: none; }
+.product-visual svg { width: min(82%, 330px); fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.visual-index { position: absolute; top: 31px; left: 34px; font-family: Georgia, serif; font-size: 1.1rem; z-index: 1; }
+.product-visual small { position: absolute; right: 34px; bottom: 30px; font-size: .57rem; font-weight: 700; letter-spacing: .08em; z-index: 1; }
+.commerce-item-copy { display: flex; padding: clamp(35px, 5vw, 62px); flex-direction: column; justify-content: center; }
+.item-eyebrow { margin: 0 0 14px; color: #817a70; font-family: Arial, sans-serif; font-size: .65rem; font-weight: 900; letter-spacing: .14em; }
+.commerce-item h3 { margin: 0 0 20px; font-family: "Yu Gothic UI", "Yu Gothic", sans-serif; font-size: clamp(1.7rem, 3.4vw, 2.75rem); font-weight: 900; line-height: 1.2; letter-spacing: -.045em; }
+.item-hook { margin: 0 0 18px; color: #22211e; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.08rem; font-weight: 700; line-height: 1.8; }
+.commerce-item-copy > p:not(.item-eyebrow):not(.item-hook) { color: #666057; font-size: .86rem; }
+.commerce-specs { display: grid; grid-template-columns: repeat(2, 1fr); margin: 20px 0 25px; border-top: 1px solid #d3ccc2; border-bottom: 1px solid #d3ccc2; }
+.commerce-specs div { padding: 11px 10px 11px 0; }
+.commerce-specs div + div { padding-left: 16px; border-left: 1px solid #d3ccc2; }
+.commerce-specs dt { color: #8a8379; font-size: .65rem; }
+.commerce-specs dd { margin: 2px 0 0; font-size: .84rem; font-weight: 800; }
+.product-cta { display: flex; width: 100%; justify-content: space-between; margin-top: auto; color: #fff; background: #1b1b19; border-color: #1b1b19; }
+.product-cta:hover { background: #d9432e; border-color: #d9432e; }
+.product-cta span { font-size: 1.05rem; }
+.buying-check { display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(40px, 8vw, 95px); margin: 110px 0 50px; padding: 70px 0; border-top: 5px solid #1b1b19; border-bottom: 1px solid #bcb4aa; scroll-margin-top: 100px; }
+.buying-check h2 { margin: 0; font-size: clamp(2rem, 4.4vw, 3.45rem); line-height: 1.3; }
+.buying-check-lead { margin: 8px 0 30px; font-size: 1.12rem; }
+.buying-check-lead strong { color: #d9432e; font-family: Georgia, serif; font-size: 1.35em; }
+.buying-check ol { margin: 0; padding: 0; border-top: 1px solid #c9c1b6; list-style: none; }
+.buying-check li { display: grid; grid-template-columns: 42px 1fr; gap: 15px; padding: 16px 0; border-bottom: 1px solid #c9c1b6; }
+.buying-check li span { color: #d9432e; font-family: Georgia, serif; }
+.buying-check li p { margin: 0; color: #686159; font-size: .85rem; }
+.buying-check li strong { display: block; color: #22211e; font-size: .92rem; }
+.method-note { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin: 0 0 50px; border: 1px solid #c9c1b6; background: #ece6dc; }
+.method-note > div { padding: 24px; }
+.method-note > div + div { border-left: 1px solid #c9c1b6; }
+.method-note strong { font-size: .75rem; letter-spacing: .05em; }
+.method-note p { margin: 8px 0 0; color: #6b645b; font-size: .75rem; line-height: 1.8; }
+.commerce-decision { align-items: end; padding: clamp(34px, 6vw, 65px); background: #1b1b19; }
+.commerce-decision p { margin: 0 0 15px; color: #ef5b43; font-family: Arial, sans-serif; font-size: .68rem; font-weight: 900; letter-spacing: .18em; }
+.commerce-decision h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.25; }
+.commerce-decision span { color: #bdb8af; font-size: .76rem; }
+.commerce-decision .button { color: #1b1b19; background: #fffaf2; border-color: #fffaf2; white-space: nowrap; }
+.commerce-decision .button span { margin-left: 14px; color: inherit; }
+.commerce-decision .button:hover { color: #fff; background: #e9553e; border-color: #e9553e; }
+
+@media (max-width: 900px) {
+  .commerce-hero { grid-template-columns: 1fr; }
+  .commerce-hero-board { min-height: 420px; border-top: 1px solid rgba(255,255,255,.25); border-left: 0; }
+  .quick-picks { grid-template-columns: repeat(2, 1fr); }
+  .pick-card { min-height: 210px; border-bottom: 1px solid rgba(24,24,22,.45); }
+  .pick-card:nth-child(2n) { border-right: 0; }
+  .pick-card:last-child { grid-column: 1 / -1; min-height: 180px; }
+  .commerce-item { grid-template-columns: 1fr; }
+  .product-visual { min-height: 360px; border-right: 0; border-bottom: 1px solid #9c958b; }
+}
+@media (max-width: 700px) {
+  .pr-disclosure { align-items: flex-start; }
+  .commerce-hero { width: calc(100% + 32px); min-height: 0; margin-left: -16px; }
+  .commerce-hero-copy { padding: 45px 26px 50px; }
+  .commerce-hero h1 { font-size: clamp(2.7rem, 14vw, 4.1rem); }
+  .commerce-hero-board { min-height: 390px; padding: 25px; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .commerce-facts { grid-template-columns: 1fr; margin-bottom: 65px; }
+  .commerce-facts div { border-right: 0; border-bottom: 1px solid #d8d1c7; }
+  .commerce-facts div:last-child { border-bottom: 0; }
+  .editorial-intro, .buying-check { grid-template-columns: 1fr; gap: 25px; }
+  .editorial-intro { margin-bottom: 60px; padding-bottom: 50px; }
+  .editorial-intro > div:last-child { padding-top: 0; }
+  .quick-picks { grid-template-columns: 1fr 1fr; }
+  .pick-card { min-height: 185px; padding: 15px; }
+  .pick-card:last-child { min-height: 155px; }
+  .commerce-caption { margin-bottom: 75px; text-align: left; }
+  .commerce-section-head { display: block; }
+  .commerce-section-head h2 { margin-top: 13px; text-align: left; }
+  .commerce-item { width: calc(100% + 16px); margin-left: -8px; }
+  .product-visual { min-height: 300px; padding: 30px; }
+  .commerce-item-copy { padding: 33px 25px 29px; }
+  .commerce-specs { grid-template-columns: 1fr; }
+  .commerce-specs div + div { padding-left: 0; border-top: 1px solid #d3ccc2; border-left: 0; }
+  .method-note { grid-template-columns: 1fr; }
+  .method-note > div + div { border-top: 1px solid #c9c1b6; border-left: 0; }
+  .commerce-decision .button { white-space: normal; }
+}
