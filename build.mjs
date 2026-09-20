@@ -20,7 +20,7 @@ const root = resolve(".");
 const output = resolve("dist");
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-const files = ["index.html", "articles.html", "electric-kettle-comparison.html", "hand-blender-comparison.html", "oven-toaster-comparison.html", "electric-pressure-cooker-comparison.html", "coffee-maker-comparison.html", "stainless-bottle-comparison.html", "rakuyoko-rselect-under-700.html", "rakuyoko-minimum-order.html", "rakuyoko-shipping.html", "rakuyoko-returns-guide.html", "rakuyoko-safe.html", "rakuyoko-payment.html", "guide.html", "returns.html", "compare.html", "affiliate.html", "sources.html", "about.html", "404.html", "styles.css", "app.js", "config.js", "search-index.js", "search.js", "favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml", "_headers", ".nojekyll"];
+const files = ["index.html", "articles.html", "electric-kettle-comparison.html", "hand-blender-comparison.html", "oven-toaster-comparison.html", "electric-pressure-cooker-comparison.html", "coffee-maker-comparison.html", "stainless-bottle-comparison.html", "rakuyoko-rselect-under-700.html", "rakuyoko-minimum-order.html", "rakuyoko-shipping.html", "rakuyoko-returns-guide.html", "rakuyoko-safe.html", "rakuyoko-payment.html", "guide.html", "returns.html", "compare.html", "affiliate.html", "sources.html", "about.html", "404.html", "styles.css", "app.js", "config.js", "search-index.js", "search.js", "favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml", "_headers", ".nojekyll", "CNAME"];
 for (const file of files) await cp(resolve(root, file), resolve(output, file));
 
 const textFiles = files.filter((file) => /\.(?:html|js|xml|txt)$/.test(file));

@@ -18,7 +18,7 @@
 `dist/` を配信して開く（`_headers` は GitHub Pages では効かないので CSP は気にしなくてよい）。
 
 ```bash
-SITE_URL=https://kaimono-standard.github.io CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
+SITE_URL=https://kaimono-standard.echoant.com CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
 cd dist && python -m http.server 8765
 ```
 

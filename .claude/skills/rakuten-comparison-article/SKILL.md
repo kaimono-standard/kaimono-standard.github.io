@@ -99,7 +99,7 @@ Claude は指摘を1件ずつ見て、台帳で裏付けられるなら台帳を
 
 ```bash
 node .claude/skills/rakuten-comparison-article/scripts/verify.mjs <slug>
-npm run check && SITE_URL=https://kaimono-standard.github.io CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
+npm run check && SITE_URL=https://kaimono-standard.echoant.com CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
 ```
 
 `verify.mjs` は、プレースホルダ残り、`config.js` に無いキー、`data-affiliate` の欠落、出典リンク数、製品ブロック数、`rel="nofollow sponsored"`、最上級表現の一覧（文脈付き）を出す。最上級はここで表の数値と目で照らす。

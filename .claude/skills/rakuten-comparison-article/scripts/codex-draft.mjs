@@ -35,7 +35,7 @@ ${JSON.stringify(facts, null, 2)}
 \`\`\`
 
 # 追加指示
-- canonical / og:url は https://kaimono-standard.github.io/${facts.slug}.html
+- canonical / og:url は https://kaimono-standard.echoant.com/${facts.slug}.html
 - datePublished / dateModified / 署名の日付 / 「確認日」は ${facts.date}
 - サイドバー「関連する比較」は次の2本: ${related.map((r) => r.split("|").join(" → ")).join(" / ")}
 - 製品の順番、結論ブロックの順番、比較表の行、出典の順番は台帳の products の順に揃える
