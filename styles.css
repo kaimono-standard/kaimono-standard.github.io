@@ -847,6 +847,23 @@ th { color: var(--ink); background: #eae5dc; }
 .hero-search input:focus { border-color: #435b59; outline: 2px solid #435b59; outline-offset: 1px; }
 .hero-search .button { flex: none; min-height: 44px; }
 
+/* Article cards (directory) */
+.article-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 20px; }
+.article-card { display: flex; flex-direction: column; min-width: 0; color: #222; background: #fff; border: 1px solid #d9d9d9; text-decoration: none; overflow: hidden; transition: border-color .15s ease, box-shadow .15s ease; }
+.article-card:hover { color: #222; border-color: #999; box-shadow: 0 4px 14px rgba(0, 0, 0, .06); }
+.article-card:hover .directory-read { color: #6f2419; }
+.article-card-media { position: relative; display: grid; width: 100%; grid-template-columns: repeat(3, 1fr); gap: 6px; align-items: center; height: 190px; padding: 34px 12px 14px; background: #f6f5f2; border-bottom: 1px solid #e5e5e5; }
+.article-card-media img { display: block; width: 100%; height: 142px; object-fit: contain; mix-blend-mode: multiply; }
+.article-card-media.is-icon { width: 100%; grid-template-columns: 1fr; justify-items: center; align-items: center; color: #435b59; background: #eef1ef; }
+.article-card-media.is-icon svg { width: 64px; height: 64px; }
+.article-card-badge { position: absolute; top: 10px; left: 10px; padding: 3px 8px; white-space: nowrap; color: #fff; background: #435b59; border-radius: 2px; font-size: .62rem; font-weight: 700; letter-spacing: .04em; }
+.article-card-body { display: flex; flex: 1; flex-direction: column; padding: 16px 18px 18px; }
+.article-card h3 { margin: 10px 0 8px; color: #222; font-family: inherit; font-size: .98rem; line-height: 1.6; }
+.article-card p { flex: 1; margin: 0 0 14px; color: #666; font-size: .76rem; line-height: 1.75; }
+.article-card .directory-read { align-self: flex-start; }
+@media (max-width: 900px) { .article-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .article-cards { grid-template-columns: 1fr; gap: 16px; } .article-card-media { height: 170px; } .article-card-media img { height: 124px; } }
+
 /* Directory search */
 .directory-search { max-width: 800px; margin: 30px 0 26px; padding: 22px 24px; background: #fff; border: 1px solid #d9d9d9; border-top: 3px solid #435b59; }
 .directory-search label { display: block; margin-bottom: 10px; color: #222; font-size: .92rem; font-weight: 750; }
