@@ -173,6 +173,7 @@ tr:last-child > * { border-bottom: 0; }
 .footer-inner h3 { color: white; font-size: .83rem; }
 .footer-inner a { display: block; width: fit-content; margin: 7px 0; color: #d9e3dd; font-size: .82rem; }
 .footer-inner p { color: #a9beb3; font-size: .78rem; }
+.footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .footer-bottom { width: min(calc(100% - 40px), var(--max)); margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); color: #8fa79b; font-size: .72rem; }
 @media (max-width: 900px) {
   .home-hero { grid-template-columns: 1fr; gap: 28px; padding-top: 42px; }
@@ -662,7 +663,7 @@ th { color: var(--ink); background: #eae5dc; }
 .review-page { color: #333; background: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; }
 .review-page .site-header { background: #fff; }
 .review-wrap { max-width: 1120px; padding-bottom: 90px; }
-.review-breadcrumb { display: flex; gap: 8px; align-items: center; margin: 22px 0 42px; color: #8a8a8a; font-size: .75rem; }
+.review-breadcrumb { display: flex; gap: 8px; align-items: center; margin: 22px 0 42px; color: #6b6b6b; font-size: .75rem; }
 .review-breadcrumb a { color: #666; text-decoration: underline; text-underline-offset: 2px; }
 .review-header { max-width: 980px; }
 .review-category { display: inline-block; margin: 0 0 14px; padding: 5px 10px; color: #fff; background: #435b59; font-size: .72rem; font-weight: 700; }
@@ -672,15 +673,15 @@ th { color: var(--ink); background: #eae5dc; }
 .review-avatar { display: grid; width: 38px; height: 38px; color: #fff; background: #435b59; border-radius: 50%; place-items: center; font-family: "Yu Mincho", serif; font-size: .9rem; }
 .review-byline strong, .review-byline small { display: block; }
 .review-byline strong { color: #333; font-size: .78rem; }
-.review-byline small { margin-top: 3px; color: #888; font-size: .68rem; }
+.review-byline small { margin-top: 3px; color: #6b6b6b; font-size: .68rem; }
 .review-ad { margin: 28px 0 20px; padding: 11px 14px; color: #666; background: #f6f6f6; border: 1px solid #e5e5e5; font-size: .74rem; line-height: 1.65; }
 .review-ad strong { margin-right: 8px; color: #333; }
 .review-hero-image { margin: 0 0 45px; }
 .review-product-row { display: grid; grid-template-columns: repeat(5, 1fr); background: #eee; border: 1px solid #dedede; }
 .review-product-row a { display: grid; min-height: 205px; padding: 10px; place-items: center; background: #fff; border-right: 1px solid #e5e5e5; }
 .review-product-row a:last-child { border-right: 0; }
-.review-product-row img { width: 100%; max-width: 190px; height: auto; }
-.review-hero-image figcaption { margin-top: 8px; color: #888; font-size: .68rem; }
+.review-product-row img { aspect-ratio: 1 / 1; width: 100%; max-width: 190px; height: auto; }
+.review-hero-image figcaption { margin-top: 8px; color: #6b6b6b; font-size: .68rem; }
 .review-layout { display: grid; grid-template-columns: minmax(0, 790px) 250px; gap: 55px; align-items: start; }
 .review-main { min-width: 0; }
 .review-summary { margin-bottom: 58px; padding: 24px; background: #f3f7f6; border-top: 4px solid #435b59; }
@@ -690,7 +691,7 @@ th { color: var(--ink); background: #eae5dc; }
 .summary-list a:last-child { grid-column: 1 / -1; }
 .summary-list span { grid-row: 1 / 3; align-self: center; color: #9c3b2d; font-size: .7rem; font-weight: 700; }
 .summary-list strong { font-size: .85rem; }
-.summary-list em { color: #777; font-size: .69rem; font-style: normal; }
+.summary-list em { color: #666; font-size: .69rem; font-style: normal; }
 .review-section { margin-bottom: 70px; scroll-margin-top: 95px; }
 .review-section > h2 { margin: 0 0 22px; padding: 0 0 11px 15px; color: #222; border-bottom: 2px solid #333; border-left: 5px solid #a33b2c; font-family: inherit; font-size: 1.65rem; line-height: 1.45; }
 .review-section > p { color: #555; font-size: .9rem; line-height: 1.85; }
@@ -702,7 +703,7 @@ th { color: var(--ink); background: #eae5dc; }
 .review-table td:first-child { min-width: 132px; }
 .review-table td a { color: #333; }
 .review-table td strong { color: #9b372a; }
-.review-footnote { margin-top: 10px !important; color: #777 !important; font-size: .68rem !important; }
+.review-footnote { margin-top: 10px !important; color: #666 !important; font-size: .68rem !important; }
 .plain-guide { border-top: 1px solid #ddd; }
 .plain-guide article { display: grid; grid-template-columns: 125px 1fr; gap: 22px; padding: 20px 4px; border-bottom: 1px solid #ddd; }
 .plain-guide strong { color: #263c39; font-size: .92rem; }
@@ -721,7 +722,7 @@ th { color: var(--ink); background: #eae5dc; }
 .fit-note strong, .fit-note span { font-size: .75rem; line-height: 1.7; }
 .fit-note strong { color: #263c39; }
 .fit-note span { color: #4e5957; }
-.caution-note { margin: 13px 0 !important; color: #777 !important; font-size: .7rem !important; }
+.caution-note { margin: 13px 0 !important; color: #666 !important; font-size: .7rem !important; }
 .rakuten-button { display: block; padding: 13px 16px; color: #fff !important; background: #bf0000; border-radius: 3px; font-size: .84rem; font-weight: 700; text-align: center; }
 .rakuten-button:hover { color: #fff; background: #9f0000; }
 .source-box { padding: 25px; background: #f7f7f7; border: 1px solid #ddd; }
@@ -736,7 +737,7 @@ th { color: var(--ink); background: #eae5dc; }
 .sidebar-box dl { margin: 0; }
 .sidebar-box dl div { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #eee; }
 .sidebar-box dt, .sidebar-box dd { margin: 0; font-size: .68rem; }
-.sidebar-box dt { color: #888; }
+.sidebar-box dt { color: #6b6b6b; }
 .sidebar-box dd { color: #444; font-weight: 700; text-align: right; }
 
 @media (max-width: 900px) {
@@ -782,11 +783,11 @@ th { color: var(--ink); background: #eae5dc; }
 .directory-section { margin-bottom: 68px; scroll-margin-top: 95px; }
 .directory-section-head { display: flex; justify-content: space-between; gap: 25px; align-items: end; margin-bottom: 22px; padding-bottom: 11px; border-bottom: 2px solid #333; }
 .directory-section-head h2 { margin: 0; color: #222; font-family: inherit; font-size: 1.55rem; }
-.directory-section-head p { max-width: 390px; margin: 0; color: #777; font-size: .72rem; line-height: 1.7; text-align: right; }
+.directory-section-head p { max-width: 390px; margin: 0; color: #666; font-size: .72rem; line-height: 1.7; text-align: right; }
 .directory-feature { display: grid; grid-template-columns: minmax(0, 1fr) 245px; color: #222; background: #fff; border: 1px solid #d9d9d9; text-decoration: none; }
-.directory-feature:hover { color: #222; border-color: #999; }
+.directory-feature:hover { color: #222; border-color: #757575; }
 .directory-feature-copy { padding: 30px; }
-.directory-meta, .directory-list-meta { display: flex; gap: 12px; align-items: center; color: #888; font-size: .68rem; }
+.directory-meta, .directory-list-meta { display: flex; gap: 12px; align-items: center; color: #6b6b6b; font-size: .68rem; }
 .directory-meta span, .directory-list-meta span { color: #9d382b; font-weight: 700; }
 .directory-feature h3 { margin: 13px 0 12px; color: #222; font-family: inherit; font-size: 1.55rem; line-height: 1.55; }
 .directory-feature p { margin: 0 0 17px; color: #5c5c5c; font-size: .82rem; line-height: 1.8; }
@@ -802,7 +803,7 @@ th { color: var(--ink); background: #eae5dc; }
 .directory-tools a { display: grid; grid-template-columns: 180px 1fr auto; gap: 20px; align-items: center; padding: 19px 4px; color: #333; border-bottom: 1px solid #d9d9d9; }
 .directory-tools a::after { content: "›"; color: #9d382b; font-size: 1.35rem; }
 .directory-tools strong { font-size: .88rem; }
-.directory-tools span { color: #777; font-size: .76rem; }
+.directory-tools span { color: #666; font-size: .76rem; }
 .directory-sidebar { position: sticky; top: 95px; display: grid; gap: 18px; }
 .directory-sidebar nav { display: block; }
 .directory-sidebar nav a { display: block; padding: 9px 2px; color: #555; border-bottom: 1px solid #eee; font-size: .75rem; }
@@ -811,7 +812,7 @@ th { color: var(--ink); background: #eae5dc; }
 .directory-update dl { margin: 0 0 12px; }
 .directory-update dl div { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #eee; }
 .directory-update dt, .directory-update dd { margin: 0; font-size: .68rem; }
-.directory-update dt { color: #888; }
+.directory-update dt { color: #6b6b6b; }
 .directory-update dd { color: #444; font-weight: 700; }
 
 @media (max-width: 900px) {
@@ -850,7 +851,7 @@ th { color: var(--ink); background: #eae5dc; }
 /* Article cards (directory) */
 .article-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 20px; }
 .article-card { display: flex; flex-direction: column; min-width: 0; color: #222; background: #fff; border: 1px solid #d9d9d9; text-decoration: none; overflow: hidden; transition: border-color .15s ease, box-shadow .15s ease; }
-.article-card:hover { color: #222; border-color: #999; box-shadow: 0 4px 14px rgba(0, 0, 0, .06); }
+.article-card:hover { color: #222; border-color: #757575; box-shadow: 0 4px 14px rgba(0, 0, 0, .06); }
 .article-card:hover .directory-read { color: #6f2419; }
 .article-card-media { position: relative; display: grid; width: 100%; grid-template-columns: repeat(3, 1fr); gap: 6px; align-items: center; height: 190px; padding: 34px 12px 14px; background: #f6f5f2; border-bottom: 1px solid #e5e5e5; }
 .article-card-media img { display: block; width: 100%; height: 142px; object-fit: contain; mix-blend-mode: multiply; }
@@ -871,13 +872,13 @@ th { color: var(--ink); background: #eae5dc; }
 .directory-search-row input { flex: 1; min-width: 0; min-height: 46px; padding: 8px 40px 8px 14px; color: #222; background: #fff; border: 1px solid #999; border-radius: 3px; font-size: 1rem; }
 .directory-search-row input:focus { border-color: #435b59; outline: 2px solid #435b59; outline-offset: 1px; }
 .directory-search-row input::-webkit-search-cancel-button { display: none; }
-.directory-search-clear { position: absolute; top: 50%; right: 84px; display: none; width: 30px; height: 30px; padding: 0; color: #777; background: transparent; border: 0; border-radius: 50%; font-size: 1.2rem; line-height: 1; transform: translateY(-50%); cursor: pointer; }
+.directory-search-clear { position: absolute; top: 50%; right: 84px; display: none; width: 30px; height: 30px; padding: 0; color: #666; background: transparent; border: 0; border-radius: 50%; font-size: 1.2rem; line-height: 1; transform: translateY(-50%); cursor: pointer; }
 .directory-search-clear:hover { color: #222; background: #eee; }
 .directory-search.is-active .directory-search-clear, .directory-search form.is-active .directory-search-clear { display: block; }
 .directory-search .button { min-height: 46px; padding: 8px 20px; flex: none; }
-.directory-search-help { margin: 12px 0 0; color: #777; font-size: .74rem; line-height: 1.7; }
+.directory-search-help { margin: 12px 0 0; color: #666; font-size: .74rem; line-height: 1.7; }
 .directory-search-chips { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; margin-top: 14px; }
-.directory-search-chips span { margin-right: 3px; color: #888; font-size: .68rem; font-weight: 700; }
+.directory-search-chips span { margin-right: 3px; color: #6b6b6b; font-size: .68rem; font-weight: 700; }
 .directory-search-chips span:not(:first-child) { margin-left: 12px; }
 .directory-search-chips button { min-height: 30px; padding: 4px 11px; color: #333; background: #f6f6f6; border: 1px solid #ddd; border-radius: 15px; font-size: .74rem; cursor: pointer; }
 .directory-search-chips button:hover { color: #fff; background: #435b59; border-color: #435b59; }
@@ -893,10 +894,10 @@ th { color: var(--ink); background: #eae5dc; }
 .search-category { color: #666 !important; font-weight: 400 !important; }
 .search-hits { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 14px; }
 .search-hit { display: flex; flex-direction: column; gap: 2px; padding: 9px 12px; color: #222; background: #f7f7f7; border: 1px solid #e3e3e3; border-left: 3px solid #9d382b; text-decoration: none; }
-.search-hit:hover { background: #fff; border-color: #999; }
+.search-hit:hover { background: #fff; border-color: #757575; }
 .search-hit strong { font-size: .8rem; line-height: 1.5; }
-.search-hit span { color: #777; font-size: .68rem; }
-.search-more { align-self: center; color: #777; font-size: .72rem; }
+.search-hit span { color: #666; font-size: .68rem; }
+.search-more { align-self: center; color: #666; font-size: .72rem; }
 .search-empty { padding: 28px 4px; }
 .search-empty strong { display: block; margin-bottom: 8px; color: #222; font-size: 1rem; }
 .search-empty p { margin: 0; color: #666; font-size: .82rem; line-height: 1.8; }
@@ -914,7 +915,7 @@ body:not(.review-page):not(.directory-page) { color: #333; background: #fff; fon
 body:not(.review-page):not(.directory-page) .site-header { background: #fff; }
 body:not(.review-page):not(.directory-page) .status-bar { display: none; }
 body:not(.review-page):not(.directory-page) main { padding-top: 30px; padding-bottom: 90px; }
-body:not(.review-page):not(.directory-page) .breadcrumb { display: flex; gap: 7px; margin: 8px 0 34px; color: #888; font-size: .74rem; }
+body:not(.review-page):not(.directory-page) .breadcrumb { display: flex; gap: 7px; margin: 8px 0 34px; color: #6b6b6b; font-size: .74rem; }
 body:not(.review-page):not(.directory-page) h1,
 body:not(.review-page):not(.directory-page) h2,
 body:not(.review-page):not(.directory-page) h3 { color: #222; font-family: inherit; }
@@ -927,7 +928,7 @@ body:not(.review-page):not(.directory-page) .lead { max-width: 760px; color: #55
 body:not(.review-page):not(.directory-page) .eyebrow,
 body:not(.review-page):not(.directory-page) .section-kicker { display: inline-block; margin: 0 0 14px; padding: 5px 10px; color: #fff; background: #435b59; font-size: .7rem; font-weight: 700; letter-spacing: 0; }
 body:not(.review-page):not(.directory-page) .section-kicker::before { display: none; }
-body:not(.review-page):not(.directory-page) .article-meta { margin: 22px 0; padding-top: 14px; color: #777; border-top: 1px solid #ddd; font-size: .75rem; }
+body:not(.review-page):not(.directory-page) .article-meta { margin: 22px 0; padding-top: 14px; color: #666; border-top: 1px solid #ddd; font-size: .75rem; }
 body:not(.review-page):not(.directory-page) .meta-pill,
 body:not(.review-page):not(.directory-page) .tag { padding: 4px 8px; color: #444; background: #f1f1f1; border: 1px solid #ddd; border-radius: 2px; font-size: .69rem; }
 body:not(.review-page):not(.directory-page) .ad-note,
@@ -936,7 +937,7 @@ body:not(.review-page):not(.directory-page) .ad-note::before,
 body:not(.review-page):not(.directory-page) .pr-disclosure span { color: #fff; background: #435b59; }
 body:not(.review-page):not(.directory-page) .section-head { margin: 65px 0 22px; padding-bottom: 11px; border-bottom: 2px solid #333; }
 body:not(.review-page):not(.directory-page) .section-head h2 { margin: 0; }
-body:not(.review-page):not(.directory-page) .section-head p { color: #777; font-size: .8rem; }
+body:not(.review-page):not(.directory-page) .section-head p { color: #666; font-size: .8rem; }
 body:not(.review-page):not(.directory-page) .grid,
 body:not(.review-page):not(.directory-page) .related-grid { gap: 1px; background: #ddd; border: 1px solid #ddd; }
 body:not(.review-page):not(.directory-page) .card { padding: 24px; background: #fff; border: 0; border-radius: 0; box-shadow: none; }
@@ -944,7 +945,7 @@ body:not(.review-page):not(.directory-page) a.card:hover { transform: none; back
 body:not(.review-page):not(.directory-page) .card-number { width: auto; height: auto; margin-bottom: 15px; color: #9d382b; background: transparent; border-radius: 0; font-family: inherit; font-size: .75rem; text-align: left; }
 body:not(.review-page):not(.directory-page) .button { min-height: 44px; padding: 10px 17px; color: #fff; background: #333; border-color: #333; border-radius: 3px; box-shadow: none; font-size: .82rem; }
 body:not(.review-page):not(.directory-page) .button:hover { background: #435b59; border-color: #435b59; }
-body:not(.review-page):not(.directory-page) .button.secondary { color: #333; background: #fff; border-color: #999; }
+body:not(.review-page):not(.directory-page) .button.secondary { color: #333; background: #fff; border-color: #757575; }
 body:not(.review-page):not(.directory-page) .tool { padding: 27px; background: #fff; border: 1px solid #ddd; border-top: 4px solid #435b59; border-radius: 2px; box-shadow: none; }
 body:not(.review-page):not(.directory-page) input,
 body:not(.review-page):not(.directory-page) select { border-color: #aaa; border-radius: 2px; }

@@ -48,6 +48,8 @@ h1 は「○○5機種を比較。軸A・軸B・軸Cで選ぶ」の型。`<title
 
 ## プレースホルダ
 
+`<head>` の preconnect、Article の `"image":"{{IMGRAW:先頭製品のkey}}"`、BreadcrumbList（3階層目は h1 と canonical）、先頭ヒーロー画像の `fetchpriority="high"`、全 `<img>` の `width="240" height="240"` は exemplar の通りに付ける。
+
 リンク・画像・価格は台帳から機械的に差し込むので、本文には次の形で残す。`key` は製品の `key`。
 
 - `{{ITEM:key}}` … `data-fallback` の値

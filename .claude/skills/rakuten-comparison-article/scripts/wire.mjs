@@ -15,7 +15,7 @@ const byKey = Object.fromEntries(facts.products.map((p) => [p.key, p]));
 let html = readFileSync(tplPath, "utf8").replace(/\{\{(IMG|ITEM|PRICE):(\w+)\}\}/g, (_, kind, key) => {
   const p = byKey[key];
   if (!p?.rakuten?.id) fail(`プレースホルダ ${kind}:${key} に対応する製品/rakuten がありません`);
-  return { IMG: imageUrl(p.rakuten), ITEM: p.rakuten.item, PRICE: p.rakuten.price }[kind];
+  return { IMG: imageUrl(p.rakuten), IMGRAW: imageUrl(p.rakuten).replace(/&amp;/g, "&"), ITEM: p.rakuten.item, PRICE: p.rakuten.price }[kind];
 });
 writeRepo(`${slug}.html`, html);
 console.log(`+ ${slug}.html を書き出し`);
@@ -45,7 +45,7 @@ const entry = {
 writeRepo("search-index.js", insertOnce(readRepo("search-index.js"), "window.SEARCH_INDEX = [\n", `${slug}.html"`, "  " + JSON.stringify(entry, null, 2).split("\n").join("\n  ") + ",\n", "search-index.js"));
 
 // 5. articles.html（商品比較グリッド先頭にカード）
-const imgs = facts.products.slice(0, 3).map((p) => `<img loading="lazy" src="${imageUrl(p.rakuten)}" alt="${escapeHtml(p.name)}">`).join("");
+const imgs = facts.products.slice(0, 3).map((p) => `<img loading="lazy" src="${imageUrl(p.rakuten)}" width="240" height="240" alt="${escapeHtml(p.name)}">`).join("");
 const badge = facts.badge || "5機種比較";
 const card = `          <a class="article-card" href="${slug}.html"><div class="article-card-media">${imgs}<span class="article-card-badge">${badge}</span></div><div class="article-card-body"><div class="directory-list-meta"><span>${escapeHtml(facts.category_label)}</span><time datetime="${date}">${date.replace(/-/g, ".")}</time></div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(facts.card_summary || entry.summary)}</p><span class="directory-read">記事を読む</span></div></a>\n`;
 writeRepo("articles.html", insertOnce(readRepo("articles.html"), '<div class="article-cards" aria-label="商品比較記事一覧">\n', `href="${slug}.html"`, card, "articles.html"));
