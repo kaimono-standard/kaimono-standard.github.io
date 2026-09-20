@@ -2,6 +2,63 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "hand-blender-comparison.html",
+    "type": "商品比較",
+    "category": "キッチン家電",
+    "updated": "2026-09-21",
+    "title": "ハンドブレンダー5機種を比較。パワー・アタッチメント・手入れで選ぶ",
+    "summary": "ブラウン、パナソニック、ティファール、BRUNO、アイリスオーヤマのハンドブレンダー5機種を、消費電力・重量・スピード調節・定格時間で比較。",
+    "keywords": [
+      "ハンドブレンダー",
+      "ブレンダー",
+      "ハンドミキサー",
+      "離乳食",
+      "スムージー",
+      "ポタージュ",
+      "泡立て",
+      "みじん切り",
+      "チョッパー",
+      "スープ"
+    ],
+    "products": [
+      {
+        "name": "ブラウン マルチクイック 7 ハンドブレンダー MQ7035XBG",
+        "brand": "ブラウン Braun BRAUN マルチクイック",
+        "model": "MQ7035XBG",
+        "anchor": "braun",
+        "note": "握る力だけでスピードを直感的に操作できる「イージースマートスピードテクノロジー」"
+      },
+      {
+        "name": "パナソニック ハンドブレンダー MX-S302",
+        "brand": "パナソニック Panasonic",
+        "model": "MX-S302",
+        "anchor": "panasonic",
+        "note": "2つの操作を同時に行わないと動かないダブルアクションスイッチ"
+      },
+      {
+        "name": "ティファール ハンドブレンダー ベビーマルチ HB65H8JP",
+        "brand": "ティファール T-fal tfal",
+        "model": "HB65H8JP",
+        "anchor": "tfal",
+        "note": "1台6役（離乳食用ブレンダー・つぶす／混ぜる・切る／刻む・泡立て・カップ2種）"
+      },
+      {
+        "name": "BRUNO マルチスティックブレンダー2 BOE140",
+        "brand": "BRUNO ブルーノ",
+        "model": "BOE140",
+        "anchor": "bruno",
+        "note": "1台5役（つぶす・混ぜる・刻む・砕く・泡立てる）"
+      },
+      {
+        "name": "アイリスオーヤマ ハンドブレンダー IHB-M301",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "IHB-M301",
+        "anchor": "iris",
+        "note": "1台4役（まぜる・つぶす・きざむ・泡立てる）"
+      }
+    ]
+  },
+  {
     url: "oven-toaster-comparison.html", type: "商品比較", category: "キッチン家電", updated: "2026-09-20",
     title: "オーブントースター5機種を比較。加熱方式・庫内サイズ・手入れで選ぶ",
     summary: "2枚焼きの現行5機種を消費電力・庫内サイズ・温度調節・タイマーで整理。",

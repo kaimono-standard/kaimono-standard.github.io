@@ -1,0 +1,271 @@
+{
+  "slug": "oven-toaster-comparison",
+  "topic": "オーブントースター",
+  "scope": "食パン2枚焼きの現行モデル",
+  "category_label": "キッチン家電",
+  "date": "2026-09-20",
+  "audience_axes": [
+    "オートメニューで迷わない",
+    "パンの焼き上がりを優先",
+    "立ち上がりの速さ",
+    "広い庫内と長時間調理",
+    "価格を抑えたい"
+  ],
+  "table_columns": [
+    "消費電力",
+    "庫内（幅×奥行）",
+    "温度調節",
+    "タイマー"
+  ],
+  "buying_points": [
+    {
+      "title": "加熱方式",
+      "body": "スチームで水分を保つもの、グラファイトヒーターで瞬時に高温にするもの、近赤外線で中まで熱を通すものなど方式が異なる。トースト中心か、総菜の温め直しやグラタンにも使うかで向き不向きが変わる。"
+    },
+    {
+      "title": "庫内サイズ",
+      "body": "5機種はいずれも食パン2枚が目安。グラタン皿を2皿並べたい、20cmのピザを切らずに焼きたいなら庫内の幅・奥行・高さを確認する。"
+    },
+    {
+      "title": "温度調節とタイマー",
+      "body": "オートメニューで任せたいか、温度ダイヤルで自分で決めたいか。焼きいもなど時間のかかる調理を想定するならタイマーの最大時間と下限温度も見る。"
+    },
+    {
+      "title": "手入れ",
+      "body": "焼き網が外せるか、くず受け皿がスライド式か、扉が外せるか。毎朝使うほどパンくずと油汚れの処理のしやすさが効く。"
+    }
+  ],
+  "table_footnote": "バルミューダは温度ダイヤルではなく、トースト・チーズトースト・フランスパン・クロワッサンの各モードとクラシックモード（170・200・230℃）で選ぶ。庫内寸法は各社公式表記を幅×奥行に揃えた。",
+  "keywords": [
+    "トースター",
+    "オーブントースター",
+    "パン",
+    "食パン",
+    "グラタン",
+    "ピザ",
+    "焼きいも",
+    "2枚焼き"
+  ],
+  "badge": "5機種比較",
+  "related": [
+    "electric-kettle-comparison.html|電気ケトル5機種を比較",
+    "coffee-maker-comparison.html|全自動コーヒーメーカー5機種を比較"
+  ],
+  "products": [
+    {
+      "key": "toasterPanasonic",
+      "anchor": "panasonic",
+      "brand": "パナソニック",
+      "brand_aliases": [
+        "Panasonic"
+      ],
+      "name": "パナソニック オーブントースター ビストロ NT-D700",
+      "model": "NT-D700",
+      "pick_reason": "15オートメニューで、冷凍パンや総菜も含めてメニュー選択だけで済ませたい人向け",
+      "official_url": "https://panasonic.jp/toaster/products/NT-D700/spec.html",
+      "official_label": "パナソニック NT-D700 公式仕様",
+      "specs": {
+        "消費電力": "1300W",
+        "庫内（幅×奥行）": "26.0×25.0cm",
+        "庫内": "幅26.0×奥行25.0×高さ9.5cm",
+        "温度調節": "120〜260℃",
+        "タイマー": "30秒〜25分（デジタル）",
+        "質量": "約4.3kg",
+        "外形": "幅34.1×奥行32.8×高さ26.9cm"
+      },
+      "features": [
+        "上ヒーターは遠赤外線と近赤外線の組み合わせ、下ヒーターは遠赤外線",
+        "15のオートメニュー（厚切り・冷凍パン、焼きいも、もち、総菜の温め直しなど）",
+        "スライド式くず受け皿、外せる焼き網"
+      ],
+      "release": "",
+      "unverified": [
+        "トースト1枚の所要時間"
+      ],
+      "caution_hint": "質量約4.3kgは象印EQ-SC22と同値で5機種最重量。奥行32.8cm",
+      "rakuten": {
+        "id": "57ba07de.a02a930e.57ba07df.a8c22535",
+        "me_id": "1414582",
+        "item_id": "10000094",
+        "item": "https://item.rakuten.co.jp/panasonic-store/nt-d700-w/",
+        "thumb": "https://thumbnail.image.rakuten.co.jp/@0_mall/panasonic-store/cabinet/banner/thumb/nt-d700_251112.jpg",
+        "price": "29,972円",
+        "shop": "panasonic-store",
+        "shop_is_official": true,
+        "variant_note": "リンク先は2色から選ぶ形式"
+      }
+    },
+    {
+      "key": "toasterBalmuda",
+      "anchor": "balmuda",
+      "brand": "バルミューダ",
+      "brand_aliases": [
+        "BALMUDA"
+      ],
+      "name": "BALMUDA The Toaster K11A",
+      "model": "K11A",
+      "pick_reason": "スチームと5モードで、食パンやクロワッサンなどパンを焼く用途が中心の人向け",
+      "official_url": "https://www.balmuda.com/jp/toaster/spec",
+      "official_label": "BALMUDA The Toaster K11A 公式スペック",
+      "specs": {
+        "消費電力": "1300W",
+        "庫内（幅×奥行）": "27.5×22.4cm",
+        "庫内": "幅27.5×奥行22.4×高さ17.8cm",
+        "温度調節": "モード選択（クラシックモード170・200・230℃）",
+        "タイマー": "1〜10分・15分",
+        "質量": "約4.1kg",
+        "外形": "幅35.7×奥行32.1×高さ20.9cm"
+      },
+      "features": [
+        "5ccの水を入れるスチーム式",
+        "トースト・チーズトースト・フランスパン・クロワッサンの4モード＋クラシックモード",
+        "ブラック・ホワイト・ショコラ・グレーの4色"
+      ],
+      "release": "",
+      "unverified": [],
+      "caution_hint": "5機種で最も高価（掲載時価格）",
+      "rakuten": {
+        "id": "57ba0459.e289826f.57ba045a.78a9c40b",
+        "me_id": "1212236",
+        "item_id": "10012643",
+        "item": "https://item.rakuten.co.jp/plywood/14949001/",
+        "thumb": "https://thumbnail.image.rakuten.co.jp/@0_mall/plywood/cabinet/503/14949059.jpg",
+        "price": "33,000円",
+        "shop": "plywood",
+        "shop_is_official": false,
+        "variant_note": "リンク先は複数色から選ぶ形式"
+      }
+    },
+    {
+      "key": "toasterAladdin",
+      "anchor": "aladdin",
+      "brand": "アラジン",
+      "brand_aliases": [
+        "Aladdin"
+      ],
+      "name": "アラジン グラファイトトースター AET-GS13D",
+      "model": "AET-GS13D",
+      "pick_reason": "0.2秒で発熱するグラファイトヒーターで、予熱を待たず短時間で焼きたい人向け",
+      "official_url": "https://aladdin-aic.com/product/toaster2",
+      "official_label": "アラジン グラファイトトースター（2枚焼き） 公式製品ページ",
+      "specs": {
+        "消費電力": "1270W",
+        "庫内（幅×奥行）": "31.0×23.5cm",
+        "温度調節": "100〜280℃",
+        "タイマー": "15分",
+        "質量": "約3.4kg",
+        "電源コード": "1.2m"
+      },
+      "features": [
+        "0.2秒で発熱するグラファイトヒーター（上部）",
+        "もちが落ちにくい細かいメッシュ網",
+        "ホーローの受け皿が付属",
+        "グリーン・ホワイト（ブラックは限定流通）"
+      ],
+      "release": "",
+      "unverified": [
+        "外形寸法",
+        "焼き上がり時間"
+      ],
+      "caution_hint": "楽天市場では旧型番AET-GS13B2・GS13Cが安く併売されている",
+      "rakuten": {
+        "id": "57ba09ed.551e9713.57ba09ee.ea33acef",
+        "me_id": "1332002",
+        "item_id": "10149254",
+        "item": "https://item.rakuten.co.jp/b-surprise2/4962365070806/",
+        "thumb": "https://thumbnail.image.rakuten.co.jp/@0_mall/b-surprise2/cabinet/cm193/4962365070806.jpg",
+        "price": "15,730円",
+        "shop": "b-surprise2",
+        "shop_is_official": false,
+        "variant_note": ""
+      }
+    },
+    {
+      "key": "toasterZojirushi",
+      "anchor": "zojirushi",
+      "brand": "象印",
+      "brand_aliases": [
+        "ZOJIRUSHI"
+      ],
+      "name": "象印 こんがり倶楽部 EQ-SC22",
+      "model": "EQ-SC22",
+      "pick_reason": "80〜250℃と30分タイマーで、グラタン2皿や焼きいもなど長時間調理にも使いたい人向け",
+      "official_url": "https://www.zojirushi.co.jp/syohin/kitchen/toaster/eq-sc/",
+      "official_label": "象印 EQ-SC22 公式製品ページ",
+      "specs": {
+        "消費電力": "1000W",
+        "庫内（幅×奥行）": "27.0×23.5cm",
+        "庫内": "幅27.0×奥行23.5×高さ11.0cm",
+        "温度調節": "80〜250℃",
+        "タイマー": "30分",
+        "質量": "約4.3kg",
+        "外形": "幅33.5×奥行29×高さ26cm"
+      },
+      "features": [
+        "上火グリル",
+        "外せる扉、外せる焼き網、スライド式くず受け皿",
+        "20cmまでのピザトレーが付属",
+        "山型パン2枚、グラタン皿を縦に2皿"
+      ],
+      "release": "2026年9月発売",
+      "unverified": [
+        "トースト時間"
+      ],
+      "caution_hint": "1000Wで、1300W機より焼き上がりに時間がかかる可能性",
+      "rakuten": {
+        "id": "57b73c89.a9ad4f57.57b73c8a.901a6902",
+        "me_id": "1270903",
+        "item_id": "11744612",
+        "item": "https://item.rakuten.co.jp/r-kojima/4974305232779/",
+        "thumb": "https://thumbnail.image.rakuten.co.jp/@0_mall/r-kojima/cabinet/n0000001849/4974305232779_1.jpg",
+        "price": "9,201円",
+        "shop": "r-kojima",
+        "shop_is_official": false,
+        "variant_note": ""
+      }
+    },
+    {
+      "key": "toasterIris",
+      "anchor": "iris",
+      "brand": "アイリスオーヤマ",
+      "brand_aliases": [
+        "IRIS OHYAMA",
+        "アイリス"
+      ],
+      "name": "アイリスオーヤマ ミラーオーブントースター MOT-011",
+      "model": "MOT-011",
+      "pick_reason": "1000W・4段階火力・15分タイマーのシンプル構成で、価格と省スペースを重視する人向け",
+      "official_url": "https://www.irisplaza.co.jp/index.php?KB=SHOSAI&SID=H561970F",
+      "official_label": "アイリスオーヤマ MOT-011 公式通販仕様",
+      "specs": {
+        "消費電力": "1000W",
+        "庫内（幅×奥行）": "25.0×22.0cm",
+        "庫内": "幅25.0×奥行22.0×高さ7.5cm",
+        "温度調節": "4段階火力",
+        "タイマー": "15分",
+        "質量": "約3.3kg",
+        "外形": "幅33.2×奥行27×高さ22.1cm",
+        "電源コード": "1.2m"
+      },
+      "features": [
+        "ミラーガラス扉の横型",
+        "4段階の火力切り替え",
+        "15分タイマー（電源スイッチ兼用）"
+      ],
+      "release": "",
+      "unverified": [],
+      "caution_hint": "5機種で最軽量（約3.3kg）。庫内高さ7.5cmで厚みのある調理には向かない",
+      "rakuten": {
+        "id": "57b73cab.fc9d3f8d.57b73cac.d7bbcabb",
+        "me_id": "1358201",
+        "item_id": "10092911",
+        "item": "https://item.rakuten.co.jp/irisplaza-r/561970/",
+        "thumb": "https://thumbnail.image.rakuten.co.jp/@0_mall/irisplaza-r/cabinet/09848016/imgrc0096817380.jpg",
+        "price": "7,640円",
+        "shop": "irisplaza-r",
+        "shop_is_official": true,
+        "variant_note": ""
+      }
+    }
+  ]
+}
