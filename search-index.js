@@ -2,6 +2,63 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "mobile-battery-comparison.html",
+    "type": "商品比較",
+    "category": "スマホ・PC周辺",
+    "updated": "2026-09-21",
+    "title": "モバイルバッテリー5機種を比較。ケーブル・出力・携帯性で選ぶ",
+    "summary": "Anker、CIO、UGREEN、Belkin、エレコムの10000mAhクラスのモバイルバッテリー5機種を、最大出力・ケーブル・サイズ・重量で比較。",
+    "keywords": [
+      "モバイルバッテリー",
+      "10000mAh",
+      "充電器",
+      "USB-C",
+      "PD",
+      "MagSafe",
+      "Qi2",
+      "ワイヤレス充電",
+      "ケーブル内蔵",
+      "スマホ充電"
+    ],
+    "products": [
+      {
+        "name": "Anker Zolo Power Bank (10000mAh, 30W, Built-In USB-C ケーブル)",
+        "brand": "Anker アンカー",
+        "model": "A1688",
+        "anchor": "anker",
+        "note": "本体に一体型のUSB-Cケーブル（約14cm）を備え、ケーブルを別に持ち歩かなくてよい"
+      },
+      {
+        "name": "CIO SMARTCOBY Pro SLIM 35W2C1A 10000mAh",
+        "brand": "CIO シーアイオー",
+        "model": "CIO-MB35W2C1A-10000-S",
+        "anchor": "cio",
+        "note": "厚さ16.2mm・約180gの薄型軽量ボディ"
+      },
+      {
+        "name": "UGREEN MagFlow Air 10000mAh モバイルバッテリー MagSafe対応 15W",
+        "brand": "UGREEN ユーグリーン",
+        "model": "75982",
+        "anchor": "ugreen",
+        "note": "Qi2規格（MPP）対応で、iPhoneにマグネットで吸着して最大15Wのワイヤレス充電"
+      },
+      {
+        "name": "Belkin BoostCharge Power Bank 10K with Display BPB027",
+        "brand": "Belkin ベルキン",
+        "model": "BPB027",
+        "anchor": "belkin",
+        "note": "デジタル画面で残量を数字で表示"
+      },
+      {
+        "name": "エレコム USB PD20Wモバイルバッテリー（10000mAh／USB PD準拠／C×1+A×1）EC-C03BK",
+        "brand": "エレコム ELECOM",
+        "model": "EC-C03BK",
+        "anchor": "elecom",
+        "note": "USB Power Delivery規格に準拠し、2ポート合計20Wを出力。USB-Cポートの出力を優先し、残りをUSB-Aから出力"
+      }
+    ]
+  },
+  {
     "url": "automatic-coffee-machine-comparison.html",
     "type": "商品比較",
     "category": "キッチン家電",
