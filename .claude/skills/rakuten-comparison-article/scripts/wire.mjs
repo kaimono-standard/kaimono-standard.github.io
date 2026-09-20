@@ -2,7 +2,7 @@
 // 使い方: node wire.mjs _drafts/<slug>
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { affiliateUrl, draftDir, escapeHtml, fail, imageUrl, insertOnce, readFacts, readRepo, writeRepo } from "./lib.mjs";
+import { affiliateUrl, draftDir, escapeHtml, fail, hasLink, imageUrl, insertOnce, readFacts, readRepo, writeRepo } from "./lib.mjs";
 
 const dir = draftDir(process.argv[2]);
 const facts = readFacts(dir);
@@ -14,7 +14,7 @@ const byKey = Object.fromEntries(facts.products.map((p) => [p.key, p]));
 // 1. プレースホルダ解決 → <slug>.html
 let html = readFileSync(tplPath, "utf8").replace(/\{\{(IMGRAW|IMG|ITEM|PRICE):(\w+)\}\}/g, (_, kind, key) => {
   const p = byKey[key];
-  if (!p?.rakuten?.id) fail(`プレースホルダ ${kind}:${key} に対応する製品/rakuten がありません`);
+  if (!hasLink(p?.rakuten)) fail(`プレースホルダ ${kind}:${key} に対応する製品/rakuten がありません`);
   return { IMG: imageUrl(p.rakuten), IMGRAW: imageUrl(p.rakuten).replace(/&amp;/g, "&"), ITEM: p.rakuten.item, PRICE: p.rakuten.price }[kind];
 });
 writeRepo(`${slug}.html`, html);

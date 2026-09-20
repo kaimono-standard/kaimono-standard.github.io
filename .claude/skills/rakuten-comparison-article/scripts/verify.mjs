@@ -58,6 +58,18 @@ readRepo("sitemap.xml").includes(`/${slug}.html<`) ? ok("sitemap.xml 登録済�
 readRepo("search-index.js").includes(`${slug}.html"`) ? ok("search-index.js 登録済み") : ng("search-index.js 未登録");
 readRepo("articles.html").includes(`href="${slug}.html"`) ? ok("articles.html 登録済み") : ng("articles.html 未登録");
 
+// --online: ブラウザ無しで画像と商品URLの到達性を確認する（Codex 単独運用向け）
+if (process.argv.includes("--online")) {
+  const decode = (s) => s.replace(/&amp;/g, "&");
+  const imgSrcs = [...new Set([...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => decode(m[1])))];
+  const thumbs = imgSrcs.map((u) => { const m = u.match(/[?&]pc=([^&]+)/); return m ? decodeURIComponent(m[1]) : u; });
+  const items = [...new Set([...html.matchAll(/data-fallback="([^"]+)"/g)].map((m) => m[1]))];
+  const ua = { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128.0.0.0 Safari/537.36" };
+  const head = async (u) => { try { const r = await fetch(u, { method: "GET", headers: { ...ua, Range: "bytes=0-0" }, redirect: "follow" }); return r.status; } catch (e) { return `ERR ${e.message}`; } };
+  for (const u of thumbs) { const st = await head(u); (st === 200 || st === 206) ? ok(`画像 ${st} ${u.slice(0, 80)}`) : ng(`画像 ${st} ${u}`); }
+  for (const u of items) { const st = await head(u); (st === 200 || st === 206) ? ok(`商品ページ ${st} ${u}`) : ng(`商品ページ ${st} ${u}`); }
+}
+
 // 最上級表現は目視用に列挙
 const text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 const superlatives = [...text.matchAll(/.{0,25}(最も|最軽量|最大|最小|最少|最高|最長|最短|いちばん|唯一|最速).{0,25}/g)].map((m) => m[0].trim());

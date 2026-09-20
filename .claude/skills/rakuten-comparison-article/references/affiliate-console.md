@@ -83,3 +83,32 @@ toasterZojirushi	57b73c89.a9ad4f57.57b73c8a.901a6902	1270903	11744612	https://it
 | braunhousehold（ブラウン公式） | 57bbc715.777d061e.57bbc716.48ac6b20 |
 | bruno-official（BRUNO公式） | 57bbc7a8.26c14f52.57bbc7a9.0469692e |
 | edion（エディオン） | 57bbc770.6f7c7534.57bbc771.17bdda71 |
+
+## 管理画面が使えないとき：楽天ウェブサービスAPIで代替する
+
+Chrome（ログイン済みの管理画面）が使えない環境——Codex 単独で回すときや、ブラウザ操作が不安定なとき——は、楽天ウェブサービスの商品検索APIで同じ情報を取る。計測付きURL（`affiliateUrl`）とサムネイルが返るので、記事の収益計測は管理画面経由と同じように働く。違いは画像の参照方法だけ（hgb ラッパーを通さず、サムネイルを直接参照する）。
+
+準備（1回だけ）：
+
+1. https://webservice.rakuten.co.jp/ で「アプリID」を発行（楽天IDでログインし、アプリ名とURLを登録するだけ）
+2. 楽天アフィリエイト管理画面の「アフィリエイトID」（`xxxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx` の形）を控える
+3. リポジトリ直下の `.env`（gitignore 済み）に書く：
+   ```
+   RAKUTEN_APP_ID=発行したアプリID
+   RAKUTEN_AFFILIATE_ID=アフィリエイトID
+   ```
+
+手順：
+
+```bash
+# 候補を見る（index|shopCode|価格|送料|商品名|itemCode）
+node .claude/skills/rakuten-comparison-article/scripts/rakuten-api.mjs search "象印 オーブントースター EQ-SC22" --hits 12
+# 店舗を絞る
+node .claude/skills/rakuten-comparison-article/scripts/rakuten-api.mjs search "EQ-SC22" --shop zojirushi-direct
+# 選んだ商品を links.tsv に追記
+node .claude/skills/rakuten-comparison-article/scripts/rakuten-api.mjs pick "zojirushi-direct:10001234" --key toasterZojirushi --dir _drafts/<slug>
+```
+
+店舗の選び方は管理画面のときと同じ（公式店 → 大手量販店 → 送料込みで中央値付近）。`pick` は8列目に `affiliateUrl` を持つ行を `links.tsv` に足すので、あとは `merge-links.mjs` で取り込むだけ。`facts.json` 側には `link_source: "rakuten-webservice-api"` が付き、`wire.mjs` は `config.js` にその URL をそのまま登録する。
+
+管理画面の行（リンクID あり）と API の行（8列目あり）を1つの `links.tsv` に混ぜてもよい。

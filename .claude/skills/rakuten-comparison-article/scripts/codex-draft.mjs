@@ -1,15 +1,15 @@
 // facts.json と編集ルール・完成例をまとめて Codex に渡し、article.tpl.html を書かせる。
 // 使い方: node codex-draft.mjs _drafts/<slug> [--model <id>]
 import { spawnSync } from "node:child_process";
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { REPO_DIR, SKILL_DIR, draftDir, fail, readFacts } from "./lib.mjs";
+import { REPO_DIR, SKILL_DIR, draftDir, fail, hasLink, readFacts } from "./lib.mjs";
 
 const dir = draftDir(process.argv[2]);
 const modelFlag = process.argv.indexOf("--model") > -1 ? ["-m", process.argv[process.argv.indexOf("--model") + 1]] : [];
 const facts = readFacts(dir);
 
-const ready = facts.products.filter((p) => p.rakuten?.id && p.official_url && p.specs && Object.keys(p.specs).length);
+const ready = facts.products.filter((p) => hasLink(p.rakuten) && p.official_url && p.specs && Object.keys(p.specs).length);
 if (facts.products.length !== 5) fail(`製品は5つ必要です（現在 ${facts.products.length}）`);
 if (ready.length !== 5) fail(`公式URL・specs・rakuten が揃っていない製品があります: ${facts.products.filter((p) => !ready.includes(p)).map((p) => p.key).join(", ")}`);
 
@@ -46,11 +46,22 @@ const promptPath = resolve(dir, "draft-prompt.txt");
 writeFileSync(promptPath, prompt, "utf8");
 const outPath = resolve(dir, "article.tpl.html");
 
-console.log(`codex exec を実行中（プロンプト ${prompt.length} 文字）…`);
-const res = spawnSync("codex", ["exec", "-s", "read-only", "-C", REPO_DIR, "--ephemeral", "--skip-git-repo-check", "-o", outPath, ...modelFlag, "-"], {
-  input: prompt, encoding: "utf8", stdio: ["pipe", "ignore", "ignore"], shell: process.platform === "win32", maxBuffer: 64 * 1024 * 1024,
-});
-if (res.status !== 0) fail(`codex exec が失敗しました (exit ${res.status})`);
+// --prompt-only: Codex 自身が執筆するときに使う。プロンプトだけ書き出して終了する（実行者が article.tpl.html を書き、--finalize で整形・検査する）
+// --finalize:    既に書かれた article.tpl.html を整形・検査するだけ
+const mode = process.argv.includes("--prompt-only") ? "prompt" : process.argv.includes("--finalize") ? "finalize" : "exec";
+if (mode === "prompt") {
+  console.log(`プロンプトを書き出しました: ${promptPath}（${prompt.length} 文字）`);
+  console.log(`この内容に従って ${outPath} を書き、次に --finalize を付けて再実行してください`);
+  process.exit(0);
+}
+if (mode === "exec") {
+  console.log(`codex exec を実行中（プロンプト ${prompt.length} 文字）…`);
+  const res = spawnSync("codex", ["exec", "-s", "read-only", "-C", REPO_DIR, "--ephemeral", "--skip-git-repo-check", "-o", outPath, ...modelFlag, "-"], {
+    input: prompt, encoding: "utf8", stdio: ["pipe", "ignore", "ignore"], shell: process.platform === "win32", maxBuffer: 64 * 1024 * 1024,
+  });
+  if (res.status !== 0) fail(`codex exec が失敗しました (exit ${res.status})。Codex の中から実行している場合は --prompt-only で自分で書く`);
+}
+if (!existsSync(outPath)) fail(`${outPath} がありません`);
 
 let html = readFileSync(outPath, "utf8").trim();
 html = html.replace(/^```(?:html)?\s*/i, "").replace(/\s*```$/, "").trim();

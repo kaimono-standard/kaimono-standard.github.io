@@ -24,8 +24,28 @@ export const readRepo = (file) => readFileSync(resolve(REPO_DIR, file), "utf8");
 export const writeRepo = (file, content) => writeFileSync(resolve(REPO_DIR, file), content, "utf8");
 
 // 楽天アフィリエイトの計測付きURLと画像URL。config.js / 記事の既存表記と同じ形にする。
-export const affiliateUrl = (r) => `https://hb.afl.rakuten.co.jp/ichiba/${r.id}/?pc=${encodeURIComponent(r.item)}&link_type=picttext&ut=${UT}`;
-export const imageUrl = (r) => `https://hbb.afl.rakuten.co.jp/hgb/${r.id}/?me_id=${r.me_id}&amp;item_id=${r.item_id}&amp;pc=${encodeURIComponent(r.thumb + "?_ex=240x240")}&amp;s=240x240&amp;t=picttext`;
+// 管理画面で取ったリンク（id / me_id / item_id）と、楽天ウェブサービスAPIで取ったリンク（affiliate_url のみ）の両方に対応する。
+// API経由の場合は計測付きURLをそのまま使い、画像は hgb ラッパーを通さず楽天のサムネイルを直接参照する。
+export const hasConsoleLink = (r) => /^[0-9a-f]{8}\.[0-9a-f]{8}\.[0-9a-f]{8}\.[0-9a-f]{8}$/.test(r?.id || "");
+export const hasLink = (r) => Boolean(r && (hasConsoleLink(r) || /^https:\/\/hb\.afl\.rakuten\.co\.jp\//.test(r.affiliate_url || "")));
+export const affiliateUrl = (r) => hasConsoleLink(r)
+  ? `https://hb.afl.rakuten.co.jp/ichiba/${r.id}/?pc=${encodeURIComponent(r.item)}&link_type=picttext&ut=${UT}`
+  : r.affiliate_url;
+export const imageUrl = (r) => hasConsoleLink(r) && r.me_id && r.item_id
+  ? `https://hbb.afl.rakuten.co.jp/hgb/${r.id}/?me_id=${r.me_id}&amp;item_id=${r.item_id}&amp;pc=${encodeURIComponent(r.thumb + "?_ex=240x240")}&amp;s=240x240&amp;t=picttext`
+  : `${r.thumb}?_ex=240x240`;
+
+// リポジトリ直下の .env（gitignore 済み）から KEY=VALUE を読む。process.env が優先。
+export const readEnv = () => {
+  const out = { ...process.env };
+  const path = resolve(REPO_DIR, ".env");
+  if (!existsSync(path)) return out;
+  for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
+    if (m && !(m[1] in process.env)) out[m[1]] = m[2].replace(/^["']|["']$/g, "");
+  }
+  return out;
+};
 
 export const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 

@@ -64,14 +64,28 @@ ${body}
 \`\`\``;
 
 const outPath = resolve(dir, "factcheck.json");
-writeFileSync(resolve(dir, "factcheck-prompt.txt"), prompt, "utf8");
-console.log(`codex exec を実行中（本文 ${body.length} 文字）…`);
-const res = spawnSync("codex", ["exec", "-s", "read-only", "-C", REPO_DIR, "--ephemeral", "--skip-git-repo-check", "--output-schema", schemaPath, "-o", outPath, ...modelFlag, "-"], {
-  input: prompt, encoding: "utf8", stdio: ["pipe", "ignore", "ignore"], shell: process.platform === "win32", maxBuffer: 64 * 1024 * 1024,
-});
-if (res.status !== 0) fail(`codex exec が失敗しました (exit ${res.status})`);
+const promptPath = resolve(dir, "factcheck-prompt.txt");
+writeFileSync(promptPath, prompt, "utf8");
+
+// --prompt-only: プロンプトと schema を書き出して終了（Codex 自身が照合し、結果を factcheck.json に書く）
+// --report:      既にある factcheck.json を整形表示するだけ
+const mode = process.argv.includes("--prompt-only") ? "prompt" : process.argv.includes("--report") ? "report" : "exec";
+if (mode === "prompt") {
+  console.log(`プロンプト: ${promptPath}（本文 ${body.length} 文字）\nスキーマ: ${schemaPath}`);
+  console.log(`プロンプトに従って照合し、スキーマ通りのJSONを ${outPath} に書いてから --report を付けて再実行してください`);
+  process.exit(0);
+}
+if (mode === "exec") {
+  console.log(`codex exec を実行中（本文 ${body.length} 文字）…`);
+  const res = spawnSync("codex", ["exec", "-s", "read-only", "-C", REPO_DIR, "--ephemeral", "--skip-git-repo-check", "--output-schema", schemaPath, "-o", outPath, ...modelFlag, "-"], {
+    input: prompt, encoding: "utf8", stdio: ["pipe", "ignore", "ignore"], shell: process.platform === "win32", maxBuffer: 64 * 1024 * 1024,
+  });
+  if (res.status !== 0) fail(`codex exec が失敗しました (exit ${res.status})。Codex の中から実行している場合は --prompt-only で自分で照合する`);
+}
+if (!existsSync(outPath)) fail(`${outPath} がありません`);
 
 const result = JSON.parse(readFileSync(outPath, "utf8"));
+if (!Array.isArray(result.issues)) fail("factcheck.json の形式が不正（issues 配列が必要）");
 console.log(`\n指摘 ${result.issues.length} 件 — ${result.summary}`);
 for (const [i, issue] of result.issues.entries()) {
   console.log(`\n${i + 1}. [${issue.severity}] 「${issue.quote}」\n   理由: ${issue.reason}\n   案: ${issue.suggestion}`);

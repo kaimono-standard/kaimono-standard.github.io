@@ -125,4 +125,5 @@ npm run check && SITE_URL=https://kaimono-standard.echoant.com CONTACT_URL=https
 - `references/affiliate-console.md` — 楽天アフィリエイト管理画面の操作と JS ヘルパー
 - `references/wiring.md` — 配線先ファイルの一覧と、ブラウザ確認用スニペット
 - `assets/exemplar.tpl.html` — 完成例（オーブントースター記事のテンプレート）
-- `scripts/` — `merge-links.mjs` `codex-draft.mjs` `wire.mjs` `codex-factcheck.mjs` `verify.mjs`
+- `scripts/` — `merge-links.mjs` `codex-draft.mjs` `wire.mjs` `codex-factcheck.mjs` `verify.mjs`、ブラウザ無し運用向けの `fetch-page.mjs`（公式ページを本文テキストで読む）と `rakuten-api.mjs`（楽天ウェブサービスAPIでリンク取得。`.env` に `RAKUTEN_APP_ID` / `RAKUTEN_AFFILIATE_ID`）
+- `.codex/skills/rakuten-comparison-article/SKILL.md` — **Codex 単独版**。Claude の利用上限に達したときは Codex にこのスキルで同じ手順を回させる。同じ references / scripts / exemplar を使うので品質基準は同一。`codex-draft.mjs --prompt-only` → 自分で執筆 → `--finalize`、`codex-factcheck.mjs --prompt-only` → 自分で照合 → `--report`、`verify.mjs --online` がその用途
