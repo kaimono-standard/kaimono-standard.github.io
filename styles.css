@@ -838,3 +838,133 @@ th { color: var(--ink); background: #eae5dc; }
   .directory-tools span { grid-column: 1; }
   .directory-tools a::after { grid-column: 2; grid-row: 1 / 3; }
 }
+
+/* Site-wide editorial standard */
+body:not(.review-page):not(.directory-page) { color: #333; background: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; }
+body:not(.review-page):not(.directory-page) .site-header { background: #fff; }
+body:not(.review-page):not(.directory-page) .status-bar { display: none; }
+body:not(.review-page):not(.directory-page) main { padding-top: 30px; padding-bottom: 90px; }
+body:not(.review-page):not(.directory-page) .breadcrumb { display: flex; gap: 7px; margin: 8px 0 34px; color: #888; font-size: .74rem; }
+body:not(.review-page):not(.directory-page) h1,
+body:not(.review-page):not(.directory-page) h2,
+body:not(.review-page):not(.directory-page) h3 { color: #222; font-family: inherit; }
+body:not(.review-page):not(.directory-page) h1 { font-size: clamp(2rem, 3.8vw, 3.15rem); font-weight: 750; line-height: 1.38; letter-spacing: -.035em; }
+body:not(.review-page):not(.directory-page) h2 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); font-weight: 750; line-height: 1.45; letter-spacing: -.02em; }
+body:not(.review-page):not(.directory-page) h3 { font-weight: 700; }
+body:not(.review-page):not(.directory-page) .article-head { max-width: 900px; padding: 16px 0 24px; }
+body:not(.review-page):not(.directory-page) .article-head h1 { max-width: 850px; font-size: clamp(2rem, 3.8vw, 3.15rem); line-height: 1.38; }
+body:not(.review-page):not(.directory-page) .lead { max-width: 760px; color: #555; font-size: .98rem; line-height: 1.9; }
+body:not(.review-page):not(.directory-page) .eyebrow,
+body:not(.review-page):not(.directory-page) .section-kicker { display: inline-block; margin: 0 0 14px; padding: 5px 10px; color: #fff; background: #435b59; font-size: .7rem; font-weight: 700; letter-spacing: 0; }
+body:not(.review-page):not(.directory-page) .section-kicker::before { display: none; }
+body:not(.review-page):not(.directory-page) .article-meta { margin: 22px 0; padding-top: 14px; color: #777; border-top: 1px solid #ddd; font-size: .75rem; }
+body:not(.review-page):not(.directory-page) .meta-pill,
+body:not(.review-page):not(.directory-page) .tag { padding: 4px 8px; color: #444; background: #f1f1f1; border: 1px solid #ddd; border-radius: 2px; font-size: .69rem; }
+body:not(.review-page):not(.directory-page) .ad-note,
+body:not(.review-page):not(.directory-page) .pr-disclosure { margin: 0 0 30px; padding: 11px 14px; color: #666; background: #f6f6f6; border: 1px solid #e5e5e5; font-size: .73rem; line-height: 1.65; }
+body:not(.review-page):not(.directory-page) .ad-note::before,
+body:not(.review-page):not(.directory-page) .pr-disclosure span { color: #fff; background: #435b59; }
+body:not(.review-page):not(.directory-page) .section-head { margin: 65px 0 22px; padding-bottom: 11px; border-bottom: 2px solid #333; }
+body:not(.review-page):not(.directory-page) .section-head h2 { margin: 0; }
+body:not(.review-page):not(.directory-page) .section-head p { color: #777; font-size: .8rem; }
+body:not(.review-page):not(.directory-page) .grid,
+body:not(.review-page):not(.directory-page) .related-grid { gap: 1px; background: #ddd; border: 1px solid #ddd; }
+body:not(.review-page):not(.directory-page) .card { padding: 24px; background: #fff; border: 0; border-radius: 0; box-shadow: none; }
+body:not(.review-page):not(.directory-page) a.card:hover { transform: none; background: #fafafa; box-shadow: none; }
+body:not(.review-page):not(.directory-page) .card-number { width: auto; height: auto; margin-bottom: 15px; color: #9d382b; background: transparent; border-radius: 0; font-family: inherit; font-size: .75rem; text-align: left; }
+body:not(.review-page):not(.directory-page) .button { min-height: 44px; padding: 10px 17px; color: #fff; background: #333; border-color: #333; border-radius: 3px; box-shadow: none; font-size: .82rem; }
+body:not(.review-page):not(.directory-page) .button:hover { background: #435b59; border-color: #435b59; }
+body:not(.review-page):not(.directory-page) .button.secondary { color: #333; background: #fff; border-color: #999; }
+body:not(.review-page):not(.directory-page) .tool { padding: 27px; background: #fff; border: 1px solid #ddd; border-top: 4px solid #435b59; border-radius: 2px; box-shadow: none; }
+body:not(.review-page):not(.directory-page) input,
+body:not(.review-page):not(.directory-page) select { border-color: #aaa; border-radius: 2px; }
+body:not(.review-page):not(.directory-page) .result { background: #eef4f2; border-left: 3px solid #435b59; border-radius: 0; }
+body:not(.review-page):not(.directory-page) .notice { background: #faf7f1; border-color: #ded6c7; border-left: 3px solid #9d382b; border-radius: 0; }
+body:not(.review-page):not(.directory-page) .notice.info { background: #eef4f2; border-color: #d5e1de; border-left-color: #435b59; }
+body:not(.review-page):not(.directory-page) .table-wrap { border-color: #ddd; border-radius: 0; box-shadow: none; }
+body:not(.review-page):not(.directory-page) th { color: #fff; background: #435b59; }
+
+body:not(.review-page):not(.directory-page) .article-layout { grid-template-columns: minmax(0, 790px) 250px; gap: 55px; }
+body:not(.review-page):not(.directory-page) .article-body { color: #444; font-size: .96rem; line-height: 1.9; }
+body:not(.review-page):not(.directory-page) .article-body h2 { margin-top: 2.8em; padding: 0 0 11px 15px; border-top: 0; border-bottom: 2px solid #333; border-left: 5px solid #9d382b; font-size: 1.55rem; }
+body:not(.review-page):not(.directory-page) .article-body h3 { margin-top: 2em; font-size: 1.18rem; }
+body:not(.review-page):not(.directory-page) .toc { padding: 18px; background: #fff; border: 1px solid #ddd; border-radius: 0; box-shadow: none; }
+body:not(.review-page):not(.directory-page) .toc strong { padding-bottom: 9px; color: #333; border-bottom: 2px solid #435b59; font-family: inherit; font-size: .82rem; }
+body:not(.review-page):not(.directory-page) .toc a { padding: 7px 0; color: #555; border-bottom: 1px solid #eee; font-size: .74rem; }
+body:not(.review-page):not(.directory-page) .fact-box { padding: 20px; background: #eef4f2; border-left: 3px solid #435b59; border-radius: 0; }
+body:not(.review-page):not(.directory-page) .fact-box strong { color: #263c39; font-size: 1rem; }
+body:not(.review-page):not(.directory-page) .formula { padding: 20px; color: #222; background: #f3f3f3; border: 1px solid #ddd; border-radius: 0; }
+body:not(.review-page):not(.directory-page) .source-list { background: #f7f7f7; border-color: #ddd; border-radius: 0; }
+body:not(.review-page):not(.directory-page) .decision-banner { padding: 28px; color: #333; background: #f3f7f6; border-top: 4px solid #435b59; border-radius: 0; box-shadow: none; }
+body:not(.review-page):not(.directory-page) .decision-banner h2,
+body:not(.review-page):not(.directory-page) .decision-banner p { color: #333; font-family: inherit; }
+
+body:not(.review-page):not(.directory-page) .home-hero { gap: 55px; padding: 48px 0 54px; background: none; border-bottom: 0; }
+body:not(.review-page):not(.directory-page) .home-hero > div { padding-left: 0; border-left: 0; }
+body:not(.review-page):not(.directory-page) .home-hero h1 em { color: #222; }
+body:not(.review-page):not(.directory-page) .hero-points { color: #555; font-size: .78rem; font-weight: 600; }
+body:not(.review-page):not(.directory-page) .hero-points li::before { content: "•"; color: #9d382b; }
+body:not(.review-page):not(.directory-page) .quick-tool { padding: 27px; color: #333; background: #fff; border: 1px solid #ccc; border-top: 4px solid #435b59; border-radius: 2px; box-shadow: none; }
+body:not(.review-page):not(.directory-page) .quick-tool h2 { color: #222; font-family: inherit; font-size: 1.3rem; }
+body:not(.review-page):not(.directory-page) .quick-tool label,
+body:not(.review-page):not(.directory-page) .quick-tool small { color: #555; }
+body:not(.review-page):not(.directory-page) .quick-tool .result { color: #333; background: #eef4f2; }
+body:not(.review-page):not(.directory-page) .trust-strip { margin: 15px 0 65px; background: #ddd; border-color: #ddd; border-radius: 0; }
+body:not(.review-page):not(.directory-page) .trust-item { background: #fff; }
+body:not(.review-page):not(.directory-page) .trust-item strong { color: #333; font-family: inherit; }
+body:not(.review-page):not(.directory-page) .change-board { color: #333; background: #fff; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .change-head { border-bottom-color: #ddd; }
+body:not(.review-page):not(.directory-page) .change-item { background: #fafafa; border-right-color: #ddd; }
+body:not(.review-page):not(.directory-page) .change-item strong { color: #333; }
+
+body:not(.review-page):not(.directory-page) .commerce-hero { min-height: 0; margin-bottom: 0; color: #333; background: #fff; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .commerce-hero-copy { padding: clamp(34px, 5vw, 55px); }
+body:not(.review-page):not(.directory-page) .commerce-label { margin-bottom: 18px; color: #9d382b; letter-spacing: .08em; }
+body:not(.review-page):not(.directory-page) .commerce-hero h1 { color: #222; font-family: inherit; font-size: clamp(2.1rem, 4vw, 3.2rem); font-weight: 750; line-height: 1.35; letter-spacing: -.035em; }
+body:not(.review-page):not(.directory-page) .commerce-hero h1 span { margin-bottom: 8px; color: #555; font-family: inherit; font-size: .45em; }
+body:not(.review-page):not(.directory-page) .commerce-hero .lead { margin-top: 20px; color: #555; font-size: .88rem; }
+body:not(.review-page):not(.directory-page) .commerce-hero-board { padding: 24px; background: #f3f3f3; border-left-color: #ddd; }
+body:not(.review-page):not(.directory-page) .board-title { color: #555; }
+body:not(.review-page):not(.directory-page) .commerce-hero-board a { color: #333; border-top-color: #ccc; }
+body:not(.review-page):not(.directory-page) .commerce-hero-board a:hover { color: #9d382b; }
+body:not(.review-page):not(.directory-page) .commerce-button { color: #fff; background: #333; border-color: #333; }
+body:not(.review-page):not(.directory-page) .text-cta { color: #555; }
+body:not(.review-page):not(.directory-page) .commerce-facts { margin-bottom: 65px; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .editorial-intro { margin-bottom: 60px; padding-bottom: 50px; border-bottom-color: #ddd; }
+body:not(.review-page):not(.directory-page) .editorial-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+body:not(.review-page):not(.directory-page) .quick-picks { border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .pick-card { min-height: 170px; color: #333; background: #fff; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .pick-card:hover { color: #333; background: #fafafa; filter: none; }
+body:not(.review-page):not(.directory-page) .commerce-caption { margin-bottom: 65px; }
+body:not(.review-page):not(.directory-page) .commerce-section-head { border-bottom: 2px solid #333; }
+body:not(.review-page):not(.directory-page) .commerce-section-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+body:not(.review-page):not(.directory-page) .commerce-item { min-height: 0; margin-bottom: 28px; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .product-visual { min-height: 330px; color: #435b59; background: #f3f3f3; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .product-visual::after { border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .commerce-item h3 { font-size: clamp(1.45rem, 2.8vw, 2rem); }
+body:not(.review-page):not(.directory-page) .item-hook { font-family: inherit; font-size: .96rem; }
+body:not(.review-page):not(.directory-page) .product-cta { background: #bf0000; border-color: #bf0000; }
+body:not(.review-page):not(.directory-page) .buying-check { margin-top: 75px; padding: 50px 0; border-top: 2px solid #333; }
+body:not(.review-page):not(.directory-page) .buying-check h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+body:not(.review-page):not(.directory-page) .method-note { background: #f7f7f7; border-color: #ddd; }
+body:not(.review-page):not(.directory-page) .commerce-decision { background: #f3f7f6; }
+
+body:not(.review-page):not(.directory-page) .site-footer { color: #ddd; background: #25292f; border-top: 4px solid #9d382b; }
+body:not(.review-page):not(.directory-page) .footer-title { font-family: inherit; }
+
+@media (max-width: 900px) {
+  body:not(.review-page):not(.directory-page) .article-layout { grid-template-columns: 1fr; }
+  body:not(.review-page):not(.directory-page) .article-aside { position: static; grid-row: auto; }
+}
+@media (max-width: 700px) {
+  body:not(.review-page):not(.directory-page) main { padding-top: 18px; padding-bottom: 60px; }
+  body:not(.review-page):not(.directory-page) h1,
+  body:not(.review-page):not(.directory-page) .article-head h1 { font-size: 1.9rem; line-height: 1.45; }
+  body:not(.review-page):not(.directory-page) .home-hero { padding-top: 30px; }
+  body:not(.review-page):not(.directory-page) .quick-tool { margin-right: 0; box-shadow: none; }
+  body:not(.review-page):not(.directory-page) .article-body h2 { font-size: 1.3rem; }
+  body:not(.review-page):not(.directory-page) .commerce-hero { width: auto; margin-left: 0; }
+  body:not(.review-page):not(.directory-page) .commerce-hero h1 { font-size: 2rem; }
+  body:not(.review-page):not(.directory-page) .commerce-hero-board { min-height: 340px; }
+  body:not(.review-page):not(.directory-page) .commerce-item { width: auto; margin-left: 0; }
+}
