@@ -18,11 +18,28 @@
     <h1>商品比較・買い方ガイド</h1>
     <p>メーカーやサービスの公式情報を確認し、商品選びに必要な違いと、購入前に確認したい条件を整理しています。</p>
   </header>
+  <section class="directory-search" aria-labelledby="search-title">
+    <form data-search role="search" autocomplete="off">
+      <label id="search-title" for="site-search">記事と製品を検索</label>
+      <div class="directory-search-row">
+        <input id="site-search" name="q" type="search" placeholder="例：象印　EQ-SC22　水筒　送料" enterkeyhint="search" aria-describedby="search-help">
+        <button type="button" class="directory-search-clear" data-search-clear aria-label="検索語を消す">×</button>
+        <button type="submit" class="button">検索</button>
+      </div>
+      <p id="search-help" class="directory-search-help">ブランド名、型番の一部、「送料」「返品」などの条件で探せます。該当する製品には記事内の該当箇所へ直接移動できます。</p>
+      <div class="directory-search-chips" aria-label="よく使われる検索語">
+        <span>ブランド</span><button type="button" data-search-chip="象印">象印</button><button type="button" data-search-chip="パナソニック">パナソニック</button><button type="button" data-search-chip="アイリスオーヤマ">アイリスオーヤマ</button><button type="button" data-search-chip="シロカ">シロカ</button><button type="button" data-search-chip="タイガー">タイガー</button>
+        <span>用途・条件</span><button type="button" data-search-chip="トースター">トースター</button><button type="button" data-search-chip="コーヒー">コーヒー</button><button type="button" data-search-chip="水筒">水筒</button><button type="button" data-search-chip="送料">送料</button><button type="button" data-search-chip="返品">返品</button>
+      </div>
+    </form>
+    <p class="directory-search-status" data-search-status aria-live="polite"></p>
+  </section>
   <p class="review-ad"><strong>広告について</strong> 本ページと各記事は楽天アフィリエイトを利用しています。価格・在庫・販売条件はリンク先の最新表示をご確認ください。</p>
 
   <div class="directory-layout">
     <div class="directory-main">
-      <section id="comparison" class="directory-section">
+      <div class="search-results" data-search-results hidden></div>
+      <section id="comparison" class="directory-section" data-search-hide>
         <div class="directory-section-head"><h2>商品比較</h2><p>仕様を同じ項目で並べ、用途別に候補を絞ります。</p></div>
         <a class="directory-feature" href="electric-kettle-comparison.html">
           <div class="directory-feature-copy">
@@ -41,7 +58,7 @@
         </div>
       </section>
 
-      <section id="guides" class="directory-section">
+      <section id="guides" class="directory-section" data-search-hide>
         <div class="directory-section-head"><h2>通販の買い方ガイド</h2><p>送料、返品、支払いなどの条件を公式情報から確認します。</p></div>
         <div class="directory-list" aria-label="買い方ガイド一覧">
           <a href="rakuyoko-shipping.html"><div class="directory-list-meta"><span>配送・送料</span><time datetime="2026-09-20">2026.09.20</time></div><h3>ラクヨコはいつ届く？送料と配送日数</h3><p>通常5〜10日、一部地域の送料1,900円、日時指定不可などを整理。</p><span class="directory-read">続きを読む</span></a>
@@ -51,7 +68,7 @@
         </div>
       </section>
 
-      <section id="tools" class="directory-section">
+      <section id="tools" class="directory-section" data-search-hide>
         <div class="directory-section-head"><h2>購入前の確認ツール</h2><p>条件を入力して、注文額や返品可否を確認できます。</p></div>
         <div class="directory-tools">
           <a href="index.html#quick-check"><strong>不足額を計算</strong><span>注文下限まで、あといくら必要か確認する</span></a>
@@ -70,5 +87,5 @@
 </main>
 
 <footer class="site-footer"><div class="footer-inner"><div class="footer-about"><div class="footer-title">買いもの標準</div><p>条件を比べて、納得して選ぶための購入判断メディアです。</p></div><div><h3>記事</h3><a href="articles.html">商品を探す</a><a href="guide.html">買い方ガイド</a><a href="compare.html">実質価格比較</a></div><div><h3>透明性</h3><a href="sources.html">出典・更新履歴</a><a href="about.html">運営・広告方針</a><a href="affiliate.html">成果検証ログ</a></div></div><div class="footer-bottom">最終確認日：<span data-updated></span>　© 買いもの標準</div></footer>
-<script src="config.js"></script><script src="app.js"></script>
+<script src="config.js"></script><script src="app.js"></script><script src="search-index.js"></script><script src="search.js"></script>
 </body></html>
