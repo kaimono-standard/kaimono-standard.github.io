@@ -15,6 +15,11 @@ const ng = (label) => { problems.push(label); console.log(`✗ ${label}`); };
 const leftovers = html.match(/\{\{[^}]*\}\}|TODO|\?\?\?|○○/g);
 leftovers ? ng(`未解決の記号: ${[...new Set(leftovers)].join(" ")}`) : ok("プレースホルダなし");
 
+// 読者向けの本文に運営側の仕組み（アフィリエイト管理画面など）を書かない
+const bodyText = html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, " ");
+const internal = bodyText.match(/楽天アフィリエイト[^。<]{0,20}|アフィリエイト管理画面|商品リンクから取得/g);
+internal ? ng(`運営側の表現が本文に残っている: ${[...new Set(internal)].join(" / ")}`) : ok("運営側の表現（楽天アフィリエイト等）なし");
+
 // アフィリエイトキー
 const keys = [...new Set([...html.matchAll(/data-affiliate="([^"]+)"/g)].map((m) => m[1]))];
 const cfg = readRepo("config.js");

@@ -51,7 +51,7 @@ const card = `          <a class="article-card" href="${slug}.html"><div class="
 writeRepo("articles.html", insertOnce(readRepo("articles.html"), '<div class="article-cards" aria-label="商品比較記事一覧">\n', `href="${slug}.html"`, card, "articles.html"));
 
 // 6. sources.html（変更履歴）
-const row = `<tr><td>${date}</td><td>商品比較記事を追加（${escapeHtml(facts.topic)}）。仕様はメーカー公式ページ、価格は楽天アフィリエイト商品検索で確認。</td><td class="status yes">反映済み</td></tr>`;
+const row = `<tr><td>${date}</td><td>商品比較記事を追加（${escapeHtml(facts.topic)}）。仕様はメーカー公式ページ、価格は楽天市場で確認。</td><td class="status yes">反映済み</td></tr>`;
 writeRepo("sources.html", insertOnce(readRepo("sources.html"), "<tbody>", `商品比較記事を追加（${escapeHtml(facts.topic)}）`, row, "sources.html"));
 
 console.log("\n次: node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs " + process.argv[2]);

@@ -102,7 +102,7 @@ node .claude/skills/rakuten-comparison-article/scripts/verify.mjs <slug>
 npm run check && SITE_URL=https://kaimono-standard.echoant.com CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
 ```
 
-`verify.mjs` は、プレースホルダ残り、`config.js` に無いキー、`data-affiliate` の欠落、出典リンク数、製品ブロック数、`rel="nofollow sponsored"`、最上級表現の一覧（文脈付き）を出す。最上級はここで表の数値と目で照らす。
+`verify.mjs` は、プレースホルダ残り、「楽天アフィリエイト」など運営側の表現の混入、`config.js` に無いキー、`data-affiliate` の欠落、出典リンク数、製品ブロック数、`rel="nofollow sponsored"`、最上級表現の一覧（文脈付き）を出す。最上級はここで表の数値と目で照らす。
 
 余裕があれば `python -m http.server` で配信して Chrome で開き、全 `[data-affiliate]` が `data-link-status="affiliate"` になり、画像が読み込めることを確認する（`references/wiring.md` に確認用 JS がある）。
 
