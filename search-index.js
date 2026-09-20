@@ -2,6 +2,63 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "carry-on-suitcase-comparison.html",
+    "type": "商品比較",
+    "category": "旅行用品",
+    "updated": "2026-09-21",
+    "title": "キャリーケース5製品を比較。容量・開閉方式・ハンドルで選ぶ",
+    "summary": "サムソナイト、プロテカ、イノベーター、無印良品、レジェンドウォーカーのキャリーケース5製品を、容量・総外寸・重量・開閉方式・価格帯で比較。",
+    "keywords": [
+      "キャリーケース",
+      "スーツケース",
+      "機内持ち込み",
+      "1泊2日",
+      "出張",
+      "旅行",
+      "フロントオープン",
+      "ストッパー",
+      "TSAロック",
+      "小型"
+    ],
+    "products": [
+      {
+        "name": "サムソナイト オクトライト ネオ スピナー55 エキスパンダブル",
+        "brand": "サムソナイト Samsonite",
+        "model": "UC5*09001",
+        "anchor": "samsonite",
+        "note": "ファスナーで奥行を24.0cmから27.0cmに広げ、容量を36Lから42Lに拡張できる"
+      },
+      {
+        "name": "プロテカ 360G5 スーツケース 38L（02621）",
+        "brand": "エース（プロテカ） ACE PROTECA プロテカ エース",
+        "model": "02621",
+        "anchor": "proteca",
+        "note": "360度ファスナーで、通常の横開きに加えて縦開きでも使える"
+      },
+      {
+        "name": "イノベーター INV50 38L Cabin（フロントオープン）",
+        "brand": "イノベーター innovator トリオ",
+        "model": "INV50",
+        "anchor": "innovator",
+        "note": "フロントオープンで、寝かせずに前面からノートPCや書類を出し入れできる3 ROOM収納"
+      },
+      {
+        "name": "無印良品 バーを自由に調節できる ハードキャリーケース（36L）",
+        "brand": "無印良品 MUJI 良品計画",
+        "model": "36L",
+        "anchor": "muji",
+        "note": "キャリーバーの高さを地面から52〜91cmの範囲で1cm刻みに調節できる"
+      },
+      {
+        "name": "レジェンドウォーカー GRACE 5509-48-R（Sサイズ・35L）",
+        "brand": "レジェンドウォーカー LEGEND WALKER T&S ティーアンドエス",
+        "model": "5509-48-R",
+        "anchor": "legendwalker",
+        "note": "金具で閉じるフレームタイプ。本体はポリカーボネート＋ABS樹脂"
+      }
+    ]
+  },
+  {
     "url": "mobile-battery-comparison.html",
     "type": "商品比較",
     "category": "スマホ・PC周辺",
