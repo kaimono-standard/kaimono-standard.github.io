@@ -7,11 +7,11 @@
 ## 公開前に必ず行うこと
 
 1. `config.js` に楽天アフィリエイト管理画面で発行した完全なURLを設定する
-2. 全HTML、`robots.txt`、`sitemap.xml` の `https://example.com` を本番URLへ置換する
+2. 本番URLは `https://kaimono-standard.echoant.com/`（Cloudflare DNS の CNAME → GitHub Pages、`CNAME` ファイルで設定済み）。HTML の canonical は直書き、`robots.txt`／`sitemap.xml` はビルド時に `SITE_URL` で置換
 3. GitHubのリポジトリ変数 `SITE_URL` と `CONTACT_URL` を設定する
 4. 楽天アフィリエイトへ本サイトを登録する
 5. 広告リンクが通常リンクではなくアフィリエイトURLへ遷移することを確認する
-6. 公開後にSearch Consoleとアクセス解析を設定する
+6. Search Console は登録済み（URLプレフィックス、確認ファイル `google3723ec5dfc7ec3ff.html` は削除しない）。アクセス解析は未設定
 7. 楽天側で媒体登録後、Secret `RAKUYOKO_AFFILIATE_HOME_URL` を設定する
 
 ## ローカル確認
