@@ -29,9 +29,6 @@ for (const file of textFiles) {
   let content = await readFile(path, "utf8");
   content = content.replaceAll("https://example.com", siteUrl);
   if (file === "config.js" && affiliateUrl) content = content.replace('home: ""', `home: ${JSON.stringify(affiliateUrl)}`);
-  if (file === "about.html") {
-    content = content.replace("連絡用メールアドレスはドメイン取得後に記載します。公開時にこの案内を正式な問い合わせ先へ差し替えます。", `問い合わせ窓口：<a href="${contactUrl}">GitHub Issues</a>`);
-  }
   await writeFile(path, content, "utf8");
 }
 console.log(`公開用ファイルを生成しました: ${output}`);

@@ -8,7 +8,7 @@
 
 ## 構成（exemplar と同一にする）
 
-1. `<header class="review-header">`：カテゴリ、h1、リード文、署名、広告表記
+1. `<header class="review-header">`：カテゴリ、h1、リード文、署名（有無（買いもの標準 編集部）、about.html へリンク）、広告表記
 2. `<figure class="review-hero-image">`：5製品の画像リンク（`{{IMG:key}}` `{{ITEM:key}}`）
 3. `review-summary`：「結論：使い方から選ぶと、この5機種」。`audience_axes` の順に5行。`<span>用途</span><strong>短い製品名</strong><em>決め手（台帳の数値か機能）</em>`
 4. `#comparison` 比較表：列は `製品 | table_columns… | 掲載時価格`。価格は `{{PRICE:key}}`。表の下に `review-footnote`（`table_footnote` を元に）
