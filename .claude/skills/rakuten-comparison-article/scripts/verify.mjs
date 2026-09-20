@@ -20,9 +20,9 @@ const bodyText = html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>
 const internal = bodyText.match(/楽天アフィリエイト[^。<]{0,20}|アフィリエイト管理画面|商品リンクから取得/g);
 internal ? ng(`運営側の表現が本文に残っている: ${[...new Set(internal)].join(" / ")}`) : ok("運営側の表現（楽天アフィリエイト等）なし");
 
-// 見出し・段落の頭の「結論：」「ポイント：」のようなラベル＋全角コロン（仕様の <li><strong>項目：</strong> は対象外）
-const labelColon = html.match(/<(?:h[1-4]|p)(?: [^>]*)?>\s*[^<：]{1,8}：/g);
-labelColon ? ng(`見出し・段落頭のラベル＋コロン: ${[...new Set(labelColon.map((m) => m.replace(/<[^>]+>\s*/, "")))].join(" / ")}`) : ok("見出し・段落頭のラベル＋コロンなし");
+// 見出しの頭の「結論：」「まとめ：」のような要約ラベル＋全角コロン（「出典：」や仕様の項目名は対象外）
+const labelColon = html.match(/<(?:h[1-4]|p)(?: [^>]*)?>\s*(?:結論|まとめ|ポイント|要点|総評|結果|答え)：/g);
+labelColon ? ng(`見出し頭の要約ラベル＋コロン: ${[...new Set(labelColon.map((m) => m.replace(/<[^>]+>\s*/, "")))].join(" / ")}`) : ok("見出し頭の要約ラベル（結論：等）なし");
 
 // アフィリエイトキー
 const keys = [...new Set([...html.matchAll(/data-affiliate="([^"]+)"/g)].map((m) => m[1]))];
