@@ -544,3 +544,116 @@ th { color: var(--ink); background: #eae5dc; }
   .method-note > div + div { border-top: 1px solid #c9c1b6; border-left: 0; }
   .commerce-decision .button { white-space: normal; }
 }
+
+/* Electric kettle editorial — photography-led buying guide */
+.kettle-page { background: #f5f3ee; }
+.kettle-article { max-width: 1180px; margin: 0 auto; }
+.kettle-hero { display: grid; grid-template-columns: 1.02fr .98fr; min-height: 610px; background: #e7e1d7; border: 1px solid #c7c0b5; }
+.kettle-hero-copy { display: flex; justify-content: center; flex-direction: column; padding: clamp(40px, 7vw, 82px); }
+.kettle-kicker { margin: 0 0 31px; color: #8d392d; font: 800 .68rem/1.3 Arial, sans-serif; letter-spacing: .18em; }
+.kettle-hero h1 { margin: 0; color: #1e2b2b; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(2.7rem, 5.5vw, 5rem); font-weight: 600; line-height: 1.14; letter-spacing: -.055em; }
+.kettle-hero h1 span { color: #8d392d; }
+.kettle-dek { max-width: 590px; margin: 30px 0 0; color: #5e5a54; font-size: .95rem; line-height: 2; }
+.kettle-meta { display: flex; flex-wrap: wrap; gap: 7px 20px; margin-top: 32px; padding-top: 18px; border-top: 1px solid #bdb5aa; color: #6e685f; font-size: .7rem; font-weight: 700; }
+.kettle-hero-products { display: grid; grid-template: repeat(2, 1fr) / repeat(2, 1fr); gap: 1px; min-height: 520px; background: #c8c0b4; }
+.kettle-hero-products a { display: grid; min-height: 250px; padding: 24px; place-items: center; overflow: hidden; background: #fff; }
+.kettle-hero-products a:first-child { grid-row: 1 / 3; }
+.kettle-hero-products img { display: block; width: 100%; max-width: 280px; height: auto; transition: transform .35s ease; }
+.kettle-hero-products a:hover img { transform: scale(1.025); }
+.kettle-note { display: grid; grid-template-columns: 170px 1fr; gap: 30px; margin: 0 0 22px; padding: 24px 28px; color: #eae6de; background: #203434; }
+.kettle-note strong { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.05rem; }
+.kettle-note p { margin: 0; color: #ccd3cf; font-size: .84rem; line-height: 1.8; }
+.kettle-jump { display: flex; flex-wrap: wrap; gap: 8px 0; margin: 0 0 90px; padding: 17px 0; border-bottom: 1px solid #c7c0b5; }
+.kettle-jump a { padding: 0 24px; color: #45413d; border-right: 1px solid #c7c0b5; font-size: .76rem; font-weight: 700; }
+.kettle-jump a:first-child { padding-left: 0; }
+.kettle-section { margin-bottom: 110px; scroll-margin-top: 100px; }
+.kettle-section-head { display: grid; grid-template-columns: 150px 1fr; align-items: end; margin-bottom: 35px; padding-bottom: 22px; border-bottom: 2px solid #223536; }
+.kettle-section-head p { margin: 0; color: #9a4032; font: 800 .66rem/1 Arial, sans-serif; letter-spacing: .16em; }
+.kettle-section-head h2 { margin: 0; color: #203233; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(2.1rem, 4.5vw, 3.65rem); font-weight: 600; line-height: 1.23; text-align: right; letter-spacing: -.045em; }
+.kettle-table-wrap { background: #fff; border: 1px solid #d2cbc1; }
+.kettle-table th { color: #f7f4ed; background: #243737; font-size: .7rem; white-space: nowrap; }
+.kettle-table td { vertical-align: top; font-size: .79rem; line-height: 1.55; }
+.kettle-table td:first-child { min-width: 155px; }
+.kettle-table td strong, .kettle-table td small { display: block; }
+.kettle-table td strong { color: #203233; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: .92rem; }
+.kettle-table td small { margin-top: 3px; color: #807970; font-size: .64rem; }
+.kettle-caption { margin: 13px 0 0; color: #777168; font-size: .69rem; line-height: 1.7; }
+.choose-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(35px, 7vw, 90px); }
+.choose-grid .kettle-section-head { display: block; margin: 0; border-bottom: 0; }
+.choose-grid .kettle-section-head h2 { margin-top: 20px; text-align: left; }
+.choose-cards { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #c9c1b7; border-left: 1px solid #c9c1b7; }
+.choose-cards article { min-height: 215px; padding: 25px; background: #fff; border-right: 1px solid #c9c1b7; border-bottom: 1px solid #c9c1b7; }
+.choose-cards span { color: #9a4032; font-size: .65rem; font-weight: 800; letter-spacing: .1em; }
+.choose-cards h3 { margin: 12px 0 10px; color: #203233; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.15rem; line-height: 1.55; }
+.choose-cards p { margin: 0; color: #6c665e; font-size: .78rem; line-height: 1.85; }
+.kettle-product { display: grid; grid-template-columns: minmax(310px, .92fr) minmax(0, 1.08fr); min-height: 520px; margin-bottom: 34px; background: #fff; border: 1px solid #c8c0b5; scroll-margin-top: 100px; }
+.kettle-product.reverse .kettle-product-image { grid-column: 2; }
+.kettle-product.reverse .kettle-product-copy { grid-column: 1; grid-row: 1; }
+.kettle-product-image { position: relative; display: grid; padding: clamp(34px, 5vw, 64px); place-items: center; background: #eeebe5; border-right: 1px solid #d2cbc1; }
+.kettle-product.reverse .kettle-product-image { border-right: 0; border-left: 1px solid #d2cbc1; }
+.kettle-product-image a { display: grid; width: 100%; height: 100%; place-items: center; }
+.kettle-product-image img { width: min(100%, 360px); height: auto; max-height: 390px; object-fit: contain; }
+.kettle-product-image > span { position: absolute; top: 23px; left: 25px; color: #9a4032; font-family: Georgia, serif; font-size: .9rem; }
+.kettle-product-copy { display: flex; justify-content: center; flex-direction: column; padding: clamp(35px, 5vw, 62px); }
+.kettle-product-copy h3 { margin: 0 0 17px; color: #203233; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(1.85rem, 3.5vw, 2.8rem); font-weight: 600; letter-spacing: -.04em; }
+.kettle-product-lead { margin: 0 0 15px; color: #252f2e !important; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.08rem !important; font-weight: 700; line-height: 1.75; }
+.kettle-product-copy > p { color: #686159; font-size: .83rem; line-height: 1.85; }
+.kettle-specs { display: grid; grid-template-columns: repeat(3, 1fr); margin: 21px 0 18px; border-top: 1px solid #d2cbc1; border-bottom: 1px solid #d2cbc1; }
+.kettle-specs div { padding: 12px; border-right: 1px solid #d2cbc1; }
+.kettle-specs div:first-child { padding-left: 0; }
+.kettle-specs div:last-child { border-right: 0; }
+.kettle-specs dt { color: #867f76; font-size: .62rem; }
+.kettle-specs dd { margin: 3px 0 0; color: #203233; font-size: .84rem; font-weight: 800; }
+.kettle-caution { margin: 0 0 20px !important; padding-left: 12px; border-left: 2px solid #a34839; font-size: .72rem !important; }
+.kettle-buy { display: flex; width: 100%; justify-content: space-between; margin-top: auto; background: #203434; border-color: #203434; }
+.kettle-buy:hover { background: #963d30; border-color: #963d30; }
+.kettle-verdict { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 8vw, 100px); margin: 120px 0; padding: 70px 0; border-top: 2px solid #223536; border-bottom: 1px solid #c7c0b5; }
+.kettle-verdict > div:first-child p { color: #9a4032; font-size: .65rem; font-weight: 800; letter-spacing: .15em; }
+.kettle-verdict h2 { margin: 18px 0 0; color: #203233; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 600; line-height: 1.3; }
+.kettle-verdict > div:last-child { padding-top: 34px; color: #625d56; font-size: .9rem; line-height: 2; }
+.kettle-verdict .button { margin-top: 18px; }
+.kettle-sources { margin-bottom: 100px; padding: clamp(28px, 5vw, 52px); background: #e7e1d7; border: 1px solid #c7c0b5; }
+.kettle-sources h2 { margin-top: 0; color: #203233; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; }
+.kettle-sources > p { color: #666057; font-size: .82rem; line-height: 1.8; }
+.kettle-sources ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; margin: 25px 0; padding: 0; border-top: 1px solid #c2baae; list-style: none; }
+.kettle-sources li { padding: 12px 0; border-bottom: 1px solid #c2baae; font-size: .78rem; font-weight: 700; }
+.kettle-feature { background: #e7e1d7; }
+.kettle-feature-visual { position: relative; display: grid; min-height: 340px; padding: 40px; place-items: center; background: #fff; border-left: 1px solid #c7c0b5; overflow: hidden; }
+.kettle-feature-visual img { width: min(78%, 300px); }
+.kettle-feature-visual span { position: absolute; right: 24px; bottom: 20px; color: #8e3a2e; font: 800 .7rem/1.7 Arial, sans-serif; letter-spacing: .14em; text-align: right; }
+.kettle-feature-visual small { color: #6f6a63; font-size: .65rem; }
+
+@media (max-width: 900px) {
+  .kettle-hero, .choose-grid { grid-template-columns: 1fr; }
+  .kettle-hero-products { min-height: 430px; }
+  .kettle-section-head { grid-template-columns: 120px 1fr; }
+  .kettle-product { grid-template-columns: 1fr; }
+  .kettle-product.reverse .kettle-product-image, .kettle-product.reverse .kettle-product-copy { grid-column: 1; }
+  .kettle-product.reverse .kettle-product-copy { grid-row: 2; }
+  .kettle-product-image, .kettle-product.reverse .kettle-product-image { min-height: 390px; border-right: 0; border-bottom: 1px solid #d2cbc1; border-left: 0; }
+}
+@media (max-width: 700px) {
+  .kettle-hero { width: calc(100% + 32px); margin-left: -16px; border-right: 0; border-left: 0; }
+  .kettle-hero-copy { padding: 45px 25px 50px; }
+  .kettle-hero h1 { font-size: clamp(2.55rem, 13vw, 3.8rem); }
+  .kettle-hero-products { min-height: 360px; }
+  .kettle-hero-products a { min-height: 180px; padding: 12px; }
+  .kettle-note { grid-template-columns: 1fr; gap: 8px; margin-inline: -16px; }
+  .kettle-jump { display: grid; margin-bottom: 65px; }
+  .kettle-jump a, .kettle-jump a:first-child { padding: 7px 0; border-right: 0; border-bottom: 1px solid #d2cbc1; }
+  .kettle-section { margin-bottom: 75px; }
+  .kettle-section-head { display: block; }
+  .kettle-section-head h2 { margin-top: 15px; text-align: left; }
+  .choose-cards { grid-template-columns: 1fr; }
+  .choose-cards article { min-height: auto; }
+  .kettle-product { width: calc(100% + 16px); margin-left: -8px; }
+  .kettle-product-image, .kettle-product.reverse .kettle-product-image { min-height: 310px; padding: 38px; }
+  .kettle-product-copy { padding: 32px 24px; }
+  .kettle-specs { grid-template-columns: 1fr; }
+  .kettle-specs div, .kettle-specs div:first-child { padding: 10px 0; border-right: 0; border-bottom: 1px solid #d2cbc1; }
+  .kettle-specs div:last-child { border-bottom: 0; }
+  .kettle-verdict { grid-template-columns: 1fr; gap: 15px; margin-block: 80px; padding-block: 50px; }
+  .kettle-verdict > div:last-child { padding-top: 0; }
+  .kettle-sources ul { grid-template-columns: 1fr; }
+  .kettle-feature-visual { min-height: 260px; border-top: 1px solid #c7c0b5; border-left: 0; }
+}
