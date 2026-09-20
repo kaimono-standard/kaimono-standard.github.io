@@ -12,7 +12,7 @@ if (!existsSync(tplPath)) fail(`${tplPath} がありません（codex-draft.mjs 
 const byKey = Object.fromEntries(facts.products.map((p) => [p.key, p]));
 
 // 1. プレースホルダ解決 → <slug>.html
-let html = readFileSync(tplPath, "utf8").replace(/\{\{(IMG|ITEM|PRICE):(\w+)\}\}/g, (_, kind, key) => {
+let html = readFileSync(tplPath, "utf8").replace(/\{\{(IMGRAW|IMG|ITEM|PRICE):(\w+)\}\}/g, (_, kind, key) => {
   const p = byKey[key];
   if (!p?.rakuten?.id) fail(`プレースホルダ ${kind}:${key} に対応する製品/rakuten がありません`);
   return { IMG: imageUrl(p.rakuten), IMGRAW: imageUrl(p.rakuten).replace(/&amp;/g, "&"), ITEM: p.rakuten.item, PRICE: p.rakuten.price }[kind];

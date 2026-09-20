@@ -2,6 +2,63 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "automatic-coffee-machine-comparison.html",
+    "type": "商品比較",
+    "category": "キッチン家電",
+    "updated": "2026-09-21",
+    "title": "全自動コーヒーマシン5機種を比較。ミルク機能・メニュー・容量で選ぶ",
+    "summary": "東芝、デロンギ、ガジア、JURAの全自動コーヒーマシン5機種を、ミルク機能・メニュー・タンク容量・設置寸法・価格帯で比較。",
+    "keywords": [
+      "コーヒーマシン",
+      "全自動コーヒーマシン",
+      "エスプレッソマシン",
+      "全自動エスプレッソマシン",
+      "エスプレッソ",
+      "カプチーノ",
+      "カフェラテ",
+      "ラテ",
+      "豆から挽く",
+      "ミル付き"
+    ],
+    "products": [
+      {
+        "name": "東芝 全自動エスプレッソ&ラテマシン ELM-A1B",
+        "brand": "東芝 TOSHIBA",
+        "model": "ELM-A1B",
+        "anchor": "toshiba",
+        "note": "専用ミルクボトルをチューブで本体につなぎ、ラテマキアート・カプチーノ・ミルクフォームを自動で抽出"
+      },
+      {
+        "name": "デロンギ マグニフィカ スタート 全自動コーヒーマシン ECAM22020B",
+        "brand": "デロンギ De'Longhi DeLonghi",
+        "model": "ECAM22020B",
+        "anchor": "delonghi-start",
+        "note": "エスプレッソ、スペシャルティ、深蒸しのカフェ・ジャポーネの3メニューをタッチパネルで選ぶ"
+      },
+      {
+        "name": "ガジア 全自動コーヒーマシン マジェンタ プラス SUP051W",
+        "brand": "ガジア GAGGIA Gaggia",
+        "model": "SUP051W",
+        "anchor": "gaggia",
+        "note": "エスプレッソ、エスプレッソルンゴ、コーヒー、アメリカーノ、お湯の5メニュー"
+      },
+      {
+        "name": "JURA 全自動コーヒーマシン ENA 4 Full Metropolitan Black",
+        "brand": "ユーラ JURA Jura",
+        "model": "ENA 4",
+        "anchor": "jura",
+        "note": "エスプレッソ、コーヒー、エスプレッソ・ドッピオ、カフェ・ドッピオの4メニュー"
+      },
+      {
+        "name": "デロンギ マグニフィカS 全自動コーヒーマシン ECAM22112B",
+        "brand": "デロンギ De'Longhi DeLonghi",
+        "model": "ECAM22112B",
+        "anchor": "delonghi-s",
+        "note": "深蒸しのレギュラーコーヒー「カフェ・ジャポーネ」メニュー付き"
+      }
+    ]
+  },
+  {
     "url": "hand-blender-comparison.html",
     "type": "商品比較",
     "category": "キッチン家電",
