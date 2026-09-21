@@ -2,6 +2,31 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "sleep-earbuds-anker-guide.html",
+    "type": "悩み解決",
+    "category": "睡眠・オーディオ",
+    "updated": "2026-09-21",
+    "title": "寝るときイヤホンが痛い・騒音が気になる。Anker Sleep A20とA30の選び方",
+    "summary": "横向き寝の耳の痛さ、家族のいびき、外の騒音に悩む人向けに、Anker Soundcore Sleep A20とA30の違い、最新機種の状況、買う前の注意点を整理。",
+    "keywords": ["睡眠用イヤホン", "寝ホン", "Anker", "Soundcore", "Sleep A20", "Sleep A30", "いびき", "ノイズキャンセリング", "横向き寝", "耳が痛い", "騒音", "睡眠"],
+    "products": [
+      {
+        "name": "Anker Soundcore Sleep A30",
+        "brand": "Anker Soundcore アンカー",
+        "model": "D1301",
+        "anchor": "a30",
+        "note": "適応型ノイズキャンセリングといびきマスキングを搭載した現行モデル"
+      },
+      {
+        "name": "Anker Soundcore Sleep A20",
+        "brand": "Anker Soundcore アンカー",
+        "model": "A6611Z21",
+        "anchor": "a20",
+        "note": "ANC非搭載の従来モデル。Anker公式では在庫切れ"
+      }
+    ]
+  },
+  {
     "url": "carry-on-suitcase-comparison.html",
     "type": "商品比較",
     "category": "旅行用品",

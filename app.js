@@ -14,6 +14,17 @@
       if (typeof window.plausible === "function") window.plausible(eventName, { props: { page: location.pathname } });
     });
   });
+  document.querySelectorAll("[data-amazon]").forEach((link) => {
+    const key = link.dataset.amazon;
+    const amazonUrl = config.amazonLinks?.[key];
+    link.href = amazonUrl || link.dataset.fallback || "https://www.amazon.co.jp/";
+    link.dataset.linkStatus = amazonUrl ? "affiliate" : "direct";
+    link.addEventListener("click", () => {
+      const eventName = `outbound_amazon_${key}`;
+      if (typeof window.gtag === "function") window.gtag("event", eventName);
+      if (typeof window.plausible === "function") window.plausible(eventName, { props: { page: location.pathname } });
+    });
+  });
   document.querySelectorAll("[data-basket-calculator]").forEach((form) => {
     const result = form.querySelector("[data-basket-result]");
     const render = () => {

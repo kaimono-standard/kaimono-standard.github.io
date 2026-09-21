@@ -34,6 +34,13 @@ const anchors = [...html.matchAll(/<a\b[^>]*data-affiliate=[^>]*>/g)].map((m) =>
 const badAnchors = anchors.filter((a) => !/rel="nofollow sponsored noopener"/.test(a) || !/data-fallback="https:\/\/item\.rakuten\.co\.jp\//.test(a) || !/target="_blank"/.test(a));
 badAnchors.length ? ng(`rel/data-fallback/target が不足しているリンク ${badAnchors.length} 本`) : ok(`商品リンク ${anchors.length} 本すべて rel="nofollow sponsored noopener" + data-fallback`);
 
+// Amazon ボタン
+const amzKeys = [...new Set([...html.matchAll(/data-amazon="([^"]+)"/g)].map((m) => m[1]))];
+const amzMissing = amzKeys.filter((k) => !new RegExp(`\\b${k}: "https://www\\.amazon\\.co\\.jp`).test(cfg));
+amzKeys.length === 5 ? ok("data-amazon キー 5種") : ng(`data-amazon キーが ${amzKeys.length} 種（5種のはず）`);
+amzMissing.length ? ng(`config.js amazonLinks に未設定: ${amzMissing.join(", ")}`) : ok("config.js amazonLinks に全キー設定済み");
+/tag=kaimonostd-22/.test(html) ? ng("記事HTMLにAmazonタグが直書きされている（config.js 経由にする）") : ok("Amazonタグは config.js 経由");
+
 // 構成
 const count = (re) => (html.match(re) || []).length;
 const checks = [

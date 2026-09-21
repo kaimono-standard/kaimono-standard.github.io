@@ -47,6 +47,15 @@ export const readEnv = () => {
   return out;
 };
 
+// Amazon アソシエイト。facts の amazon.asin があれば商品ページ、無ければ型番の検索結果ページ。withTag=false は data-fallback 用（タグ無し）。
+export const AMAZON_TAG = "kaimonostd-22";
+export const amazonQuery = (p) => p.amazon?.query || [p.brand, p.model].filter(Boolean).join(" ");
+export const amazonUrl = (p, withTag = true) => {
+  const tag = withTag ? `tag=${AMAZON_TAG}` : "";
+  if (/^[A-Z0-9]{10}$/.test(p.amazon?.asin || "")) return `https://www.amazon.co.jp/dp/${p.amazon.asin}/${tag ? "?" + tag : ""}`;
+  return `https://www.amazon.co.jp/s?k=${encodeURIComponent(amazonQuery(p))}${tag ? "&" + tag : ""}`;
+};
+
 export const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 // 挿入位置の改行コードは LF / CRLF どちらでも探す（Windows で編集されたファイルが混ざるため）

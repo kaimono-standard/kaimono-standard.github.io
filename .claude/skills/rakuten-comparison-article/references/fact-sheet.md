@@ -77,6 +77,7 @@
 | `release` | 公式プレスリリース／公式ストアで確認できた場合のみ「2026年9月発売」のように。無ければ空 |
 | `unverified` | 書きたかったが確認できなかった項目。Codex はこれを見て「記載なし」扱いにする |
 | `caution_hint` | 注意書きの種。比較表から導ける事実（最重量、旧型番併売、選択式リンク等）を書く |
+| `amazon` | 任意。`{ "query": "検索語", "asin": "B0XXXXXXXX" }`。`asin` があれば商品ページへ、無ければ `query`（省略時は brand＋model）の検索結果へリンクする。Amazon 限定型番（末尾 AM / AZ など）しか無いときは asin を入れず検索リンクにする |
 | `rakuten` | `merge-links.mjs` が `links.tsv` から埋める。`shop_is_official` はボタン文言（「○○公式楽天市場店で見る」）に使う |
 
 ## 最上級表現の扱い

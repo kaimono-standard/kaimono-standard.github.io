@@ -2,7 +2,7 @@
 // 使い方: node wire.mjs _drafts/<slug>
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { affiliateUrl, draftDir, escapeHtml, fail, hasLink, imageUrl, insertOnce, readFacts, readRepo, writeRepo } from "./lib.mjs";
+import { affiliateUrl, amazonUrl, draftDir, escapeHtml, fail, hasLink, imageUrl, insertOnce, readFacts, readRepo, writeRepo } from "./lib.mjs";
 
 const dir = draftDir(process.argv[2]);
 const facts = readFacts(dir);
@@ -12,7 +12,11 @@ if (!existsSync(tplPath)) fail(`${tplPath} がありません（codex-draft.mjs 
 const byKey = Object.fromEntries(facts.products.map((p) => [p.key, p]));
 
 // 1. プレースホルダ解決 → <slug>.html
-let html = readFileSync(tplPath, "utf8").replace(/\{\{(IMGRAW|IMG|ITEM|PRICE):(\w+)\}\}/g, (_, kind, key) => {
+let html = readFileSync(tplPath, "utf8").replace(/\{\{AMAZON:(\w+)\}\}/g, (_, key) => {
+  const p = byKey[key];
+  if (!p) fail(`プレースホルダ AMAZON:${key} に対応する製品がありません`);
+  return amazonUrl(p, false);
+}).replace(/\{\{(IMGRAW|IMG|ITEM|PRICE):(\w+)\}\}/g, (_, kind, key) => {
   const p = byKey[key];
   if (!hasLink(p?.rakuten)) fail(`プレースホルダ ${kind}:${key} に対応する製品/rakuten がありません`);
   return { IMG: imageUrl(p.rakuten), IMGRAW: imageUrl(p.rakuten).replace(/&amp;/g, "&"), ITEM: p.rakuten.item, PRICE: p.rakuten.price }[kind];
@@ -25,10 +29,20 @@ let cfg = readRepo("config.js");
 const newKeys = facts.products.filter((p) => !new RegExp(`\\b${p.key}:`).test(cfg));
 if (newKeys.length) {
   const lines = newKeys.map((p) => `    ${p.key}: ${JSON.stringify(affiliateUrl(p.rakuten))}`).join(",\n");
-  const updated = cfg.replace(/("\s*)\n(\s*\}\s*\n\};)/, `$1,\n${lines}\n$2`);
+  // affiliateLinks ブロックの最後の値の直後に足す（ブロックは `  },` で閉じ、その後に amazonLinks が続く）
+  const updated = cfg.replace(/(affiliateLinks:\s*\{[\s\S]*?"\s*)\n(\s*\},)/, `$1,\n${lines}\n$2`);
   if (updated === cfg) fail("config.js の affiliateLinks の末尾が見つかりません");
   cfg = updated; writeRepo("config.js", cfg); console.log(`+ config.js: ${newKeys.map((p) => p.key).join(", ")}`);
 } else console.log("= config.js: 登録済み");
+// 2b. config.js の amazonLinks（型番の検索結果リンク。facts の amazon.asin があれば /dp/ リンク）
+if (!/amazonLinks:\s*\{/.test(cfg)) fail("config.js に amazonLinks がありません");
+const newAmz = facts.products.filter((p) => !new RegExp(`\\b${p.key}: "https://www\\.amazon\\.co\\.jp`).test(cfg));
+if (newAmz.length) {
+  const lines = newAmz.map((p) => `    ${p.key}: ${JSON.stringify(amazonUrl(p, true))}`).join(",\n");
+  const updated = cfg.replace(/(amazonLinks:\s*\{[\s\S]*?"\s*)\n(\s*\}\s*\n\};)/, `$1,\n${lines}\n$2`);
+  if (updated === cfg) fail("config.js の amazonLinks の末尾が見つかりません");
+  cfg = updated; writeRepo("config.js", cfg); console.log(`+ config.js amazonLinks: ${newAmz.map((p) => p.key).join(", ")}`);
+} else console.log("= config.js amazonLinks: 登録済み");
 
 // 3. build.mjs / sitemap.xml
 writeRepo("build.mjs", insertOnce(readRepo("build.mjs"), '"electric-kettle-comparison.html", ', `"${slug}.html"`, `"${slug}.html", `, "build.mjs"));

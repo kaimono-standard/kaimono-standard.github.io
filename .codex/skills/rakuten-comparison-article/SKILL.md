@@ -24,7 +24,7 @@ SKILL = .claude/skills/rakuten-comparison-article
   scripts/verify.mjs              機械検証（--online で画像・商品URLの到達性も）
 ```
 
-このサイトの収益は楽天市場の商品リンクからしか発生しない。だから **5製品すべてに計測付きリンク** が付いていて、**記事の数値が全部メーカー公式で裏取りされている** ことが完成条件。どちらか欠けたら未完成。
+このサイトの収益は楽天市場とAmazonの商品リンクからしか発生しない。だから **5製品すべてに計測付きリンク（楽天＋Amazon）** が付いていて、**記事の数値が全部メーカー公式で裏取りされている** ことが完成条件。どちらか欠けたら未完成。
 
 ## 0. 始める前に
 
@@ -80,6 +80,14 @@ node .claude/skills/rakuten-comparison-article/scripts/merge-links.mjs _drafts/<
 
 新しい公式店を使ったら `scripts/lib.mjs` の `OFFICIAL_SHOPS` に shopCode を追加する（ボタン文言「○○公式楽天市場店で見る」に効く）。
 
+## 3b. Amazon リンク
+
+各製品に「Amazonで見る」ボタンも付く（`wire.mjs` が `facts.json` の `amazon` から `config.js` の `amazonLinks` に登録。アソシエイトIDは `lib.mjs` の `AMAZON_TAG`）。
+
+- `facts.json` の各製品に `"amazon": { "query": "ブランド 製品名 型番" }` を入れる。検索結果の先頭にその製品が出る語にする（既定は brand＋model だが、無印良品のように型番が弱い製品は必ず query を書く）
+- 商品ページ直リンクにしたいときだけ、Amazon の検索結果（ブラウザか `fetch-page.mjs "https://www.amazon.co.jp/s?k=<型番>" --grep "data-asin"`）で正規型番と一致する出品の ASIN を確認して `"asin"` に入れる。スポンサー枠・並行輸入・中古・セット品・Amazon限定型番（`…AM` `…AZ`）は使わない
+- Amazon の価格・在庫は記事に書かない
+
 ## 4. 執筆（Codex 自身が書く）
 
 ```bash
@@ -91,7 +99,8 @@ node .claude/skills/rakuten-comparison-article/scripts/codex-draft.mjs _drafts/<
 - 構成・クラス名・プレースホルダ（`{{IMG:key}}` `{{ITEM:key}}` `{{PRICE:key}}` `{{IMGRAW:先頭製品のkey}}`）は完成例と同一。リンクや画像URLは自分で書かない
 - 台帳にある事実だけを書く。unverified は「公式仕様に記載はありません」か触れない
 - 「結論：」のような要約ラベル＋コロンの見出しは使わない（見出しは「使い方から選ぶと、この5機種」）
-- 「楽天アフィリエイト」という語を使わない。広告表記は「本記事には楽天市場の商品リンク（広告）が含まれます。」の1文だけ
+- 「楽天アフィリエイト」という語を使わない。広告表記は完成例の2文（楽天市場とAmazonの商品リンク／Amazonアソシエイトの表記文）をそのまま使う
+- 各製品ブロックの楽天ボタンの直後に `{{AMAZON:key}}` を data-fallback にした「Amazonで見る」ボタンを置く（完成例と同じ）
 - 製品ブロック・比較表・結論・出典はすべて5つで、順番は台帳の `products` の順
 - 「5機種」「5製品」は topic に合わせる（スーツケースなら「5製品」）
 
