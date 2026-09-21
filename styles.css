@@ -724,10 +724,14 @@ th { color: var(--ink); background: #eae5dc; }
 .fit-note strong { color: #263c39; }
 .fit-note span { color: #4e5957; }
 .caution-note { margin: 13px 0 !important; color: #666 !important; font-size: .7rem !important; }
-.rakuten-button { display: block; padding: 13px 16px; color: #fff !important; background: #bf0000; border-radius: 3px; font-size: .84rem; font-weight: 700; text-align: center; }
+/* 商品ボタン（楽天・Amazon）。よくある商品紹介の型に合わせ、同じ形・同じ幅で横並びにし、色だけ各ストアの色にする */
+.shop-buttons { display: flex; gap: 8px; margin-top: 14px; }
+.shop-buttons a, .rakuten-button, .amazon-button { flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 12px; color: #fff !important; border-radius: 4px; font-size: .84rem; font-weight: 700; line-height: 1.3; text-align: center; text-decoration: none; box-shadow: 0 1px 2px rgba(0, 0, 0, .15); }
+.rakuten-button { background: #bf0000; }
 .rakuten-button:hover { color: #fff; background: #9f0000; }
-.amazon-button { display: block; margin-top: 8px; padding: 13px 16px; color: #fff !important; background: #232f3e; border-radius: 3px; font-size: .84rem; font-weight: 700; text-align: center; }
-.amazon-button:hover { color: #fff; background: #131921; }
+.amazon-button { background: #ff9900; color: #1a1a1a !important; }
+.amazon-button:hover { background: #f08a00; }
+@media (max-width: 420px) { .shop-buttons { flex-direction: column; } }
 .source-box { padding: 25px; background: #f7f7f7; border: 1px solid #ddd; }
 .source-box > h2 { padding-left: 0; border-left: 0; font-size: 1.3rem; }
 .source-box ul { margin: 18px 0 0; padding-left: 1.2em; }
