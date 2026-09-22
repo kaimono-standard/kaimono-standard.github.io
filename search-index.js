@@ -2,6 +2,44 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "logicool-mx-master-4-mx-master-3s-difference.html",
+    "type": "新旧比較",
+    "category": "PC周辺機器",
+    "updated": "2026-09-23",
+    "title": "ロジクール MX MASTER 4とMX MASTER 3Sの違い。触覚フィードバック・対応OSで選ぶ",
+    "summary": "ロジクールのワイヤレスマウスMX MASTER 4と、ひとつ前のモデルMX MASTER 3Sの違いを、触覚フィードバック、ボタン数、レシーバー、対応OSで比較。",
+    "keywords": [
+      "マウス",
+      "ワイヤレスマウス",
+      "MX MASTER 4",
+      "MX MASTER 3S",
+      "MX2400GR",
+      "MX2300CR",
+      "違い",
+      "型落ち",
+      "ロジクール",
+      "Logicool",
+      "Logitech",
+      "在宅ワーク"
+    ],
+    "products": [
+      {
+        "name": "ロジクール MX MASTER 4 ハイパフォーマンス ワイヤレス マウス MX2400GR",
+        "brand": "ロジクール Logicool Logitech",
+        "model": "MX MASTER 4",
+        "anchor": "new",
+        "note": "ロジクール製品のマウスとして初めて触覚フィードバックを搭載。動作・ショートカット・通知に応じて親指エリアが振動し、Logi Options+ でアプリごとのオン／オフや強さを設定できる"
+      },
+      {
+        "name": "ロジクール MX MASTER 3S Bluetooth edition アドバンスド ワイヤレス マウス MX2300CR",
+        "brand": "ロジクール Logicool Logitech",
+        "model": "MX MASTER 3S",
+        "anchor": "old",
+        "note": "メーカーの説明は「MX MASTER 3S の性能はそのままに、よりお求めやすい価格で登場」"
+      }
+    ]
+  },
+  {
     "url": "anker-liberty-5-pro-liberty-4-pro-difference.html",
     "type": "新旧比較",
     "category": "イヤホン・オーディオ",
