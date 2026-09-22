@@ -2,6 +2,61 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "engineer-keyboard-comparison.html",
+    "type": "商品比較",
+    "category": "PC周辺機器",
+    "updated": "2026-09-22",
+    "title": "エンジニア向けキーボード5機種を比較。キースイッチ・配列・接続方式で選ぶ",
+    "summary": "PFU、東プレ、ロジクール、Keychron、エレコムのエンジニア向けキーボード5機種を、キースイッチ・配列・接続方式・キー数・質量で比較。",
+    "keywords": [
+      "キーボード",
+      "メカニカルキーボード",
+      "静電容量無接点",
+      "HHKB",
+      "REALFORCE",
+      "テンキーレス",
+      "プログラミング",
+      "Bluetooth"
+    ],
+    "products": [
+      {
+        "name": "PFU HHKB Professional HYBRID Type-S",
+        "brand": "PFU HHKB Happy Hacking Keyboard",
+        "model": "PD-KB800BS",
+        "anchor": "hhkb",
+        "note": "静電容量無接点方式のType-S構造。Bluetooth接続とUSB Type-C接続の両対応"
+      },
+      {
+        "name": "東プレ REALFORCE R3S テンキーレス 日本語配列 R3SC11",
+        "brand": "東プレ REALFORCE Topre",
+        "model": "R3SC11",
+        "anchor": "realforce",
+        "note": "東プレの静電容量無接点方式スイッチ。スイッチ寿命は1億回以上で、フルNキーロールオーバー"
+      },
+      {
+        "name": "ロジクール MX MECHANICAL MINI KX850",
+        "brand": "ロジクール Logicool Logitech",
+        "model": "KX850",
+        "anchor": "logicool",
+        "note": "薄型メカニカルスイッチ。タクタイル（茶軸）、リニア（赤軸）、クリッキーの3種類から選ぶ"
+      },
+      {
+        "name": "Keychron K8 Max QMK ワイヤレスカスタム・メカニカルキーボード（日本語配列）",
+        "brand": "Keychron キークロン コペックジャパン",
+        "model": "K8M-A1-JIS",
+        "anchor": "keychron",
+        "note": "TKL（80%）レイアウト。2.4GHz、Bluetooth 5.1、USB Type-C有線の3方式に対応し、Bluetoothでは3台に接続"
+      },
+      {
+        "name": "エレコム Bluetooth薄型ミニキーボード Slint TK-TM10BP",
+        "brand": "エレコム ELECOM",
+        "model": "TK-TM10BPBK",
+        "anchor": "elecom",
+        "note": "パンタグラフ方式で、最薄部約7mm、重量約290g。キーピッチは19.0mm"
+      }
+    ]
+  },
+  {
     "url": "dried-fruit-comparison.html",
     "type": "商品比較",
     "category": "食品",

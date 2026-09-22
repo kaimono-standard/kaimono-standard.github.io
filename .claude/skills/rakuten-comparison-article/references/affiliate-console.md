@@ -83,6 +83,10 @@ toasterZojirushi	57b73c89.a9ad4f57.57b73c8a.901a6902	1270903	11744612	https://it
 | braunhousehold（ブラウン公式） | 57bbc715.777d061e.57bbc716.48ac6b20 |
 | bruno-official（BRUNO公式） | 57bbc7a8.26c14f52.57bbc7a9.0469692e |
 | edion（エディオン） | 57bbc770.6f7c7534.57bbc771.17bdda71 |
+| pfudirect（PFU公式・HHKB） | 57c9a25d.9253880a.57c9a25e.04ec0403 |
+| realforce（REALFORCE公式） | 57c9a326.7b6424dd.57c9a327.193e989b |
+| logicool（ロジクール公式） | 57c9a36b.cabf9efd.57c9a36c.442545da |
+| keychron（Keychron Japan公式） | 57c9a3c9.8b1e24c8.57c9a3ca.a32bfe66 |
 
 ## 管理画面が使えないとき：楽天ウェブサービスAPIで代替する
 
