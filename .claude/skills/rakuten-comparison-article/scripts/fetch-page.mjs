@@ -39,7 +39,13 @@ try {
   console.error(`✗ 取得失敗: ${e.message}`); process.exit(2);
 } finally { clearTimeout(timer); }
 
-const html = await res.text();
+// 文字コードは Content-Type か <meta charset> で判定する（sony.jp など Shift_JIS のメーカーページがあるため）
+const bytes = Buffer.from(await res.arrayBuffer());
+const headerCharset = (res.headers.get("content-type") || "").match(/charset=([\w-]+)/i)?.[1];
+const metaCharset = bytes.subarray(0, 4096).toString("latin1").match(/<meta[^>]+charset=["']?([\w-]+)/i)?.[1];
+const charset = (headerCharset || metaCharset || "utf-8").toLowerCase().replace(/^(x-)?(sjis|shift-jis|ms932|windows-31j)$/, "shift_jis");
+let html;
+try { html = new TextDecoder(charset).decode(bytes); } catch { html = new TextDecoder("utf-8").decode(bytes); }
 console.log(`# ${res.status} ${res.statusText} ${res.url}${res.url !== url ? `  (from ${url})` : ""}`);
 if (res.status === 403 || res.status === 503) console.log("# 403/503: ブラウザで開く（Codex のブラウザ機能）か、公式オンラインストアで確認する");
 const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1];

@@ -88,3 +88,15 @@
 
 トップレベルに `"editor": "<id>"` を置く。id は `_editorial/editors.json` の `editors[].id`。`codex-draft.mjs` はこの人物の視点・文体・署名で下書きを書かせ、未設定なら止まる。
 
+
+## 新旧比較（article_type: "version"）
+
+5機種比較と同じ台帳に、次の違いがある。
+
+- `"article_type": "version"` をトップレベルに置く
+- `products` は **2つだけ**。1つ目が新型、2つ目が旧型。それぞれ `release`（発売時期。メーカー公式の表記）を必ず入れる
+- `table_columns` は新旧で比べる項目。両方の `specs` に同じキーで入れる。表記ゆれは台帳の段階で揃える（「約1.0kg」と「約1kg」を混ぜない）。値が片方にしかない項目は、無いほうに `"公式仕様に記載なし"` と入れる
+- `changes`：変わった項目の一覧。`[{"item": "質量", "new": "約2.1kg", "old": "約2.4kg"}]` の形。値は `specs` と完全に一致させる（`verify.mjs` が「違い」の印の数を specs から数えて照合する）
+- `successor_evidence`：メーカーが新型を旧型の後継・新モデルと示しているページ。`{"url": "...", "label": "象印 2026年新製品ニュースリリース", "quote": "従来品EQ-SA22…"}`。無ければこの型の記事にしない
+- slug は `<ブランド>-<新型型番>-<旧型型番>-difference`（英小文字とハイフン）。例：`zojirushi-eq-sc22-eq-sa22-difference`
+- `editor` は、型落ちとの違いを知りたい読者に近い人（最初の候補は `mie`）

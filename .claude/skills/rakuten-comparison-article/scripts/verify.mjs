@@ -10,6 +10,13 @@ const preview = process.argv.includes("--preview");
 const target = preview ? `_drafts/${slug}/preview.html` : `${slug}.html`;
 if (!existsSync(resolve(REPO_DIR, target))) fail(`${target} がありません${preview ? "（wire.mjs --preview を先に実行）" : ""}`);
 const html = readRepo(target);
+// 記事の型で期待する数を変える（台帳が下書きフォルダに残っていれば読む）
+const factsPath = resolve(REPO_DIR, `_drafts/${slug}/facts.json`);
+const facts = existsSync(factsPath) ? JSON.parse(readRepo(`_drafts/${slug}/facts.json`)) : {};
+const isVersion = facts.article_type === "version";
+const N = isVersion ? 2 : 5;
+const expectedRows = isVersion ? (facts.table_columns || []).length + 2 : 5; // 新旧は「発売」＋項目＋「価格」
+const expectedSources = isVersion ? 3 : 5; // 新旧は新型・旧型・後継の根拠
 const problems = [];
 const ok = (label) => console.log(`✓ ${label}`);
 const ng = (label) => { problems.push(label); console.log(`✗ ${label}`); };
@@ -31,7 +38,7 @@ labelColon ? ng(`見出し頭の要約ラベル＋コロン: ${[...new Set(label
 const keys = [...new Set([...html.matchAll(/data-affiliate="([^"]+)"/g)].map((m) => m[1]))];
 const cfg = readRepo("config.js");
 const missing = keys.filter((k) => !new RegExp(`\\b${k}: "https://`).test(cfg));
-keys.length === 5 ? ok(`data-affiliate キー 5種: ${keys.join(", ")}`) : ng(`data-affiliate キーが ${keys.length} 種（5種のはず）`);
+keys.length === N ? ok(`data-affiliate キー ${N}種: ${keys.join(", ")}`) : ng(`data-affiliate キーが ${keys.length} 種（${N}種のはず）`);
 if (!preview) missing.length ? ng(`config.js に未設定: ${missing.join(", ")}`) : ok("config.js に全キー設定済み");
 const anchors = [...html.matchAll(/<a\b[^>]*data-affiliate=[^>]*>/g)].map((m) => m[0]);
 const badAnchors = anchors.filter((a) => !/rel="nofollow sponsored noopener"/.test(a) || !/data-fallback="https:\/\/item\.rakuten\.co\.jp\//.test(a) || !/target="_blank"/.test(a));
@@ -40,21 +47,29 @@ badAnchors.length ? ng(`rel/data-fallback/target が不足しているリンク 
 // Amazon ボタン
 const amzKeys = [...new Set([...html.matchAll(/data-amazon="([^"]+)"/g)].map((m) => m[1]))];
 const amzMissing = amzKeys.filter((k) => !new RegExp(`\\b${k}: "https://www\\.amazon\\.co\\.jp`).test(cfg));
-amzKeys.length === 5 ? ok("data-amazon キー 5種") : ng(`data-amazon キーが ${amzKeys.length} 種（5種のはず）`);
-amzMissing.length ? ng(`config.js amazonLinks に未設定: ${amzMissing.join(", ")}`) : ok("config.js amazonLinks に全キー設定済み");
+amzKeys.length === N ? ok(`data-amazon キー ${N}種`) : ng(`data-amazon キーが ${amzKeys.length} 種（${N}種のはず）`);
+if (!preview) amzMissing.length ? ng(`config.js amazonLinks に未設定: ${amzMissing.join(", ")}`) : ok("config.js amazonLinks に全キー設定済み");
 /tag=kaimonostd-22/.test(html) ? ng("記事HTMLにAmazonタグが直書きされている（config.js 経由にする）") : ok("Amazonタグは config.js 経由");
 
 // 構成
 const count = (re) => (html.match(re) || []).length;
 const checks = [
-  ["製品ブロック", count(/class="review-product"/g), 5],
-  ["結論ブロックの行", count(/class="summary-list"[\s\S]*?<\/div>/) ? (html.match(/class="summary-list"[\s\S]*?<\/div>/)[0].match(/<a href="#/g) || []).length : 0, 5],
-  ["比較表の行", (html.match(/<tbody>[\s\S]*?<\/tbody>/) || [""])[0].split("<tr>").length - 1, 5],
-  ["出典リンク", ((html.match(/id="sources"[\s\S]*?<\/ul>/) || [""])[0].match(/<li>/g) || []).length, 5],
-  ["ヒーロー画像", ((html.match(/review-product-row[\s\S]*?<\/div>/) || [""])[0].match(/<img /g) || []).length, 5],
+  ["製品ブロック", count(/class="review-product"/g), N],
+  ["結論ブロックの行", count(/class="summary-list"[\s\S]*?<\/div>/) ? (html.match(/class="summary-list"[\s\S]*?<\/div>/)[0].match(/<a href="#/g) || []).length : 0, N],
+  ["比較表の行", ((html.match(/<tbody>[\s\S]*?<\/tbody>/) || [""])[0].match(/<tr[ >]/g) || []).length, expectedRows],
+  ["出典リンク", ((html.match(/id="sources"[\s\S]*?<\/ul>/) || [""])[0].match(/<li>/g) || []).length, expectedSources],
+  ["ヒーロー画像", ((html.match(/review-product-row[\s\S]*?<\/div>/) || [""])[0].match(/<img /g) || []).length, N],
 ];
 for (const [label, n, want] of checks) n === want ? ok(`${label} ${n}`) : ng(`${label} ${n}（${want} のはず）`);
-count(/class="fit-note"/g) === 5 && count(/class="caution-note"/g) === 5 ? ok("fit-note / caution-note 各5") : ng("fit-note または caution-note が5つない");
+count(/class="fit-note"/g) === N && count(/class="caution-note"/g) === N ? ok(`fit-note / caution-note 各${N}`) : ng(`fit-note または caution-note が${N}つない`);
+if (isVersion) {
+  // 「違い」の印が付いた行が、台帳の specs で新旧の値が違う項目の数と一致するか
+  const [a, b] = facts.products || [];
+  const diffKeys = (facts.table_columns || []).filter((c) => String(a?.specs?.[c] ?? "") !== String(b?.specs?.[c] ?? ""));
+  const marked = count(/class="is-diff"/g);
+  marked === diffKeys.length ? ok(`「違い」の印 ${marked}行（台帳と一致）`) : ng(`「違い」の印が ${marked}行、台帳で値が違う項目は ${diffKeys.length}（${diffKeys.join("・")}）`);
+  /\{\{PRICEDIFF|差は\s*です/.test(html) ? ng("価格差が埋まっていない") : ok("価格差の一文あり");
+}
 /review-page/.test(html) ? ok('body.review-page') : ng("body に review-page クラスがない");
 
 // 出典が公式ドメインか（小売・比較サイトが混ざっていないか）

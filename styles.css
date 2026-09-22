@@ -1081,3 +1081,15 @@ body:not(.review-page):not(.directory-page) .footer-title { font-family: inherit
 body:not(.review-page):not(.directory-page) .home-rakuyoko .grid.two { gap: 18px; background: none; border: 0; }
 .home-rakuyoko-facts .card, .home-tool-links .card { border: 1px solid var(--line); }
 body:not(.review-page):not(.directory-page) .section-head .eyebrow, body:not(.review-page):not(.directory-page) .section-head .section-kicker { color: #fff; }
+
+/* 新旧比較記事（article_type: version） */
+.version-hero .review-product-row { grid-template-columns: repeat(2, 1fr); }
+.version-hero .review-product-row a { position: relative; }
+.version-tag { position: absolute; top: 10px; left: 10px; padding: 3px 10px; color: #fff; font-size: .7rem; font-weight: 700; border-radius: 3px; }
+.version-tag.new { background: #435b59; }
+.version-tag.old { background: #8a7a5c; }
+.version-price-gap { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid #d5e0dd; color: #333; font-size: .86rem; }
+.version-table tbody th { padding: 13px; color: #333; background: #f6f6f4; font-size: .76rem; font-weight: 700; text-align: left; white-space: nowrap; }
+.version-table tr.is-diff td { background: #fff8e8; font-weight: 700; color: #222; }
+.version-table tr.is-diff th { background: #fbefd2; }
+.diff-mark { display: inline-block; margin-left: 6px; padding: 1px 6px; color: #fff; background: #b5651d; border-radius: 3px; font-size: .62rem; vertical-align: 1px; }

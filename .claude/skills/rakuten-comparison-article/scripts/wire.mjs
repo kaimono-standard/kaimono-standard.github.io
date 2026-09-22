@@ -11,9 +11,24 @@ const { slug, date } = facts;
 const tplPath = resolve(dir, "article.tpl.html");
 if (!existsSync(tplPath)) fail(`${tplPath} がありません（codex-draft.mjs を先に実行）`);
 const byKey = Object.fromEntries(facts.products.map((p) => [p.key, p]));
+const isVersion = facts.article_type === "version";
+
+// 楽天市場の掲載時価格の差（新旧比較の {{PRICEDIFF:a:b}}）。「17,800円」のような表記から数字だけを読む
+const yenOf = (key) => {
+  const p = byKey[key];
+  const n = Number(String(p?.rakuten?.price || "").replace(/[^\d]/g, ""));
+  if (!p || !n) fail(`プレースホルダ PRICEDIFF の ${key} に楽天市場の価格がありません`);
+  return n;
+};
+const priceDiff = (a, b) => {
+  const gap = yenOf(a) - yenOf(b);
+  if (gap === 0) return "ありません（同じ価格）";
+  const cheaper = gap > 0 ? byKey[b] : byKey[a];
+  return `${Math.abs(gap).toLocaleString("ja-JP")}円（${cheaper.model || cheaper.name}のほうが安い）`;
+};
 
 // 1. プレースホルダ解決 → <slug>.html
-let html = readFileSync(tplPath, "utf8").replace(/\{\{AMAZON:(\w+)\}\}/g, (_, key) => {
+let html = readFileSync(tplPath, "utf8").replace(/\{\{PRICEDIFF:(\w+):(\w+)\}\}/g, (_, a, b) => priceDiff(a, b)).replace(/\{\{AMAZON:(\w+)\}\}/g, (_, key) => {
   const p = byKey[key];
   if (!p) fail(`プレースホルダ AMAZON:${key} に対応する製品がありません`);
   return amazonUrl(p, false);
@@ -66,7 +81,7 @@ writeRepo("sitemap.xml", insertOnce(readRepo("sitemap.xml"), "  <url><loc>https:
 const title = (html.match(/<h1>([^<]+)<\/h1>/) || [])[1] || facts.topic;
 const summary = (html.match(/<meta name="description" content="([^"]+)"/) || [])[1] || "";
 const entry = {
-  url: `${slug}.html`, type: "商品比較", category: facts.category_label, updated: date, title, summary: summary.replace(/メーカー公式仕様を確認して整理しました。?$/, "").trim(),
+  url: `${slug}.html`, type: isVersion ? "新旧比較" : "商品比較", category: facts.category_label, updated: date, title, summary: summary.replace(/メーカー公式仕様を確認して整理しました。?$/, "").trim(),
   keywords: facts.keywords || [facts.topic],
   products: facts.products.map((p) => ({ name: p.name, brand: [p.brand, ...(p.brand_aliases || [])].join(" "), model: p.model, anchor: p.anchor, note: (p.features || [])[0] || "" })),
 };
@@ -74,14 +89,15 @@ writeRepo("search-index.js", insertOnce(readRepo("search-index.js"), "window.SEA
 
 // 5. articles.html（商品比較グリッド先頭にカード）
 const imgs = facts.products.slice(0, 3).map((p) => `<img loading="lazy" src="${imageUrl(p.rakuten)}" width="240" height="240" alt="${escapeHtml(p.name)}">`).join("");
-const badge = facts.badge || "5機種比較";
+const badge = facts.badge || (isVersion ? "新旧比較" : "5機種比較");
 const card = `          <a class="article-card" href="${slug}.html"><div class="article-card-media">${imgs}<span class="article-card-badge">${badge}</span></div><div class="article-card-body"><div class="directory-list-meta"><span>${escapeHtml(facts.category_label)}</span><time datetime="${date}">${date.replace(/-/g, ".")}</time></div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(facts.card_summary || entry.summary)}</p><span class="directory-read">記事を読む</span></div></a>\n`;
 let articles = readRepo("articles.html");
 if (!articles.includes(`href="${slug}.html"`)) articles = articles.replace(/(<dt>公開記事<\/dt><dd>)(\d+)(本<\/dd>)/, (_, a, n, b) => `${a}${Number(n) + 1}${b}`);
 writeRepo("articles.html", insertOnce(articles, '<div class="article-cards" aria-label="商品比較記事一覧">\n', `href="${slug}.html"`, card, "articles.html"));
 
 // 6. sources.html（変更履歴）
-const row = `<tr><td>${date}</td><td>商品比較記事を追加（${escapeHtml(facts.topic)}）。仕様はメーカー公式ページ、価格は楽天市場で確認。</td><td class="status yes">反映済み</td></tr>`;
-writeRepo("sources.html", insertOnce(readRepo("sources.html"), "<tbody>", `商品比較記事を追加（${escapeHtml(facts.topic)}）`, row, "sources.html"));
+const kind = isVersion ? "新旧比較記事" : "商品比較記事";
+const row = `<tr><td>${date}</td><td>${kind}を追加（${escapeHtml(facts.topic)}）。仕様はメーカー公式ページ、価格は楽天市場で確認。</td><td class="status yes">反映済み</td></tr>`;
+writeRepo("sources.html", insertOnce(readRepo("sources.html"), "<tbody>", `${kind}を追加（${escapeHtml(facts.topic)}）`, row, "sources.html"));
 
 console.log("\n次: node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs " + process.argv[2]);
