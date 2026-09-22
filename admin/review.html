@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>記事の公開承認｜買いもの標準</title>
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #22252a; --soft: #5f6670; --line: #e2e0d8;
+  --accent: #2f6b4f; --accent-ink: #ffffff; --warn: #a3541b; --warn-bg: #fbeee3; --bad: #a3302b; --bad-bg: #fbe9e7;
+  --info-bg: #e8f1ec; --wait-bg: #eef0f6; --wait: #45507a; --shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #16181b; --panel: #1f2226; --ink: #e8e9eb; --soft: #a3a9b1; --line: #33373d; --accent: #5fae86; --accent-ink: #0f1a14; --warn: #e3a06b; --warn-bg: #3a2a1d; --bad: #ef8a83; --bad-bg: #3b2220; --info-bg: #1f3129; --wait-bg: #252a3a; --wait: #aab4e0; --shadow: none; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.6 "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif; }
+header.top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; z-index: 2; }
+header.top h1 { margin: 0; font-size: 16px; }
+.pill { display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border-radius: 999px; font-size: 12px; background: var(--info-bg); color: var(--accent); }
+.pill.busy { background: var(--warn-bg); color: var(--warn); }
+.pill .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.pill.busy .dot { animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+.layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; min-height: calc(100vh - 57px); }
+.sidebar { border-right: 1px solid var(--line); background: var(--panel); position: sticky; top: 57px; height: calc(100vh - 57px); overflow-y: auto; }
+.tabs { display: flex; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs button { flex: 1; padding: 10px 6px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--soft); font: inherit; font-size: 13px; cursor: pointer; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 700; }
+.tabs .count { margin-left: 4px; font-size: 11px; color: var(--soft); }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li button { display: block; width: 100%; padding: 12px 16px; border: 0; border-bottom: 1px solid var(--line); background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.list li button:hover { background: var(--bg); }
+.list li button[aria-current="true"] { background: var(--info-bg); }
+.list .t { display: block; font-weight: 700; line-height: 1.45; }
+.list .m { display: block; margin-top: 4px; font-size: 12px; color: var(--soft); }
+.empty { padding: 28px 16px; color: var(--soft); text-align: center; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; background: var(--wait-bg); color: var(--wait); }
+.badge.pending { background: var(--warn-bg); color: var(--warn); }
+.badge.failed, .badge.rejected { background: var(--bad-bg); color: var(--bad); }
+.badge.published { background: var(--info-bg); color: var(--accent); }
+main { padding: 20px 24px 60px; min-width: 0; }
+.placeholder { margin-top: 18vh; text-align: center; color: var(--soft); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.card h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.4; }
+.card h3 { margin: 0 0 10px; font-size: 14px; }
+.lead { margin: 8px 0 0; color: var(--soft); }
+dl.meta { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 14px 0 0; }
+dl.meta dt { color: var(--soft); }
+dl.meta dd { margin: 0; }
+.note { font-size: 12px; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; }
+button.primary, button.secondary, button.danger { padding: 9px 18px; border-radius: 8px; font: inherit; font-weight: 700; cursor: pointer; }
+button.primary { border: 0; background: var(--accent); color: var(--accent-ink); }
+button.secondary { border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+button.danger { border: 1px solid var(--bad); background: none; color: var(--bad); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.reject { flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; }
+textarea { width: 100%; min-height: 70px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; resize: vertical; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--soft); font-weight: 400; }
+.table-wrap { overflow-x: auto; }
+.issue { padding: 8px 10px; border-left: 3px solid var(--warn); background: var(--warn-bg); margin: 8px 0; border-radius: 0 6px 6px 0; }
+.issue.high { border-color: var(--bad); background: var(--bad-bg); }
+.error { padding: 10px 12px; border-radius: 8px; background: var(--bad-bg); color: var(--bad); font-weight: 700; }
+pre { max-height: 260px; overflow: auto; padding: 10px; border-radius: 8px; background: var(--bg); font-size: 12px; white-space: pre-wrap; word-break: break-all; }
+.preview-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+iframe { width: 100%; height: 78vh; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.toast { position: fixed; right: 16px; bottom: 16px; max-width: min(420px, calc(100vw - 32px)); padding: 10px 14px; border-radius: 8px; background: var(--ink); color: var(--bg); box-shadow: 0 4px 16px rgba(0,0,0,.2); opacity: 0; transform: translateY(8px); transition: .2s; pointer-events: none; }
+.toast.show { opacity: 1; transform: none; }
+a { color: var(--accent); }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); max-height: 45vh; }
+  main { padding: 16px; }
+  iframe { height: 70vh; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>記事の公開承認</h1>
+  <span id="publisher" class="pill"><span class="dot"></span><span>読み込み中</span></span>
+</header>
+<div class="layout">
+  <nav class="sidebar" aria-label="記事一覧">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <ul class="list" id="list"></ul>
+  </nav>
+  <main id="detail"><p class="placeholder">左の一覧から記事を選んでください。</p></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const TABS = [
+  { id: "pending", label: "承認待ち", statuses: ["pending", "failed"] },
+  { id: "approved", label: "承認済み", statuses: ["approved", "publishing", "committed"] },
+  { id: "published", label: "公開済み", statuses: ["published"] },
+  { id: "rejected", label: "差し戻し", statuses: ["rejected"] },
+];
+const STATUS_LABEL = { pending: "承認待ち", failed: "公開に失敗", approved: "公開待ち", publishing: "公開処理中", committed: "push 待ち", published: "公開済み", rejected: "差し戻し" };
+const POLL_MS = 2000;
+const view = { tab: "pending", selected: null, items: [], publisher: null, detailKey: "" };
+
+const el = (tag, attrs = {}, ...children) => {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v === null || v === undefined || v === false) continue;
+    if (k === "class") node.className = v;
+    else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
+    else node.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of children.flat(Infinity)) if (c !== null && c !== undefined && c !== false) node.append(c instanceof Node ? c : String(c));
+  return node;
+};
+const fmt = (iso) => iso ? new Date(iso).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }) : "—";
+const fmtDate = (d) => d ? d.replace(/^(\d{4})-(\d{2})-(\d{2})$/, (_, y, m, dd) => `${y}年${Number(m)}月${Number(dd)}日`) : "—";
+const toast = (msg) => { const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove("show"), 3200); };
+
+const api = async (path, options = {}) => {
+  const res = await fetch(path, { ...options, headers: { "Content-Type": "application/json", "X-Review-Client": "1", ...(options.headers || {}) } });
+  let body;
+  try { body = await res.json(); } catch { throw new Error(`サーバーの応答を読めませんでした（${res.status}）`); }
+  if (!body.success) throw new Error(body.error || "失敗しました");
+  return body.data;
+};
+
+const renderPublisher = () => {
+  const p = view.publisher, pill = document.getElementById("publisher");
+  if (!p) return;
+  const waiting = p.queue.length;
+  pill.className = p.running ? "pill busy" : "pill";
+  const text = p.running
+    ? `公開処理中${p.current ? `：${titleOf(p.current)}` : ""}${waiting ? `（次の回で待機 ${waiting}件）` : ""}`
+    : waiting ? `待機中 ${waiting}件` : "待機中（処理なし）";
+  pill.replaceChildren(el("span", { class: "dot" }), el("span", {}, text));
+};
+const titleOf = (slug) => (view.items.find((i) => i.slug === slug) || {}).title || slug;
+
+const renderTabs = () => {
+  const signature = JSON.stringify([view.tab, view.items.map((i) => i.status)]);
+  if (signature === view.tabsKey) return;
+  view.tabsKey = signature;
+  document.getElementById("tabs").replaceChildren(...TABS.map((t) => el("button", {
+    role: "tab", "aria-selected": String(view.tab === t.id),
+    onclick: () => { view.tab = t.id; renderTabs(); renderList(); },
+  }, t.label, el("span", { class: "count" }, view.items.filter((i) => t.statuses.includes(i.status)).length))));
+};
+
+// 一覧は中身が変わったときだけ描き直す（ポーリングのたびに作り直すとクリックを取りこぼす）
+const renderList = () => {
+  const signature = JSON.stringify([view.tab, view.selected, view.items.map((i) => [i.slug, i.status, i.updated_at])]);
+  if (signature === view.listKey) return;
+  view.listKey = signature;
+  const tab = TABS.find((t) => t.id === view.tab);
+  const rows = view.items.filter((i) => tab.statuses.includes(i.status));
+  const list = document.getElementById("list");
+  if (!rows.length) return list.replaceChildren(el("li", { class: "empty" }, `${tab.label}の記事はありません`));
+  list.replaceChildren(...rows.map((i) => el("li", {}, el("button", {
+    "aria-current": String(view.selected === i.slug), onclick: () => select(i.slug),
+  },
+    el("span", { class: "t" }, i.title),
+    el("span", { class: "m" }, el("span", { class: `badge ${i.status}` }, STATUS_LABEL[i.status] || i.status), `　${i.editor_name || "担当未設定"}・記載日 ${fmtDate(i.stated_date)}・提出 ${fmt(i.submitted_at)}`),
+  ))));
+};
+
+const act = async (slug, action, body) => {
+  try {
+    await api(`/api/items/${slug}/${action}`, { method: "POST", body: JSON.stringify(body || {}) });
+    toast({ approve: "承認しました。公開処理に入ります", cancel: "承認を取り消しました", reject: "差し戻しました" }[action]);
+    await refresh(true);
+  } catch (e) { toast(e.message); }
+};
+
+const renderActions = (d) => {
+  if (d.status === "pending" || d.status === "failed") {
+    const note = el("textarea", { placeholder: "差し戻す理由（例：3段落目の「静か」は体験表現なので直す）", "aria-label": "差し戻す理由" });
+    return el("div", { class: "card" }, el("h3", {}, "判断"), el("div", { class: "actions" },
+      el("button", { class: "primary", onclick: (e) => { e.target.disabled = true; act(d.slug, "approve"); } }, d.status === "failed" ? "もう一度承認して公開" : "承認して公開"),
+      el("div", { class: "reject" }, note, el("div", {}, el("button", { class: "danger", onclick: () => act(d.slug, "reject", { note: note.value }) }, "差し戻す"))),
+    ), el("p", { class: "note" }, "承認すると、その場でサイトへの配線・検証・ビルド・コミット・push まで進みます。処理中に承認した記事は、今の処理が終わってから次の回でまとめて公開します。"));
+  }
+  if (d.status === "approved") {
+    return el("div", { class: "card" }, el("h3", {}, "判断"), el("div", { class: "actions" },
+      el("button", { class: "secondary", onclick: () => act(d.slug, "cancel") }, "承認を取り消す"),
+    ), el("p", { class: "note" }, "公開処理の順番待ちです。処理が始まる前なら取り消せます。"));
+  }
+  return null;
+};
+
+const renderDetail = (d) => {
+  const meta = [
+    ["状態", el("span", { class: `badge ${d.status}` }, STATUS_LABEL[d.status] || d.status)],
+    ["担当", d.editor_name || "—"],
+    ["記載上の公開日", el("span", {}, fmtDate(d.stated_date), el("br"), el("span", { class: "note" }, "記事に書かれる日付です。この日に予約投稿されるわけではなく、承認した時点で公開されます"))],
+    ["カテゴリ", d.category || "—"],
+    ["URL", `${d.slug}.html`],
+    ["提出", fmt(d.submitted_at)],
+    ["承認", fmt(d.approved_at)],
+    ["公開", fmt(d.published_at)],
+    d.commit ? ["コミット", d.commit] : null,
+  ].filter(Boolean);
+  const cards = [
+    el("div", { class: "card" }, el("h2", {}, d.title), d.lead ? el("p", { class: "lead" }, d.lead) : null,
+      el("dl", { class: "meta" }, meta.map(([k, v]) => [el("dt", {}, k), el("dd", {}, v)]))),
+  ];
+  if (d.status === "failed" || d.error) cards.push(el("div", { class: "card" }, el("p", { class: "error" }, d.error || "失敗しました"), d.log ? el("pre", {}, d.log) : null));
+  if (d.status === "rejected") cards.push(el("div", { class: "card" }, el("h3", {}, "差し戻した理由"), el("p", {}, d.reject_note), el("p", { class: "note" }, `${fmt(d.rejected_at)} に差し戻し。直した版が提出されると承認待ちに戻ります。`)));
+  const actions = renderActions(d);
+  if (actions) cards.push(actions);
+  if (d.resubmitted_from) cards.push(el("div", { class: "card" }, el("h3", {}, "前回差し戻した理由"), el("p", {}, d.resubmitted_from)));
+  if (d.products?.length) cards.push(el("div", { class: "card" }, el("h3", {}, "掲載する製品"), el("div", { class: "table-wrap" }, el("table", {},
+    el("thead", {}, el("tr", {}, el("th", {}, "製品"), el("th", {}, "型番"), el("th", {}, "掲載価格"), el("th", {}, "公式"))),
+    el("tbody", {}, d.products.map((p) => el("tr", {}, el("td", {}, p.name), el("td", {}, p.model || "—"), el("td", {}, p.price || "—"),
+      el("td", {}, p.official_url ? el("a", { href: p.official_url, target: "_blank", rel: "noopener noreferrer" }, "開く") : "—"))))))));
+  if (d.factcheck) cards.push(el("div", { class: "card" }, el("h3", {}, `事実照合（指摘 ${d.factcheck.issues?.length || 0}件）`), el("p", {}, d.factcheck.summary || ""),
+    (d.factcheck.issues || []).map((i) => el("div", { class: `issue ${i.severity}` }, el("strong", {}, `[${i.severity}] `), `「${i.quote}」`, el("br"), i.reason, el("br"), el("span", { class: "note" }, `案：${i.suggestion}`)))));
+  if (d.has_preview || d.status === "published") {
+    const src = `/site/${d.slug}.html`;
+    cards.push(el("div", { class: "card" }, el("div", { class: "preview-head" }, el("h3", {}, "記事のプレビュー"), el("a", { href: src, target: "_blank", rel: "noopener" }, "別タブで開く")),
+      el("iframe", { src, title: `${d.title} のプレビュー`, loading: "lazy" }),
+      el("p", { class: "note" }, "公開前のプレビューでは、商品リンクは計測なしの楽天市場ページに飛びます（計測付きリンクは公開時に登録されます）。")));
+  }
+  document.getElementById("detail").replaceChildren(...cards);
+};
+
+const select = async (slug) => {
+  view.selected = slug;
+  view.detailKey = "";
+  renderList();
+  await loadDetail();
+};
+
+const loadDetail = async () => {
+  if (!view.selected) return;
+  try {
+    const d = await api(`/api/items/${view.selected}`);
+    // プレビューの iframe を毎回読み直さないよう、状態が変わったときだけ描き直す
+    const key = `${d.slug}|${d.status}|${d.updated_at}`;
+    if (key !== view.detailKey) { view.detailKey = key; renderDetail(d); }
+  } catch (e) { toast(e.message); }
+};
+
+const refresh = async (withDetail) => {
+  try {
+    const data = await api("/api/items");
+    view.items = data.items; view.publisher = data.publisher;
+    renderPublisher(); renderTabs(); renderList();
+    if (withDetail || view.selected) await loadDetail();
+  } catch (e) {
+    const pill = document.getElementById("publisher");
+    pill.className = "pill busy"; pill.replaceChildren(el("span", { class: "dot" }), el("span", {}, "サーバーに接続できません"));
+  }
+};
+
+refresh();
+setInterval(refresh, POLL_MS);
+</script>
+</body>
+</html>

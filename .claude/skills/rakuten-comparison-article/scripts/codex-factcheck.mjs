@@ -8,7 +8,8 @@ import { REPO_DIR, draftDir, fail, readFacts } from "./lib.mjs";
 const dir = draftDir(process.argv[2]);
 const modelFlag = process.argv.indexOf("--model") > -1 ? ["-m", process.argv[process.argv.indexOf("--model") + 1]] : [];
 const facts = readFacts(dir);
-const articlePath = resolve(REPO_DIR, `${facts.slug}.html`);
+// --preview: 公開前の下書き（_drafts/<slug>/preview.html）を照合する
+const articlePath = process.argv.includes("--preview") ? resolve(dir, "preview.html") : resolve(REPO_DIR, `${facts.slug}.html`);
 if (!existsSync(articlePath)) fail(`${articlePath} がありません（wire.mjs を先に実行）`);
 
 // 本文だけ渡す（head・ヘッダー・フッターは照合対象外）

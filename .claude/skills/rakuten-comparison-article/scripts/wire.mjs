@@ -1,6 +1,7 @@
 // article.tpl.html を <slug>.html に解決し、サイトの各所へ登録する（冪等）。
-// 使い方: node wire.mjs _drafts/<slug>
-import { existsSync, readFileSync } from "node:fs";
+// 使い方: node wire.mjs _drafts/<slug> [--preview]
+// --preview: サイトには触らず、解決済みHTMLを _drafts/<slug>/preview.html に書くだけ（承認待ちの確認用）
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { affiliateUrl, amazonUrl, draftDir, escapeHtml, fail, hasLink, imageUrl, insertOnce, readFacts, readRepo, writeRepo } from "./lib.mjs";
 
@@ -21,6 +22,11 @@ let html = readFileSync(tplPath, "utf8").replace(/\{\{AMAZON:(\w+)\}\}/g, (_, ke
   if (!hasLink(p?.rakuten)) fail(`プレースホルダ ${kind}:${key} に対応する製品/rakuten がありません`);
   return { IMG: imageUrl(p.rakuten), IMGRAW: imageUrl(p.rakuten).replace(/&amp;/g, "&"), ITEM: p.rakuten.item, PRICE: p.rakuten.price }[kind];
 });
+if (process.argv.includes("--preview")) {
+  writeFileSync(resolve(dir, "preview.html"), html, "utf8");
+  console.log(`+ ${resolve(dir, "preview.html")} を書き出し（サイトには未配線）`);
+  process.exit(0);
+}
 writeRepo(`${slug}.html`, html);
 console.log(`+ ${slug}.html を書き出し`);
 
@@ -70,11 +76,12 @@ writeRepo("search-index.js", insertOnce(readRepo("search-index.js"), "window.SEA
 const imgs = facts.products.slice(0, 3).map((p) => `<img loading="lazy" src="${imageUrl(p.rakuten)}" width="240" height="240" alt="${escapeHtml(p.name)}">`).join("");
 const badge = facts.badge || "5機種比較";
 const card = `          <a class="article-card" href="${slug}.html"><div class="article-card-media">${imgs}<span class="article-card-badge">${badge}</span></div><div class="article-card-body"><div class="directory-list-meta"><span>${escapeHtml(facts.category_label)}</span><time datetime="${date}">${date.replace(/-/g, ".")}</time></div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(facts.card_summary || entry.summary)}</p><span class="directory-read">記事を読む</span></div></a>\n`;
-writeRepo("articles.html", insertOnce(readRepo("articles.html"), '<div class="article-cards" aria-label="商品比較記事一覧">\n', `href="${slug}.html"`, card, "articles.html"));
+let articles = readRepo("articles.html");
+if (!articles.includes(`href="${slug}.html"`)) articles = articles.replace(/(<dt>公開記事<\/dt><dd>)(\d+)(本<\/dd>)/, (_, a, n, b) => `${a}${Number(n) + 1}${b}`);
+writeRepo("articles.html", insertOnce(articles, '<div class="article-cards" aria-label="商品比較記事一覧">\n', `href="${slug}.html"`, card, "articles.html"));
 
 // 6. sources.html（変更履歴）
 const row = `<tr><td>${date}</td><td>商品比較記事を追加（${escapeHtml(facts.topic)}）。仕様はメーカー公式ページ、価格は楽天市場で確認。</td><td class="status yes">反映済み</td></tr>`;
 writeRepo("sources.html", insertOnce(readRepo("sources.html"), "<tbody>", `商品比較記事を追加（${escapeHtml(facts.topic)}）`, row, "sources.html"));
 
 console.log("\n次: node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs " + process.argv[2]);
-console.log("    articles.html の「公開記事 N本」を手で +1 する");

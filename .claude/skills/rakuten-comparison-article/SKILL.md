@@ -17,10 +17,10 @@ description: 買いもの標準（このリポジトリ）に「○○5機種を
 | 2 | 仕様の裏取り（メーカー公式） | Claude | `facts.json` の `specs` / `official_url` |
 | 3 | 楽天アフィリエイトリンク・画像・価格の取得 | Claude（Chrome） | `links.tsv` → `facts.json` にマージ |
 | 4 | 記事本文の下書き | **Codex** | `article.tpl.html` |
-| 5 | プレースホルダ解決・サイトへの配線 | script | `<slug>.html`、config/sitemap/build/検索索引/記事一覧/更新履歴 |
+| 5 | プレースホルダ解決（プレビュー） | script | `_drafts/<slug>/preview.html` |
 | 6 | 事実照合（台帳に無い主張の検出） | **Codex** | `factcheck.json` |
-| 7 | 機械検証・修正・ビルド | Claude | 検証ログ、`npm run build` 通過 |
-| 8 | 報告（コミットは頼まれたときだけ） | Claude | 要約 |
+| 7 | 機械検証・承認キューへ提出 | Claude | `review.json`（承認待ち） |
+| 8 | 承認 → 配線・ビルド・コミット・push | **ユーザー**（承認画面） | 公開 |
 
 作業ディレクトリは `_drafts/<slug>/`（gitignore 済み）。slug は `oven-toaster-comparison` のような英語ケバブケース＋`-comparison`。
 
@@ -33,6 +33,8 @@ description: 買いもの標準（このリポジトリ）に「○○5機種を
 - **ブランドが被らない**こと（アイリスオーヤマが2つ、など避ける）
 - **価格帯が広い**こと。上下で3倍以上開いていると「価格を抑えたい人」の枠が自然に埋まる
 - 楽天で流通が薄い製品（検索結果が部品・中古ばかり、販売店が1店だけ）は、仕様が良くても外す。実際にパナソニック SR-MP300・Instant Pot・スタンレーはこれで落とした
+
+**担当執筆者を決める。** `node scripts/editors.mjs list` で候補を見て、ジャンルではなく「この記事を読みに来る人に一番近い視点の人」を選び、`facts.json` の `editor` に id を入れる（例：型落ちとの違いを知りたい人向けなら `mie`、電気代まで含めて選びたい人向けなら `kazu`）。台帳は `_editorial/editors.json`（git 管理外）。同じ人に偏りすぎないよう、直近の記事の担当も見て決める。執筆者を増やしたら `node scripts/editors.mjs page` で editors.html を作り直し、styles.css に `.ed-<id>` のアバター色を足す。
 
 `facts.json` の形式は `references/fact-sheet.md` を読む（完成形は `assets/example-facts.json`）。最初は製品名・型番・公式URL候補・`pick_reason` だけ埋めればよい。
 
@@ -77,54 +79,58 @@ node .claude/skills/rakuten-comparison-article/scripts/codex-draft.mjs _drafts/<
 
 出力を受け取ったら、Claude は**構成が exemplar と同じか**（結論5行 → 比較表 → 選び方4点 → 用途別5製品 → 出典 → サイドバー）だけを目視する。文章の細部はこの段階で直さない（事実照合の後でまとめて直す方が安い）。
 
-## 5. 配線
+## 5. プレビューを作る（サイトにはまだ配線しない）
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/wire.mjs _drafts/<slug>
+node .claude/skills/rakuten-comparison-article/scripts/wire.mjs _drafts/<slug> --preview
 ```
 
-やること：`article.tpl.html` のプレースホルダを解決して `<slug>.html` を作成、`config.js` にアフィリエイトキーを追加、`build.mjs` の配布リストと `sitemap.xml` に登録、`search-index.js` に記事と製品を追記、`articles.html` の商品比較グリッド先頭にカード（製品画像3点＋バッジ）を挿入、`sources.html` の変更履歴に1行追加。すべて冪等（同じ slug で再実行しても二重登録しない）。
-
-`index.html` の「編集部の新着」カードは自動で触らない。差し替えたいときだけ手で編集する。
+`article.tpl.html` のプレースホルダを解決して `_drafts/<slug>/preview.html` を書くだけ。`config.js` や記事一覧などの共有ファイルには触らない。**公開はユーザーが承認画面で承認したときに行う**ので、この段階でサイトに配線してはいけない（承認前の記事が別の記事のコミットに紛れ込む）。
 
 ## 6. Codex に事実照合させる
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug>
+node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug> --preview
 ```
 
-生成済みの `<slug>.html` と `facts.json` を Codex に渡し、「台帳に根拠がない数値・仕様・時期・最上級表現」を JSON で列挙させる（`--output-schema` で形式を固定）。典型的に引っかかるもの：
+`preview.html` と `facts.json` を Codex に渡し、「台帳に根拠がない数値・仕様・時期・最上級表現」を JSON で列挙させる（`--output-schema` で形式を固定）。典型的に引っかかるもの：
 
 - 台帳にない数値（例：「約4分で沸く」）
 - 「最も軽い」「最大」など、比較表の数値と突き合わせると成り立たない最上級（4.3kg が2機種あるのに「最も重い」等）
 - 「〜と言われています」「一般的に〜」など出典のない一般論
 - 発売時期・新色追加などの時期情報
 
-所要1分前後、Codex 側で約2.5万トークン。台帳にない所要時間や、同値があるのに単独で「最も軽い」と書いた箇所を high で拾えることは確認済み。
+Claude は指摘を1件ずつ見て、台帳で裏付けられるなら台帳を直し、裏付けられないなら `article.tpl.html` の**表現を弱めるか削る**。「公式仕様に記載なし」に言い換えるのが定石。直したら手順5からやり直し、指摘ゼロになるまで繰り返す（通常1〜2回）。
 
-Claude は指摘を1件ずつ見て、台帳で裏付けられるなら台帳を直し、裏付けられないなら**記事の表現を弱めるか削る**。「公式仕様に記載なし」「〜の記載はありません」に言い換えるのが定石。指摘ゼロになるまで再実行する（通常1〜2回）。
-
-## 7. 機械検証とビルド
+## 7. 機械検証して承認キューに出す
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/verify.mjs <slug>
-npm run check && SITE_URL=https://kaimono-standard.echoant.com CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
+node .claude/skills/rakuten-comparison-article/scripts/verify.mjs <slug> --preview
+node admin/submit.mjs _drafts/<slug>
 ```
 
-`verify.mjs` は、プレースホルダ残り、「楽天アフィリエイト」など運営側の表現の混入、`config.js` に無いキー、`data-affiliate` の欠落、出典リンク数、製品ブロック数、`rel="nofollow sponsored"`、最上級表現の一覧（文脈付き）を出す。最上級はここで表の数値と目で照らす。
+`verify.mjs --preview` は、プレースホルダ残り、運営側の表現の混入、見出しの要約ラベル、`data-affiliate` の欠落、出典リンク数、製品ブロック数、最上級表現の一覧を出す（config.js と配線の検査は公開時に回る）。最上級はここで表の数値と目で照らす。
 
-余裕があれば `python -m http.server` で配信して Chrome で開き、全 `[data-affiliate]` が `data-link-status="affiliate"` になり、画像が読み込めることを確認する（`references/wiring.md` に確認用 JS がある）。
+`submit.mjs` は機械検証と事実照合（high の指摘ゼロ）を確認してから `_drafts/<slug>/review.json` を作り、記事を**承認待ち**にする。ここで Claude の作業は終わり。
 
-## 8. 報告
+## 8. 公開（ユーザーが承認画面で行う）
 
-ユーザーには次を短く伝える：記事URL、5製品と選定理由、公式で裏取りできなかった項目とその扱い、取得した価格の日付、配線したファイル一覧。**コミット・プッシュは頼まれたときだけ**。プッシュする場合は `gh run watch` でデプロイ完了と本番URLの 200 を確認してから報告する。
+ユーザーは `npm run review` で承認画面（http://127.0.0.1:8790/）を開き、タイトル・担当・記載日・製品・照合結果・プレビューを見て「承認して公開」か「差し戻す」を選ぶ。
+
+- 承認すると `admin/publisher.mjs` がその場で `wire.mjs`（配線）→ `verify.mjs`（配線込みの検証）→ `npm run check` → `npm run build` → 記事ごとにコミット → まとめて `git push` まで進める。公開処理中に承認された記事は待機し、終わり次第次の回で処理する
+- 共有ファイル（config.js など）に未コミットの変更があると、他の作業を巻き込まないよう公開を止めて「公開に失敗」にする
+- 記事の日付（`facts.date`）は記載用で、予約投稿ではない。公開されるのは承認した時点
+- 差し戻された記事は、`review.json` の `reject_note` を読んで直し、手順5から出し直す（`submit.mjs` は差し戻し理由を `resubmitted_from` に残す）
+
+ユーザーへの報告は、承認待ちに出した記事のタイトル・担当・5製品と選定理由・公式で裏取りできなかった項目だけでよい。
 
 ## やってはいけないこと
 
 - 実機レビュー風の表現（「使ってみると」「音が静か」）。運営方針が「実購入レビューをしない」なので信頼を壊す
 - 台帳にない数値を「だいたいこのくらい」で書く。読者は数値を信じて買う
 - ラクヨコ導線を増やす。成果対象外の可能性が高く、楽天市場リンクで稼ぐ設計と矛盾する
-- 記事だけ作って配線を忘れる。`wire.mjs` を通せば起きないが、手で HTML を直した後は `verify.mjs` を再実行する
+- 承認前にサイトへ配線する（`wire.mjs` を `--preview` なしで実行する、`<slug>.html` を手で置く）。配線は承認時に publisher が行う
+- 自分でコミット・push して公開する。公開はユーザーの承認だけが起点
 - Codex に Web 検索や楽天管理画面の操作を任せる。Codex はリポジトリ内のファイルしか見えない前提で使う
 
 ## 参照ファイル

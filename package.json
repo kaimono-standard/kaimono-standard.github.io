@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "check": "node --check app.js && node --check config.js && node --check build.mjs"
+    "check": "node --check app.js && node --check config.js && node --check build.mjs",
+    "review": "node admin/server.mjs"
   }
 }

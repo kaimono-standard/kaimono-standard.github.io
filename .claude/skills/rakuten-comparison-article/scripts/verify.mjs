@@ -1,12 +1,15 @@
-// 生成した記事と配線の機械検証。使い方: node verify.mjs <slug>
+// 生成した記事と配線の機械検証。使い方: node verify.mjs <slug> [--preview]
+// --preview: 公開前（承認待ち）の _drafts/<slug>/preview.html を検査する。config.js と配線の検査は公開時に回す
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { REPO_DIR, fail, readRepo } from "./lib.mjs";
 
 const slug = (process.argv[2] || "").replace(/\.html$/, "");
 if (!slug) fail("使い方: node verify.mjs <slug>");
-if (!existsSync(resolve(REPO_DIR, `${slug}.html`))) fail(`${slug}.html がありません`);
-const html = readRepo(`${slug}.html`);
+const preview = process.argv.includes("--preview");
+const target = preview ? `_drafts/${slug}/preview.html` : `${slug}.html`;
+if (!existsSync(resolve(REPO_DIR, target))) fail(`${target} がありません${preview ? "（wire.mjs --preview を先に実行）" : ""}`);
+const html = readRepo(target);
 const problems = [];
 const ok = (label) => console.log(`✓ ${label}`);
 const ng = (label) => { problems.push(label); console.log(`✗ ${label}`); };
@@ -29,7 +32,7 @@ const keys = [...new Set([...html.matchAll(/data-affiliate="([^"]+)"/g)].map((m)
 const cfg = readRepo("config.js");
 const missing = keys.filter((k) => !new RegExp(`\\b${k}: "https://`).test(cfg));
 keys.length === 5 ? ok(`data-affiliate キー 5種: ${keys.join(", ")}`) : ng(`data-affiliate キーが ${keys.length} 種（5種のはず）`);
-missing.length ? ng(`config.js に未設定: ${missing.join(", ")}`) : ok("config.js に全キー設定済み");
+if (!preview) missing.length ? ng(`config.js に未設定: ${missing.join(", ")}`) : ok("config.js に全キー設定済み");
 const anchors = [...html.matchAll(/<a\b[^>]*data-affiliate=[^>]*>/g)].map((m) => m[0]);
 const badAnchors = anchors.filter((a) => !/rel="nofollow sponsored noopener"/.test(a) || !/data-fallback="https:\/\/item\.rakuten\.co\.jp\//.test(a) || !/target="_blank"/.test(a));
 badAnchors.length ? ng(`rel/data-fallback/target が不足しているリンク ${badAnchors.length} 本`) : ok(`商品リンク ${anchors.length} 本すべて rel="nofollow sponsored noopener" + data-fallback`);
@@ -59,11 +62,13 @@ const sources = [...(html.match(/id="sources"[\s\S]*?<\/ul>/) || [""])[0].matchA
 const suspicious = sources.filter((u) => /kakaku\.com|amazon\.|yodobashi|biccamera|rakuten\.co\.jp|my-best|note\.com|wikipedia/.test(u));
 suspicious.length ? ng(`出典に一次情報でないURL: ${suspicious.join(", ")}`) : ok("出典はすべてメーカー系ドメイン");
 
-// 配線
+// 配線（公開時のみ）
+if (!preview) {
 readRepo("build.mjs").includes(`"${slug}.html"`) ? ok("build.mjs 登録済み") : ng("build.mjs 未登録");
 readRepo("sitemap.xml").includes(`/${slug}.html<`) ? ok("sitemap.xml 登録済み") : ng("sitemap.xml 未登録");
 readRepo("search-index.js").includes(`${slug}.html"`) ? ok("search-index.js 登録済み") : ng("search-index.js 未登録");
 readRepo("articles.html").includes(`href="${slug}.html"`) ? ok("articles.html 登録済み") : ng("articles.html 未登録");
+}
 
 // --online: ブラウザ無しで画像と商品URLの到達性を確認する（Codex 単独運用向け）
 if (process.argv.includes("--online")) {

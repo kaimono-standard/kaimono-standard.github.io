@@ -112,57 +112,50 @@ node .claude/skills/rakuten-comparison-article/scripts/codex-draft.mjs _drafts/<
 
 「製品ブロック 5 / 出典リンク 5 / プレースホルダ 30」になっていること。
 
-## 5. 配線
+## 5. プレビューを作る（サイトにはまだ配線しない）
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/wire.mjs _drafts/<slug>
+node .claude/skills/rakuten-comparison-article/scripts/wire.mjs _drafts/<slug> --preview
 ```
 
-`<slug>.html`、`config.js`、`build.mjs`、`sitemap.xml`、`search-index.js`、`articles.html`（カード）、`sources.html`（変更履歴）に冪等で登録される。終わったら `articles.html` の「公開記事 N本」を手で +1 し、「最終確認」の日付を更新する。`index.html` の「編集部の新着」は頼まれたときだけ差し替える（featured を新記事にし、古いカードを1枚落とす）。
+`_drafts/<slug>/preview.html` を書くだけで、`config.js` や記事一覧などの共有ファイルには触らない。**公開はユーザーが承認画面で承認したときに行う**ので、`--preview` なしで実行してはいけない。
 
 ## 6. 事実照合
 
 Codex の中から `codex exec` を呼べるなら、Claude 版と同じ：
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug>
+node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug> --preview
 ```
 
 呼べない（失敗する・固まる）ときは自分で照合する：
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug> --prompt-only
+node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug> --preview --prompt-only
 ```
 
-`factcheck-prompt.txt` の判定基準に従って、`<slug>.html` の本文の主張を 1文ずつ `facts.json` と突き合わせ、`factcheck-schema.json` の形式で `_drafts/<slug>/factcheck.json` に書く（`{"issues":[{"quote","reason","severity","suggestion"}],"summary"}`）。自分の文章なので甘くなりやすい——**数値・時期・最上級・unverified の断定** だけを機械的に探す。それから：
+`factcheck-prompt.txt` の判定基準に従って、`preview.html` の本文の主張を 1文ずつ `facts.json` と突き合わせ、`factcheck-schema.json` の形式で `_drafts/<slug>/factcheck.json` に書く（`{"issues":[{"quote","reason","severity","suggestion"}],"summary"}`）。自分の文章なので甘くなりやすい——**数値・時期・最上級・unverified の断定** だけを機械的に探す。それから：
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug> --report
+node .claude/skills/rakuten-comparison-article/scripts/codex-factcheck.mjs _drafts/<slug> --preview --report
 ```
 
-指摘は1件ずつ、台帳で裏付けられるなら台帳を直し、裏付けられないなら記事の表現を弱めるか削る（`<slug>.html` と `article.tpl.html` の両方を直す）。指摘ゼロになるまで繰り返す。
+指摘は1件ずつ、台帳で裏付けられるなら台帳を直し、裏付けられないなら `article.tpl.html` の表現を弱めるか削る。直したら手順5からやり直し、指摘ゼロになるまで繰り返す。
 
-## 7. 機械検証とビルド
+## 7. 機械検証して承認キューに出す
 
 ```bash
-node .claude/skills/rakuten-comparison-article/scripts/verify.mjs <slug> --online
-npm run check
+node .claude/skills/rakuten-comparison-article/scripts/verify.mjs <slug> --preview --online
+node admin/submit.mjs _drafts/<slug>
 ```
 
-ビルド（bash）：
-```bash
-SITE_URL=https://kaimono-standard.echoant.com CONTACT_URL=https://github.com/kaimono-standard/kaimono-standard.github.io/issues npm run build
-```
-ビルド（PowerShell）：
-```powershell
-$env:SITE_URL="https://kaimono-standard.echoant.com"; $env:CONTACT_URL="https://github.com/kaimono-standard/kaimono-standard.github.io/issues"; npm run build
-```
+`verify.mjs` が出す最上級表現の一覧は、比較表の数値と目で照らす。`--online` で画像5点と商品ページ5本が 200/206 になること（Chrome の代わり）。`submit.mjs` は機械検証と事実照合（high ゼロ）を確かめてから記事を**承認待ち**にする。ここで作業は終わり。
 
-`verify.mjs` が出す最上級表現の一覧は、比較表の数値と目で照らす。`--online` で画像5点と商品ページ5本が 200/206 になること（Chrome の代わり）。`dist/<slug>.html` に `{{` が残っていないことも見る。
+## 8. 公開（ユーザーが承認画面で行う）
 
-## 8. 報告（コミットは頼まれたときだけ）
+ユーザーが `npm run review`（http://127.0.0.1:8790/）で承認すると、`admin/publisher.mjs` が配線・検証・ビルド・コミット・push まで進める。自分でコミット・push しない。差し戻された記事は `_drafts/<slug>/review.json` の `reject_note` を読んで直し、手順5から出し直す。
 
-短く伝える：記事URL（`https://kaimono-standard.echoant.com/<slug>.html`）、5製品と選定理由と掲載時価格、公式で裏取りできなかった項目とその扱い、価格の確認日、配線したファイル一覧。コミット・プッシュは頼まれたときだけ。プッシュしたら `gh run watch` でデプロイ完了を待ち、本番URLが 200 を返すのを `curl` で確認してから報告する。コミットメッセージは `feat: add <topic> comparison (5 models)` の形。
+報告は、承認待ちに出した記事のタイトル・担当・5製品と選定理由と掲載時価格・公式で裏取りできなかった項目だけでよい。
 
 ## やってはいけないこと
 
@@ -171,5 +164,5 @@ $env:SITE_URL="https://kaimono-standard.echoant.com"; $env:CONTACT_URL="https://
 - 「楽天アフィリエイト」「管理画面」「商品リンクから取得」など運営側の仕組みを本文に書く（verify.mjs が止める）
 - 「結論：」「まとめ：」型の見出し（verify.mjs が止める）
 - ラクヨコへの導線を増やす
-- 記事だけ作って配線を忘れる。手で HTML を直したら `verify.mjs` を再実行する
+- 承認前にサイトへ配線する（`wire.mjs` を `--preview` なしで実行する）。配線は承認時に publisher が行う
 - 5製品がそろわないまま公開する。流通が薄い製品は差し替える
