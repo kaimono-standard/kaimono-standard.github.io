@@ -60,9 +60,10 @@ description: 買いもの標準（このリポジトリ）に「○○5機種を
 
 各製品ブロックには楽天のボタンの直後に「Amazonで見る」ボタンが付く（アソシエイトID `kaimonostd-22`、`lib.mjs` の `AMAZON_TAG`）。`wire.mjs` が `facts.json` の `amazon` から `config.js` の `amazonLinks` に登録する。
 
-- 既定は **型番の検索結果リンク**（`amazon.query`。省略時は brand＋model）。検索語は「ブランド 製品名 型番」のように、検索結果の先頭にその製品が出る語にする
+- **Creators API が使えるとき**（`.env` に `AMAZON_CREATORS_CREDENTIAL_ID` / `_SECRET` があり、過去30日の売上10件以上の条件を満たしているとき）は、`node scripts/amazon-api.mjs search "<ブランド 型番>"` で候補を出し、正規の型番と一致する出品の ASIN を `node scripts/amazon-api.mjs pick <ASIN> --key <key> --dir _drafts/<slug>` で facts.json に入れる。タイトル・画像・価格が取得日時つきで `amazon` に入る。これが最優先
+- API が使えないときの既定は **型番の検索結果リンク**（`amazon.query`。省略時は brand＋model）。検索語は「ブランド 製品名 型番」のように、検索結果の先頭にその製品が出る語にする
 - Amazon の商品ページ（`/dp/ASIN`）に直接飛ばすのは、Chrome で `https://www.amazon.co.jp/s?k=<型番>` を開き、**正規の型番と一致する出品**（スポンサー枠・並行輸入・中古・セット品・Amazon限定型番 `…AM` `…AZ` を除く）の ASIN が確認できたときだけ。`amazon.asin` に入れる
-- Amazon の価格・在庫は記事に書かない（PA-API 経由でない価格表示は規約違反）
+- Amazon の価格・在庫は記事に書かない。API で取った価格も、表示するなら取得日時の併記と頻繁な更新が要るので、facts.json に残して選定の参考にだけ使う
 - 広告表記の文言は editorial-rules.md の通り（Amazon の表記文は規約で固定）
 
 ## 4. Codex に下書きを書かせる

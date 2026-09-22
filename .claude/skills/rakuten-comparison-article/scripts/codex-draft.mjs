@@ -54,7 +54,7 @@ ${JSON.stringify(facts, null, 2)}
 - datePublished / dateModified / 署名の日付 / 「確認日」は ${facts.date}
 - サイドバー「関連する比較」は次の2本: ${related.map((r) => r.split("|").join(" → ")).join(" / ")}
 - 製品の順番、結論ブロックの順番、比較表の行、出典の順番は台帳の products の順に揃える
-- 比較表の列は「製品」「${(facts.table_columns || []).join("」「")}」「掲載時価格」
+- 比較表の列は「製品」「${(facts.table_columns || []).join("」「")}」「楽天市場の掲載時価格」
 - 台帳に無い数値・時期・評価語を書かない。unverified の項目は「公式仕様に記載はありません」と書くか触れない`;
 
 const promptPath = resolve(dir, "draft-prompt.txt");

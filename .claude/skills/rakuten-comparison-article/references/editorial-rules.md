@@ -11,7 +11,7 @@
 1. `<header class="review-header">`：カテゴリ、h1、リード文、署名（担当執筆者の名前（買いもの標準 編集部）、editors.html#<id> へリンク。HTMLは追加指示の通り）、広告表記
 2. `<figure class="review-hero-image">`：5製品の画像リンク（`{{IMG:key}}` `{{ITEM:key}}`）
 3. `review-summary`：見出しは「使い方から選ぶと、この5機種」。`audience_axes` の順に5行。`<span>用途</span><strong>短い製品名</strong><em>決め手（台帳の数値か機能）</em>`
-4. `#comparison` 比較表：列は `製品 | table_columns… | 掲載時価格`。価格は `{{PRICE:key}}`。表の下に `review-footnote`（`table_footnote` を元に）
+4. `#comparison` 比較表：列は `製品 | table_columns… | 楽天市場の掲載時価格`。価格は `{{PRICE:key}}`。表の下に `review-footnote`（`table_footnote` を元に。末尾に「Amazonの価格は各製品のAmazonのページで確認してください。」を添える）
 5. `#choose` 選び方4点：`buying_points` を `plain-guide` で
 6. `#products` 用途別5製品：製品ごとに `review-product`（`header` の p は「〜なら」で終える／h3 は正式名称／写真リンク／本文1段落／`<ul>` に台帳の主要スペック3点／`fit-note`／`caution-note`／`rakuten-button`）
 7. `#sources` 出典：製品と同じ順で `official_url` を `official_label` の文言で
@@ -28,6 +28,7 @@ h1 は「○○5機種を比較。軸A・軸B・軸Cで選ぶ」の型。`<title
 - `fit-note` は「〜人。」で終える一文。`pick_reason` を言い換える
 - `caution-note` は買う前に知るべき事実を1〜2文。`caution_hint` と `unverified`、`variant_note` から作る。欠点探しではなく「この人には向かない」「購入時にここを確認」の書き方
 - ボタン文言：`shop_is_official` が true なら「○○公式楽天市場店で見る」、選択式なら「楽天市場で色と価格を見る」、それ以外は「楽天市場で価格・在庫を見る」
+- 楽天市場と Amazon は同じ重みで扱う。本文で片方だけを勧めない（「楽天市場で買うのがお得」など）。読者が使い慣れた店で買えるようにするのが目的
 - 楽天と Amazon のボタンは `<div class="shop-buttons">` で囲んで横並びにする（完成例の通り）。楽天ボタンの直後に Amazon のボタン：`<a class="amazon-button" data-amazon="key" data-fallback="{{AMAZON:key}}" rel="nofollow sponsored noopener" target="_blank" href="#">Amazonで見る</a>`。文言は常に「Amazonで見る」。Amazon の価格は書かない（PA-API 経由でないと規約違反）
 
 ## 書いてよいこと・いけないこと

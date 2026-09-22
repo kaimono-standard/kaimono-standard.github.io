@@ -1064,3 +1064,20 @@ body:not(.review-page):not(.directory-page) .footer-title { font-family: inherit
 .editor-tagline { margin: 4px 0 0; font-size: .85rem; }
 .editor-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
 .editor-topics li { padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: .75rem; color: var(--ink-soft); }
+
+/* トップ：新着リストと楽天ラクヨコの区画 */
+.home-latest h2 { margin: 8px 0 14px; font-size: 1.3rem; }
+.home-latest-list { list-style: none; margin: 0 0 16px; padding: 0; }
+.home-latest-list li { padding: 11px 0; border-bottom: 1px solid var(--line); }
+.home-latest-list li:last-child { border-bottom: 0; }
+.home-latest-list a { display: block; font-weight: 700; color: var(--ink); text-decoration: none; }
+.home-latest-list a:hover { color: var(--green); }
+.home-latest-list span { display: block; margin-top: 2px; color: var(--ink-soft); font-size: .82rem; }
+.home-rakuyoko .grid.two { align-items: start; }
+.home-rakuyoko-facts { display: grid; gap: 18px; }
+.home-tool-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.home-tool-links h3 { margin: 0 0 8px; font-size: 1rem; }
+@media (max-width: 640px) { .home-tool-links { grid-template-columns: 1fr; } }
+body:not(.review-page):not(.directory-page) .home-rakuyoko .grid.two { gap: 18px; background: none; border: 0; }
+.home-rakuyoko-facts .card, .home-tool-links .card { border: 1px solid var(--line); }
+body:not(.review-page):not(.directory-page) .section-head .eyebrow, body:not(.review-page):not(.directory-page) .section-head .section-kicker { color: #fff; }
