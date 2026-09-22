@@ -2,6 +2,61 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "trackball-comparison.html",
+    "type": "商品比較",
+    "category": "PC周辺機器",
+    "updated": "2026-09-22",
+    "title": "トラックボール5機種を比較。操作方式・接続・ボタン数で選ぶ",
+    "summary": "ロジクール、ケンジントン、エレコム、ナカバヤシ、サンワサプライのトラックボール5機種を、操作方式・接続・ボタン数・電源で比較。",
+    "keywords": [
+      "トラックボール",
+      "トラックボールマウス",
+      "MX ERGO S",
+      "SlimBlade Pro",
+      "HUGE",
+      "親指操作",
+      "静音",
+      "エルゴノミクス"
+    ],
+    "products": [
+      {
+        "name": "ロジクール MX ERGO S MXTB2",
+        "brand": "ロジクール Logicool Logitech",
+        "model": "MXTB2",
+        "anchor": "logicool",
+        "note": "調整可能なヒンジで本体の角度を0〜20度に変えられる親指操作タイプ"
+      },
+      {
+        "name": "ケンジントン SlimBlade Pro トラックボール K72081JP",
+        "brand": "ケンジントン Kensington",
+        "model": "K72081JP",
+        "anchor": "kensington",
+        "note": "直径55mmのボールをデュアルセンサーで検出する、指先で操作するタイプ"
+      },
+      {
+        "name": "エレコム ワイヤレストラックボール HUGE M-HT1DRBK",
+        "brand": "エレコム ELECOM HUGE",
+        "model": "M-HT1DRBK",
+        "anchor": "elecom",
+        "note": "直径約52mmの大型ボールを人差し指・中指で操作する、パームレスト付きのLLサイズ"
+      },
+      {
+        "name": "ナカバヤシ Digio2 Bluetoothエルゴ静音5ボタン光学式トラックボール MUS-TBKF264BK",
+        "brand": "ナカバヤシ Digio2 デジオツー",
+        "model": "MUS-TBKF264BK",
+        "anchor": "nakabayashi",
+        "note": "左右のボタンに300万回の耐久テストを実施した静音スイッチを採用（ホイールボタンは非静音）"
+      },
+      {
+        "name": "サンワサプライ 有線トラックボール MA-TB184BK",
+        "brand": "サンワサプライ サンワダイレクト SANWA SUPPLY",
+        "model": "MA-TB184BK",
+        "anchor": "sanwa",
+        "note": "傾斜15°のエルゴノミクス形状で、親指で約34mmのボールを操作するタイプ"
+      }
+    ]
+  },
+  {
     "url": "engineer-keyboard-comparison.html",
     "type": "商品比較",
     "category": "PC周辺機器",
