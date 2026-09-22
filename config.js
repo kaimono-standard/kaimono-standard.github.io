@@ -123,10 +123,10 @@ window.SITE_CONFIG = {
     driedfruitOhsawa: "https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%BC%E3%82%B5%E3%83%AF%20%E6%9C%89%E6%A9%9F%E3%82%AB%E3%83%AA%E3%83%95%E3%82%A9%E3%83%AB%E3%83%8B%E3%82%A2%E3%83%AC%E3%83%BC%E3%82%BA%E3%83%B3%20500g&tag=kaimonostd-22",
     driedfruitKyoritsu: "https://www.amazon.co.jp/s?k=%E5%85%B1%E7%AB%8B%E9%A3%9F%E5%93%81%20%E3%83%95%E3%83%AB%E3%83%BC%E3%83%84%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%20330g&tag=kaimonostd-22",
     driedfruitKojimaya: "https://www.amazon.co.jp/s?k=%E5%B0%8F%E5%B3%B6%E5%B1%8B%20%E3%83%89%E3%83%A9%E3%82%A4%E3%83%9E%E3%83%B3%E3%82%B4%E3%83%BC%20%E3%82%BF%E3%82%A4%E7%94%A3%201kg&tag=kaimonostd-22",
-    keyboardHhkb: "https://www.amazon.co.jp/s?k=PFU%20HHKB%20Professional%20HYBRID%20Type-S%20PD-KB800BS&tag=kaimonostd-22",
-    keyboardRealforce: "https://www.amazon.co.jp/s?k=%E6%9D%B1%E3%83%97%E3%83%AC%20REALFORCE%20R3S%20R3SC11&tag=kaimonostd-22",
-    keyboardLogicool: "https://www.amazon.co.jp/s?k=%E3%83%AD%E3%82%B8%E3%82%AF%E3%83%BC%E3%83%AB%20MX%20MECHANICAL%20MINI%20KX850&tag=kaimonostd-22",
+    keyboardHhkb: "https://www.amazon.co.jp/dp/B082TYNNL2/?tag=kaimonostd-22",
+    keyboardRealforce: "https://www.amazon.co.jp/dp/B0B3QGNT7K/?tag=kaimonostd-22",
+    keyboardLogicool: "https://www.amazon.co.jp/dp/B0B1Q5T5TQ/?tag=kaimonostd-22",
     keyboardKeychron: "https://www.amazon.co.jp/s?k=Keychron%20K8%20Max%20%E6%97%A5%E6%9C%AC%E8%AA%9E%E9%85%8D%E5%88%97&tag=kaimonostd-22",
-    keyboardElecom: "https://www.amazon.co.jp/s?k=%E3%82%A8%E3%83%AC%E3%82%B3%E3%83%A0%20Slint%20TK-TM10BPBK&tag=kaimonostd-22"
+    keyboardElecom: "https://www.amazon.co.jp/dp/B0CTBH89V8/?tag=kaimonostd-22"
   }
 };

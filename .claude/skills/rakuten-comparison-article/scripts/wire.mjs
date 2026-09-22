@@ -43,6 +43,14 @@ if (newAmz.length) {
   if (updated === cfg) fail("config.js の amazonLinks の末尾が見つかりません");
   cfg = updated; writeRepo("config.js", cfg); console.log(`+ config.js amazonLinks: ${newAmz.map((p) => p.key).join(", ")}`);
 } else console.log("= config.js amazonLinks: 登録済み");
+// 2c. 登録済みキーの URL が facts と違えば差し替える（検索リンク → /dp/ASIN への切り替え用）
+const changedAmz = [];
+for (const p of facts.products) {
+  const re = new RegExp(`(\\b${p.key}: )"https://www\\.amazon\\.co\\.jp[^"]*"`);
+  const want = JSON.stringify(amazonUrl(p, true));
+  if (re.test(cfg) && !cfg.includes(`${p.key}: ${want}`)) { cfg = cfg.replace(re, `$1${want}`); changedAmz.push(p.key); }
+}
+if (changedAmz.length) { writeRepo("config.js", cfg); console.log(`~ config.js amazonLinks 更新: ${changedAmz.join(", ")}`); }
 
 // 3. build.mjs / sitemap.xml
 writeRepo("build.mjs", insertOnce(readRepo("build.mjs"), '"electric-kettle-comparison.html", ', `"${slug}.html"`, `"${slug}.html", `, "build.mjs"));
