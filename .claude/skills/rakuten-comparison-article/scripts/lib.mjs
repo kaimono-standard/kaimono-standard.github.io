@@ -7,7 +7,7 @@ export const SKILL_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const REPO_DIR = resolve(SKILL_DIR, "../../..");
 export const UT = "eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D";
 
-export const OFFICIAL_SHOPS = ["panasonic-store", "siroca", "braunhousehold", "bruno-official", "tiger-online", "tiger-official-store", "irisplaza-r", "bellevie-harima", "twinbird", "zojirushi-direct", "thermos-shop", "delonghi", "fujisangyo", "brewmatic-jura", "anker", "machinoomise", "ugreen-gear", "belkin-shop", "elecom", "samsonite", "ace-store", "mujirushi-ryohin", "373shinshu", "kojima-ya", "pokkasapporo", "hario-onlinestore", "asvel", "pfudirect", "realforce", "logicool", "keychron"];
+export const OFFICIAL_SHOPS = ["panasonic-store", "siroca", "braunhousehold", "bruno-official", "tiger-online", "tiger-official-store", "irisplaza-r", "bellevie-harima", "twinbird", "zojirushi-direct", "thermos-shop", "delonghi", "fujisangyo", "brewmatic-jura", "anker", "machinoomise", "ugreen-gear", "belkin-shop", "elecom", "samsonite", "ace-store", "mujirushi-ryohin", "373shinshu", "kojima-ya", "pokkasapporo", "hario-onlinestore", "asvel", "pfudirect", "realforce", "logicool", "keychron", "koizumi-onlineshop"];
 
 export const fail = (message) => { console.error(`✗ ${message}`); process.exit(1); };
 

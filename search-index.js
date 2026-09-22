@@ -2,6 +2,61 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "solo-living-circulator-comparison.html",
+    "type": "商品比較",
+    "category": "季節家電",
+    "updated": "2026-09-23",
+    "title": "一人暮らし向けサーキュレーター5機種を比較。首振り・消費電力・手入れで選ぶ",
+    "summary": "アイリスオーヤマ、山善、コイズミ、無印良品、ドウシシャの一人暮らし向けサーキュレーター5機種を、消費電力・首振り・適用畳数・質量で比較。",
+    "keywords": [
+      "サーキュレーター",
+      "一人暮らし",
+      "DCモーター",
+      "首振り",
+      "静音",
+      "省スペース",
+      "ワンルーム",
+      "空気循環"
+    ],
+    "products": [
+      {
+        "name": "アイリスオーヤマ サーキュレーターアイmini PCF-SM122",
+        "brand": "アイリスオーヤマ IRIS OHYAMA",
+        "model": "PCF-SM122",
+        "anchor": "iris",
+        "note": "幅18×奥行18×高さ25cmとコンパクトで、玄関や下駄箱の上にも置ける吹き下し送風モデル"
+      },
+      {
+        "name": "山善 DCサーキュレーター YAR-ND152",
+        "brand": "山善 YAMAZEN",
+        "model": "YAR-ND152",
+        "anchor": "yamazen",
+        "note": "DCモーター搭載で消費電力15W、風量は7段階で調整できる"
+      },
+      {
+        "name": "コイズミ サーキュレーター KCF-1861",
+        "brand": "コイズミ KOIZUMI 小泉成器",
+        "model": "KCF-1861",
+        "anchor": "koizumi",
+        "note": "DCモーター搭載で10段階の風量調節と、入/切それぞれ1〜6時間のタイマーに対応"
+      },
+      {
+        "name": "無印良品 360度首振り機能付きサーキュレーター6畳 MJ-OCF06",
+        "brand": "無印良品 MUJI 良品計画",
+        "model": "MJ-OCF06",
+        "anchor": "muji",
+        "note": "上下45〜90度・左右90〜360度の自動首振りで、部屋の換気や洗濯物の部屋干しに使える"
+      },
+      {
+        "name": "ドウシシャ 全分解式サーキュレーター FCA-154D",
+        "brand": "ドウシシャ DOSHISHA",
+        "model": "FCA-154D",
+        "anchor": "doshisha",
+        "note": "工具不要でパーツすべてが前側から外れ、分解・組立して水洗いできる"
+      }
+    ]
+  },
+  {
     "url": "dishwasher-safe-tumbler-comparison.html",
     "type": "商品比較",
     "category": "キッチン用品",
