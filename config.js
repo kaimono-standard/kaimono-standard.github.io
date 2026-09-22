@@ -71,7 +71,12 @@ window.SITE_CONFIG = {
     trackballKensington: "https://hb.afl.rakuten.co.jp/ichiba/57b73c89.a9ad4f57.57b73c8a.901a6902/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fr-kojima%2F4995364272933%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     trackballElecom: "https://hb.afl.rakuten.co.jp/ichiba/57bc3934.34d6c1df.57bc3935.13a7f756/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felecom%2F4953103308152%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     trackballNakabayashi: "https://hb.afl.rakuten.co.jp/ichiba/57c44fca.c7f74142.57c44fcb.217b7e70/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fp-tano%2F641-8083%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    trackballSanwa: "https://hb.afl.rakuten.co.jp/ichiba/57cb67d9.7e2e1430.57cb67da.9e7ff368/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fesupply%2Fees-ma-tb184bk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    trackballSanwa: "https://hb.afl.rakuten.co.jp/ichiba/57cb67d9.7e2e1430.57cb67da.9e7ff368/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fesupply%2Fees-ma-tb184bk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    tumblerThermos: "https://hb.afl.rakuten.co.jp/ichiba/57b73c89.a9ad4f57.57b73c8a.901a6902/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fr-kojima%2F4562344395724%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    tumblerZojirushi: "https://hb.afl.rakuten.co.jp/ichiba/57b9fe40.3116098f.57b9fe41.218e2a21/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305226631%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    tumblerHario: "https://hb.afl.rakuten.co.jp/ichiba/57cbd516.f361c8fd.57cbd517.dbafac41/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhario-onlinestore%2Fv_30316130304078%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    tumblerStojo: "https://hb.afl.rakuten.co.jp/ichiba/57cbd59b.6816e9bb.57cbd59c.10aecaee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsixem-shop%2F904202%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    tumblerAsvel: "https://hb.afl.rakuten.co.jp/ichiba/57cbd612.51011e34.57cbd613.9f4ae5b8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fasvel%2F3600%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   // Amazon アソシエイト（トラッキングID kaimonostd-22）。ASIN が確定している製品は /dp/<ASIN>/?tag=… に、それ以外は型番の検索結果リンク。
   amazonTag: "kaimonostd-22",
@@ -137,6 +142,11 @@ window.SITE_CONFIG = {
     trackballKensington: "https://www.amazon.co.jp/dp/B0BN8224SY/?tag=kaimonostd-22",
     trackballElecom: "https://www.amazon.co.jp/dp/B0735584RM/?tag=kaimonostd-22",
     trackballNakabayashi: "https://www.amazon.co.jp/s?k=%E3%83%8A%E3%82%AB%E3%83%90%E3%83%A4%E3%82%B7%20Digio2%20%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB%20MUS-TBKF264BK&tag=kaimonostd-22",
-    trackballSanwa: "https://www.amazon.co.jp/dp/B0BNP8L3QZ/?tag=kaimonostd-22"
+    trackballSanwa: "https://www.amazon.co.jp/dp/B0BNP8L3QZ/?tag=kaimonostd-22",
+    tumblerThermos: "https://www.amazon.co.jp/dp/B0CNJWSLV6/?tag=kaimonostd-22",
+    tumblerZojirushi: "https://www.amazon.co.jp/dp/B0CQX7RXP3/?tag=kaimonostd-22",
+    tumblerHario: "https://www.amazon.co.jp/dp/B001O0S89U/?tag=kaimonostd-22",
+    tumblerStojo: "https://www.amazon.co.jp/dp/B08FD94B8Y/?tag=kaimonostd-22",
+    tumblerAsvel: "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%82%B9%E3%83%99%E3%83%AB%20%E3%82%B9%E3%83%86%E3%83%B3%E3%83%AC%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%96%E3%83%A9%E3%83%BC%20TC-430&tag=kaimonostd-22"
   }
 };

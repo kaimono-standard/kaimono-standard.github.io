@@ -2,6 +2,61 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "dishwasher-safe-tumbler-comparison.html",
+    "type": "商品比較",
+    "category": "キッチン用品",
+    "updated": "2026-09-22",
+    "title": "食洗機対応タンブラー5機種を比較。素材・フタ・持ち運びで選ぶ",
+    "summary": "サーモス、象印、HARIO、stojo、アスベルの食洗機対応タンブラー5製品を、素材・容量・フタ・重量で比較。",
+    "keywords": [
+      "タンブラー",
+      "食洗機対応",
+      "ステンレスタンブラー",
+      "真空断熱",
+      "耐熱ガラス",
+      "折りたたみ",
+      "サーモス",
+      "象印"
+    ],
+    "products": [
+      {
+        "name": "サーモス 真空断熱タンブラー JDY-420",
+        "brand": "サーモス THERMOS",
+        "model": "JDY-420",
+        "anchor": "thermos",
+        "note": "ステンレス製魔法びん構造で、結露しにくく外側が熱くなりにくい"
+      },
+      {
+        "name": "象印 ステンレス キャリータンブラー SX-JS40",
+        "brand": "象印 象印マホービン ZOJIRUSHI",
+        "model": "SX-JS40",
+        "anchor": "zojirushi",
+        "note": "せんとパッキンがひとつになった「シームレスせん」を採用し、パッキンの付け外しが不要"
+      },
+      {
+        "name": "HARIO 耐熱タンブラー420 HPG-420",
+        "brand": "HARIO ハリオ",
+        "model": "HPG-420",
+        "anchor": "hario",
+        "note": "国内工場で生産した耐熱ガラス「HARIO Glass®」製の日本製タンブラー"
+      },
+      {
+        "name": "stojo ビギー 470ml（BIGGIE）",
+        "brand": "stojo ストージョ",
+        "model": "BIGGIE 470ml",
+        "anchor": "stojo",
+        "note": "折りたたむと高さ約5.6cmになるシリコーン製のカップ"
+      },
+      {
+        "name": "アスベル ステンレスタンブラー TC-430",
+        "brand": "アスベル ASVEL",
+        "model": "A3600",
+        "anchor": "asvel",
+        "note": "真空断熱のステンレスタンブラーで、内面はセラミック塗装"
+      }
+    ]
+  },
+  {
     "url": "trackball-comparison.html",
     "type": "商品比較",
     "category": "PC周辺機器",
