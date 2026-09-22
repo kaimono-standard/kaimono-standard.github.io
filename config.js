@@ -81,7 +81,9 @@ window.SITE_CONFIG = {
     circulatorYamazen: "https://hb.afl.rakuten.co.jp/ichiba/57cdeb01.5a01085d.57cdeb02.df5fb24c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fworld-depo%2Fm-ctco-84744%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     circulatorKoizumi: "https://hb.afl.rakuten.co.jp/ichiba/57cdecd7.ceb23d52.57cdecd8.4561d71a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkoizumi-onlineshop%2Fkcf-1841%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     circulatorMuji: "https://hb.afl.rakuten.co.jp/ichiba/57bc63af.a6736c7f.57bc63b0.36886b5c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujirushi-ryohin%2F4550583903725%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    circulatorDoshisha: "https://hb.afl.rakuten.co.jp/ichiba/57cdee98.34c7447a.57cdee99.d01d6f05/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhanamaruryohin%2F20260720224610_240%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    circulatorDoshisha: "https://hb.afl.rakuten.co.jp/ichiba/57cdee98.34c7447a.57cdee99.d01d6f05/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhanamaruryohin%2F20260720224610_240%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    libertyPro5: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fd1203%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    libertyPro4: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3954%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   // Amazon アソシエイト（トラッキングID kaimonostd-22）。ASIN が確定している製品は /dp/<ASIN>/?tag=… に、それ以外は型番の検索結果リンク。
   amazonTag: "kaimonostd-22",
@@ -157,6 +159,8 @@ window.SITE_CONFIG = {
     circulatorYamazen: "https://www.amazon.co.jp/s?k=%E5%B1%B1%E5%96%84%20DC%E3%82%B5%E3%83%BC%E3%82%AD%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%20YAR-ND152&tag=kaimonostd-22",
     circulatorKoizumi: "https://www.amazon.co.jp/dp/B0GTPGRVKY/?tag=kaimonostd-22",
     circulatorMuji: "https://www.amazon.co.jp/dp/B0D4M85Y4R/?tag=kaimonostd-22",
-    circulatorDoshisha: "https://www.amazon.co.jp/dp/B0DZNV23DS/?tag=kaimonostd-22"
+    circulatorDoshisha: "https://www.amazon.co.jp/dp/B0DZNV23DS/?tag=kaimonostd-22",
+    libertyPro5: "https://www.amazon.co.jp/dp/B0GK1QFGF6/?tag=kaimonostd-22",
+    libertyPro4: "https://www.amazon.co.jp/dp/B0D7ZLPSJG/?tag=kaimonostd-22"
   }
 };

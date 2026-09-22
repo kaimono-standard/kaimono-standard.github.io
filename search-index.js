@@ -2,6 +2,43 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "anker-liberty-5-pro-liberty-4-pro-difference.html",
+    "type": "新旧比較",
+    "category": "イヤホン・オーディオ",
+    "updated": "2026-09-23",
+    "title": "Anker Soundcore Liberty 5 ProとLiberty 4 Proの違い。マルチポイント・ノイズキャンセリングで選ぶ",
+    "summary": "Ankerの完全ワイヤレスイヤホンLiberty 5 Proと、ひとつ前のモデルLiberty 4 Proの違いを、ノイズキャンセリング、マルチポイント接続、再生時間、重さで比較。",
+    "keywords": [
+      "ワイヤレスイヤホン",
+      "完全ワイヤレスイヤホン",
+      "ノイズキャンセリング",
+      "Liberty 5 Pro",
+      "Liberty 4 Pro",
+      "違い",
+      "型落ち",
+      "LDAC",
+      "マルチポイント",
+      "Anker",
+      "Soundcore"
+    ],
+    "products": [
+      {
+        "name": "Anker Soundcore Liberty 5 Pro",
+        "brand": "Anker アンカー Soundcore サウンドコア",
+        "model": "Liberty 5 Pro",
+        "anchor": "new",
+        "note": "Anker独自開発のAIチップ「Thus」を搭載し、メーカーによると従来モデル（Liberty 4 Pro）の約2倍のノイズ低減"
+      },
+      {
+        "name": "Anker Soundcore Liberty 4 Pro",
+        "brand": "Anker アンカー Soundcore サウンドコア",
+        "model": "Liberty 4 Pro",
+        "anchor": "old",
+        "note": "10.5mmの低音域用と4.6mmの中高音域用の2基のドライバーを搭載"
+      }
+    ]
+  },
+  {
     "url": "solo-living-circulator-comparison.html",
     "type": "商品比較",
     "category": "季節家電",
