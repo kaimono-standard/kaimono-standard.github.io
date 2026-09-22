@@ -112,6 +112,10 @@ node .claude/skills/rakuten-comparison-article/scripts/codex-draft.mjs _drafts/<
 
 「製品ブロック 5 / 出典リンク 5 / プレースホルダ 30」になっていること。
 
+## 記事の型について
+
+`facts.json` に `"article_type": "version"` があれば新旧比較（製品2つ）。完成例は `assets/exemplar-version.tpl.html`、ルールは `references/editorial-rules-version.md`、台帳の項目は `references/fact-sheet.md` の「新旧比較」。スクリプトは型を見て製品数・完成例・検査を切り替えるので、手順は同じ。
+
 ## 5. プレビューを作る（サイトにはまだ配線しない）
 
 ```bash
