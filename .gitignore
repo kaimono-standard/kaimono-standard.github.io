@@ -7,3 +7,5 @@ Thumbs.db
 !.env.example
 _drafts/
 _editorial/
+_secrets/
+_reports/

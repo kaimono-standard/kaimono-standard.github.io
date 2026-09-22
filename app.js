@@ -1,5 +1,9 @@
 (function () {
   const config = window.SITE_CONFIG || { affiliateLinks: {} };
+  // アクセス解析（GA4）が読み込まれているときだけ送る。商品リンクのクリックは店・製品キーつきの affiliate_click にまとめる
+  const track = (name, params) => {
+    if (typeof window.gtag === "function") window.gtag("event", name, { ...params, page_path: location.pathname });
+  };
   const yen = (value) => Math.max(0, Math.round(value || 0)).toLocaleString("ja-JP") + "円";
   document.querySelectorAll("[data-updated]").forEach((el) => { el.textContent = config.updatedAt || "2026-09-20"; });
   document.querySelectorAll("[data-affiliate]").forEach((link) => {
@@ -8,22 +12,14 @@
     link.href = affiliateUrl || link.dataset.fallback || "https://rakuyoko.rakuten.co.jp/";
     link.dataset.linkStatus = affiliateUrl ? "affiliate" : "direct";
     if (!affiliateUrl) link.title = "現在は通常リンクです";
-    link.addEventListener("click", () => {
-      const eventName = `outbound_${key}`;
-      if (typeof window.gtag === "function") window.gtag("event", eventName);
-      if (typeof window.plausible === "function") window.plausible(eventName, { props: { page: location.pathname } });
-    });
+    link.addEventListener("click", () => track("affiliate_click", { store: "rakuten", item: key, link_status: link.dataset.linkStatus }));
   });
   document.querySelectorAll("[data-amazon]").forEach((link) => {
     const key = link.dataset.amazon;
     const amazonUrl = config.amazonLinks?.[key];
     link.href = amazonUrl || link.dataset.fallback || "https://www.amazon.co.jp/";
     link.dataset.linkStatus = amazonUrl ? "affiliate" : "direct";
-    link.addEventListener("click", () => {
-      const eventName = `outbound_amazon_${key}`;
-      if (typeof window.gtag === "function") window.gtag("event", eventName);
-      if (typeof window.plausible === "function") window.plausible(eventName, { props: { page: location.pathname } });
-    });
+    link.addEventListener("click", () => track("affiliate_click", { store: "amazon", item: key, link_status: link.dataset.linkStatus }));
   });
   document.querySelectorAll("[data-basket-calculator]").forEach((form) => {
     const result = form.querySelector("[data-basket-result]");

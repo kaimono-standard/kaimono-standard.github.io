@@ -31,6 +31,7 @@ jobs:
           SITE_URL: https://kaimono-standard.echoant.com
           CONTACT_URL: https://github.com/kaimono-standard/kaimono-standard.github.io/issues
           RAKUYOKO_AFFILIATE_HOME_URL: ${{ secrets.RAKUYOKO_AFFILIATE_HOME_URL }}
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
       - uses: actions/configure-pages@v5
         with:
           enablement: true
