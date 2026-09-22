@@ -105,7 +105,7 @@ const generatedAt = new Date().toISOString();
 const report = { generated_at: generatedAt, days, ga4, gsc };
 
 const md = [
-  `# 閲覧データ（直近${days}日、${generatedAt.slice(0, 10)} 取得）`, "",
+  `# 閲覧データ（直近${days}日、${new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" })} 取得）`, "",
   "## GA4 合計", ga4.error ? `（${ga4.error}）\n` : table(ga4.totals, ["activeUsers", "sessions", "screenPageViews", "engagementRate"]),
   "## よく読まれたページ", ga4.error ? "" : table(ga4.pages, ["pagePath", "screenPageViews", "activeUsers", "userEngagementDuration"]),
   "## 流入元", ga4.error ? "" : table(ga4.channels, ["sessionDefaultChannelGroup", "sessions", "activeUsers"]),
@@ -118,7 +118,7 @@ const md = [
 
 const outDir = resolve(REPO_DIR, "_reports");
 mkdirSync(outDir, { recursive: true });
-const stamp = generatedAt.slice(0, 10);
+const stamp = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" }); // 日本時間の日付
 writeFileSync(resolve(outDir, `analytics-${stamp}.json`), JSON.stringify(report, null, 2) + "\n", "utf8");
 writeFileSync(resolve(outDir, `analytics-${stamp}.md`), md + "\n", "utf8");
 console.log(md);
