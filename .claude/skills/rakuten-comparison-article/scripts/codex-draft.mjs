@@ -4,6 +4,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { REPO_DIR, SKILL_DIR, draftDir, fail, hasLink, readFacts } from "./lib.mjs";
+import { bylineHtml, editorById } from "./editors.mjs";
 
 const dir = draftDir(process.argv[2]);
 const modelFlag = process.argv.indexOf("--model") > -1 ? ["-m", process.argv[process.argv.indexOf("--model") + 1]] : [];
@@ -15,14 +16,26 @@ if (ready.length !== 5) fail(`公式URL・specs・rakuten が揃っていない�
 
 const rules = readFileSync(resolve(SKILL_DIR, "references/editorial-rules.md"), "utf8");
 const exemplar = readFileSync(resolve(SKILL_DIR, "assets/exemplar.tpl.html"), "utf8");
+if (!facts.editor) fail("facts.json に editor（編集者 id）がありません。node editors.mjs list で候補を確認する");
+const { editor, hardLines } = editorById(facts.editor);
+const [y, m, d] = facts.date.split("-").map(Number);
+const byline = bylineHtml(editor, `${y}年${m}月${d}日`);
 const related = facts.related || ["electric-kettle-comparison.html|電気ケトル5機種を比較", "oven-toaster-comparison.html|オーブントースター5機種を比較"];
 
-const prompt = `あなたは「買いもの標準」編集部の執筆者です。次の台帳（facts.json）だけを根拠に、完成例と同じ構成・同じクラス名・同じ粒度で、商品比較記事のHTMLテンプレートを1本書いてください。
+const prompt = `あなたは「買いもの標準」編集部の執筆者「${editor.public.name}」です。下の「執筆者の視点と文体」の人物として、次の台帳（facts.json）だけを根拠に、完成例と同じ構成・同じクラス名・同じ粒度で、商品比較記事のHTMLテンプレートを1本書いてください。
 
 出力はHTML全文のみ（<!doctype html> から </html> まで）。コードフェンスや前置き・後書きは不要です。ファイルには書き込まず、最終メッセージとして返してください。
 
 # 編集ルール
 ${rules}
+
+# 執筆者の視点と文体
+この記事は ${editor.public.name} が書く。完成例（別の執筆者の記事）の文体はまねず、構成・クラス名・プレースホルダだけを踏襲する。視点は「何を先に確認するか」「どんな生活の場面で使うか」で出し、使った・試したという体験は書かない。
+\`\`\`json
+${JSON.stringify({ public: editor.public, internal: editor.internal }, null, 2)}
+\`\`\`
+全執筆者に共通の決まり:
+${hardLines.map((l) => `- ${l}`).join("\n")}
 
 # 完成例（オーブントースター記事のテンプレート。構成・クラス名・プレースホルダの使い方をこのまま踏襲する）
 \`\`\`html
@@ -35,6 +48,8 @@ ${JSON.stringify(facts, null, 2)}
 \`\`\`
 
 # 追加指示
+- 署名は次のHTMLをそのまま使う: ${byline}
+- Article の JSON-LD の author は {"@type":"Person","name":"${editor.public.name}","url":"https://kaimono-standard.echoant.com/editors.html#${editor.id}"}
 - canonical / og:url は https://kaimono-standard.echoant.com/${facts.slug}.html
 - datePublished / dateModified / 署名の日付 / 「確認日」は ${facts.date}
 - サイドバー「関連する比較」は次の2本: ${related.map((r) => r.split("|").join(" → ")).join(" / ")}

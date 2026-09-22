@@ -1047,3 +1047,20 @@ body:not(.review-page):not(.directory-page) .footer-title { font-family: inherit
   body:not(.review-page):not(.directory-page) .commerce-hero-board { min-height: 340px; }
   body:not(.review-page):not(.directory-page) .commerce-item { width: auto; margin-left: 0; }
 }
+
+/* 執筆者（editors.html と記事の署名） */
+.review-avatar.ed-riko { background: #c0587a; }
+.review-avatar.ed-mayu { background: #7a6aa8; }
+.review-avatar.ed-kei { background: #3f5a78; }
+.review-avatar.ed-nao { background: #5b7a4a; }
+.review-avatar.ed-yu { background: #3f7d7a; }
+.review-avatar.ed-mie { background: #a0703a; }
+.review-avatar.ed-haruto { background: #b0654a; }
+.review-avatar.ed-kazu { background: #44546e; }
+.editor-card { scroll-margin-top: 90px; }
+.editor-head { display: flex; gap: 14px; align-items: center; margin-bottom: 12px; }
+.editor-head .review-avatar { width: 48px; height: 48px; font-size: 1.1rem; flex: none; }
+.editor-head h3 { margin: 0; }
+.editor-tagline { margin: 4px 0 0; font-size: .85rem; }
+.editor-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+.editor-topics li { padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: .75rem; color: var(--ink-soft); }

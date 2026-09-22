@@ -83,3 +83,8 @@
 ## 最上級表現の扱い
 
 「最軽量」「最も高価」「唯一」は、比較表の数値から機械的に導ける場合だけ台帳に `caution_hint` や `features` として書く。同値があるなら「象印と並んで最も重い」のように併記する。Codex が独自に最上級を作らないよう、`editorial-rules.md` でも禁じている。
+
+## editor（担当執筆者）
+
+トップレベルに `"editor": "<id>"` を置く。id は `_editorial/editors.json` の `editors[].id`。`codex-draft.mjs` はこの人物の視点・文体・署名で下書きを書かせ、未設定なら止まる。
+
