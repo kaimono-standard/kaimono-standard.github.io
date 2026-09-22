@@ -2,6 +2,44 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "anker-liberty-5-liberty-4-difference.html",
+    "type": "新旧比較",
+    "category": "イヤホン・オーディオ",
+    "updated": "2026-09-23",
+    "title": "Anker Liberty 5とLiberty 4の違い。再生時間・防塵防水で選ぶ",
+    "summary": "Ankerの完全ワイヤレスイヤホンLiberty 5と、ひとつ前のモデルLiberty 4の違いを、再生時間、防塵・防水規格、ドライバー、充電時間で比較。",
+    "keywords": [
+      "ワイヤレスイヤホン",
+      "完全ワイヤレスイヤホン",
+      "ノイズキャンセリング",
+      "Liberty 5",
+      "Liberty 4",
+      "違い",
+      "型落ち",
+      "LDAC",
+      "防水",
+      "Anker",
+      "Soundcore",
+      "コスパ"
+    ],
+    "products": [
+      {
+        "name": "Anker Soundcore Liberty 5",
+        "brand": "Anker アンカー Soundcore サウンドコア",
+        "model": "Liberty 5",
+        "anchor": "new",
+        "note": "Soundcoreの完全ワイヤレスイヤホンとして初めてDolby Audioに対応"
+      },
+      {
+        "name": "Anker Soundcore Liberty 4",
+        "brand": "Anker アンカー Soundcore サウンドコア",
+        "model": "Liberty 4",
+        "anchor": "old",
+        "note": "心拍モニタリング、ストレスチェック、姿勢リマインダー、ワークアウト機能などのヘルスモニタリング機能を搭載（Soundcoreアプリで確認）"
+      }
+    ]
+  },
+  {
     "url": "logicool-mx-master-4-mx-master-3s-difference.html",
     "type": "新旧比較",
     "category": "PC周辺機器",

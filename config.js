@@ -85,7 +85,9 @@ window.SITE_CONFIG = {
     libertyPro5: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fd1203%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     libertyPro4: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3954%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     mxMaster4: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fmx2400gr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    mxMaster3s: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fmx2300cr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    mxMaster3s: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fmx2300cr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    liberty5: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3957%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    liberty4: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3953%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   // Amazon アソシエイト（トラッキングID kaimonostd-22）。ASIN が確定している製品は /dp/<ASIN>/?tag=… に、それ以外は型番の検索結果リンク。
   amazonTag: "kaimonostd-22",
@@ -165,6 +167,8 @@ window.SITE_CONFIG = {
     libertyPro5: "https://www.amazon.co.jp/dp/B0GK1QFGF6/?tag=kaimonostd-22",
     libertyPro4: "https://www.amazon.co.jp/dp/B0D7ZLPSJG/?tag=kaimonostd-22",
     mxMaster4: "https://www.amazon.co.jp/dp/B0FR8M3WS8/?tag=kaimonostd-22",
-    mxMaster3s: "https://www.amazon.co.jp/dp/B0FR8BMDG1/?tag=kaimonostd-22"
+    mxMaster3s: "https://www.amazon.co.jp/dp/B0FR8BMDG1/?tag=kaimonostd-22",
+    liberty5: "https://www.amazon.co.jp/dp/B0DRVB48LJ/?tag=kaimonostd-22",
+    liberty4: "https://www.amazon.co.jp/dp/B0BB1PFCS3/?tag=kaimonostd-22"
   }
 };
