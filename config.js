@@ -87,7 +87,12 @@ window.SITE_CONFIG = {
     mxMaster4: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fmx2400gr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     mxMaster3s: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fmx2300cr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     liberty5: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3957%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    liberty4: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3953%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    liberty4: "https://hb.afl.rakuten.co.jp/ichiba/57bc386f.905fc2b7.57bc3870.fac14a6e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3953%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    proteinSavas: "https://hb.afl.rakuten.co.jp/ichiba/57c44fca.c7f74142.57c44fcb.217b7e70/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fp-tano%2F666-4565%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    proteinDns: "https://hb.afl.rakuten.co.jp/ichiba/57d1dd7c.bf52b64d.57d1dd7d.c6719cf6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdnsshop%2Fwheyprotein100-plain%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    proteinBelegend: "https://hb.afl.rakuten.co.jp/ichiba/57d1e013.9a50995c.57d1e014.698effa4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frealstyle4u%2Fblp-s%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    proteinXplosion: "https://hb.afl.rakuten.co.jp/ichiba/57d1e0ce.ce8be438.57d1e0cf.2883a190/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fx-plosion%2F10000019%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    proteinGrong: "https://hb.afl.rakuten.co.jp/ichiba/57d1e25a.88eb4910.57d1e25b.a118fedb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgrong%2Fgrong-596%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   // Amazon アソシエイト（トラッキングID kaimonostd-22）。ASIN が確定している製品は /dp/<ASIN>/?tag=… に、それ以外は型番の検索結果リンク。
   amazonTag: "kaimonostd-22",
@@ -169,6 +174,11 @@ window.SITE_CONFIG = {
     mxMaster4: "https://www.amazon.co.jp/dp/B0FR8M3WS8/?tag=kaimonostd-22",
     mxMaster3s: "https://www.amazon.co.jp/dp/B0FR8BMDG1/?tag=kaimonostd-22",
     liberty5: "https://www.amazon.co.jp/dp/B0DRVB48LJ/?tag=kaimonostd-22",
-    liberty4: "https://www.amazon.co.jp/dp/B0BB1PFCS3/?tag=kaimonostd-22"
+    liberty4: "https://www.amazon.co.jp/dp/B0BB1PFCS3/?tag=kaimonostd-22",
+    proteinSavas: "https://www.amazon.co.jp/s?k=%E3%82%B6%E3%83%90%E3%82%B9%20%E3%83%9B%E3%82%A8%E3%82%A4%E3%83%97%E3%83%AD%E3%83%86%E3%82%A4%E3%83%B3100%20%E3%83%AA%E3%83%83%E3%83%81%E3%82%B7%E3%83%A7%E3%82%B3%E3%83%A9%E5%91%B3%20980g&tag=kaimonostd-22",
+    proteinDns: "https://www.amazon.co.jp/dp/B0BVYV5F8Z/?tag=kaimonostd-22",
+    proteinBelegend: "https://www.amazon.co.jp/dp/B0GRGTGKFD/?tag=kaimonostd-22",
+    proteinXplosion: "https://www.amazon.co.jp/dp/B06Y69FKT2/?tag=kaimonostd-22",
+    proteinGrong: "https://www.amazon.co.jp/dp/B0B2K2PX5K/?tag=kaimonostd-22"
   }
 };
