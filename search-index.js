@@ -2,6 +2,65 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "steam-humidifier-comparison.html",
+    "type": "商品比較",
+    "category": "季節家電",
+    "updated": "2026-09-23",
+    "title": "スチーム式加湿器5機種を比較。加湿量・連続加湿時間・消費電力で選ぶ",
+    "summary": "象印、アラジン、スリーアップ、アイリスオーヤマ、山善のスチーム式加湿器5機種を、加湿量・タンク容量・連続加湿時間・消費電力・適用床面積で比較。",
+    "keywords": [
+      "加湿器",
+      "スチーム式",
+      "加熱式",
+      "スチーム式加湿器",
+      "消費電力",
+      "電気代",
+      "象印",
+      "アラジン",
+      "アイリスオーヤマ",
+      "山善",
+      "スリーアップ",
+      "タンク容量"
+    ],
+    "products": [
+      {
+        "name": "象印 スチーム式加湿器 EE-DG50",
+        "brand": "象印 象印マホービン ZOJIRUSHI",
+        "model": "EE-DG50",
+        "anchor": "zojirushi",
+        "note": "フィルターがなく、フッ素加工の広口容器（公式の特長）"
+      },
+      {
+        "name": "アラジン スチーム式加湿器 AHF-60A",
+        "brand": "アラジン Aladdin 日本エー・アイ・シー",
+        "model": "AHF-60A",
+        "anchor": "aladdin",
+        "note": "運転音は約24dB（最大）と公式の仕様に記載"
+      },
+      {
+        "name": "スリーアップ 多機能スチーム加湿器 スチームポット 3L ST-T2370",
+        "brand": "スリーアップ three-up Three-up",
+        "model": "ST-T2370",
+        "anchor": "threeup",
+        "note": "湿度設定 40〜75%（5%単位）"
+      },
+      {
+        "name": "アイリスオーヤマ スチーム式加湿器 400ml AHM-MHU40A",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "AHM-MHU40A",
+        "anchor": "iris",
+        "note": "上から給水とバケツ式タンクの2WAY仕様（公式の商品仕様）"
+      },
+      {
+        "name": "山善 スチーム式加湿器 KS-AA31",
+        "brand": "山善 YAMAZEN",
+        "model": "KS-AA31",
+        "anchor": "yamazen",
+        "note": "ふたを開けずに上から給水できる。水タンクは取り外し可能（公式の特長）"
+      }
+    ]
+  },
+  {
     "url": "sony-wh-ch730n-wh-ch720n-difference.html",
     "type": "新旧比較",
     "category": "イヤホン・オーディオ",
