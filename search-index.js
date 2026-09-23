@@ -2,6 +2,65 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "futon-dryer-comparison.html",
+    "type": "商品比較",
+    "category": "季節家電",
+    "updated": "2026-09-23",
+    "title": "布団乾燥機5機種を比較。乾燥時間・対応する布団・くつ乾燥で選ぶ",
+    "summary": "アイリスオーヤマ、象印、日立、cado、パナソニックの布団乾燥機5機種を、乾燥時間・消費電力・対応する布団・くつ乾燥・サイズで比較。",
+    "keywords": [
+      "布団乾燥機",
+      "ふとん乾燥機",
+      "マットなし",
+      "ダブル",
+      "2組",
+      "くつ乾燥",
+      "消費電力",
+      "アイリスオーヤマ",
+      "象印",
+      "日立",
+      "cado",
+      "パナソニック"
+    ],
+    "products": [
+      {
+        "name": "アイリスオーヤマ ふとん乾燥機 カラリエmini TURBO ツインノズル BSK-210-W",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス カラリエ",
+        "model": "BSK-210-W",
+        "anchor": "iris",
+        "note": "ホース2本のツインノズル（フラップ付きの立体ノズル）"
+      },
+      {
+        "name": "象印 ふとん乾燥機 スマートドライ RF-UA10",
+        "brand": "象印 象印マホービン ZOJIRUSHI",
+        "model": "RF-UA10",
+        "anchor": "zojirushi",
+        "note": "マットもホースも不要。本体の折りたたみ式ノズルを開いて置く"
+      },
+      {
+        "name": "日立 ふとん乾燥機 アッとドライ HFK-CV1B",
+        "brand": "日立 HITACHI アッとドライ",
+        "model": "HFK-CV1B",
+        "anchor": "hitachi",
+        "note": "ホースとV字型の「ふとん乾燥アタッチメント」で乾かす"
+      },
+      {
+        "name": "cado ふとん乾燥機 FOEHN 003 FEN-003-DG",
+        "brand": "cado カドー",
+        "model": "FEN-003",
+        "anchor": "cado",
+        "note": "スティック形状で、本体ごとふとんに挿し込む"
+      },
+      {
+        "name": "パナソニック ふとん乾燥機 FD-F06X2",
+        "brand": "パナソニック Panasonic",
+        "model": "FD-F06X2",
+        "anchor": "panasonic",
+        "note": "ナノイーで枕を脱臭（20分以上運転）"
+      }
+    ]
+  },
+  {
     "url": "led-ceiling-light-8jo-comparison.html",
     "type": "商品比較",
     "category": "照明",
