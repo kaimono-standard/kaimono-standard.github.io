@@ -2,6 +2,41 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "sony-wh-ch730n-wh-ch720n-difference.html",
+    "type": "新旧比較",
+    "category": "イヤホン・オーディオ",
+    "updated": "2026-09-23",
+    "title": "ソニー WH-CH730NとWH-CH720Nの違い。再生時間・重さで選ぶ",
+    "summary": "ソニーのワイヤレスヘッドホンWH-CH730Nと、ひとつ前のモデルWH-CH720Nを、折りたたみ、再生時間、質量、付属品で比較。",
+    "keywords": [
+      "ワイヤレスヘッドホン",
+      "ノイズキャンセリング",
+      "WH-CH730N",
+      "WH-CH720N",
+      "違い",
+      "型落ち",
+      "折りたたみ",
+      "ソニー",
+      "SONY"
+    ],
+    "products": [
+      {
+        "name": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WH-CH730N",
+        "brand": "ソニー SONY",
+        "model": "WH-CH730N",
+        "anchor": "new",
+        "note": "ソニーのニュースリリースでは「新たに折りたたみ機構を採用し携帯性を高めています」と説明されている"
+      },
+      {
+        "name": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WH-CH720N",
+        "brand": "ソニー SONY",
+        "model": "WH-CH720N",
+        "anchor": "old",
+        "note": "1000Xシリーズと同様の統合プロセッサーV1を搭載（公式の特長ページ）"
+      }
+    ]
+  },
+  {
     "url": "snack-nuts-comparison.html",
     "type": "商品比較",
     "category": "食品",

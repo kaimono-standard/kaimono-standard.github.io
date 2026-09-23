@@ -97,7 +97,9 @@ window.SITE_CONFIG = {
     nutsTons: "https://hb.afl.rakuten.co.jp/ichiba/57d20fd7.b7959214.57d20fd8.153fcf26/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsg-line%2Ftoyonuts-suyakimixnuts%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     nutsKojimaya: "https://hb.afl.rakuten.co.jp/ichiba/57c45482.ea83314b.57c45483.7e51bc0b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkojima-ya%2F383764%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     nutsOkfruits: "https://hb.afl.rakuten.co.jp/ichiba/57d20f55.e6fa4de5.57d20f56.fc95cf6b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fokfruits%2Fnut-086%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    nutsKinomiya: "https://hb.afl.rakuten.co.jp/ichiba/57d20fa5.c5860b03.57d20fa6.3b4dfd71/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkinomiyahompo%2F1163875%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    nutsKinomiya: "https://hb.afl.rakuten.co.jp/ichiba/57d20fa5.c5860b03.57d20fa6.3b4dfd71/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkinomiyahompo%2F1163875%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    whch730n: "https://hb.afl.rakuten.co.jp/ichiba/57cb64a5.a0aefb9d.57cb64a6.1280b3a3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736179714%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    whch720n: "https://hb.afl.rakuten.co.jp/ichiba/57cb64a5.a0aefb9d.57cb64a6.1280b3a3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736142411%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   // Amazon アソシエイト（トラッキングID kaimonostd-22）。ASIN が確定している製品は /dp/<ASIN>/?tag=… に、それ以外は型番の検索結果リンク。
   amazonTag: "kaimonostd-22",
@@ -189,6 +191,8 @@ window.SITE_CONFIG = {
     nutsTons: "https://www.amazon.co.jp/dp/B017LW6HNI/?tag=kaimonostd-22",
     nutsKojimaya: "https://www.amazon.co.jp/dp/B006D87AOM/?tag=kaimonostd-22",
     nutsOkfruits: "https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%BC%E3%82%B1%E3%83%BC%E3%83%95%E3%83%AB%E3%83%BC%E3%83%84%20%E7%B4%A0%E7%84%BC%E3%81%8D%E3%81%8F%E3%82%8B%E3%81%BF%20%E7%84%A1%E5%A1%A9%201kg&tag=kaimonostd-22",
-    nutsKinomiya: "https://www.amazon.co.jp/s?k=%E3%81%8D%E3%81%AE%E3%81%BF%E5%B1%8B%E6%9C%AC%E8%88%97%20%E7%B4%A0%E7%84%BC%E3%81%8D%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8A%E3%83%83%E3%83%84%203%E7%A8%AE%201kg&tag=kaimonostd-22"
+    nutsKinomiya: "https://www.amazon.co.jp/s?k=%E3%81%8D%E3%81%AE%E3%81%BF%E5%B1%8B%E6%9C%AC%E8%88%97%20%E7%B4%A0%E7%84%BC%E3%81%8D%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8A%E3%83%83%E3%83%84%203%E7%A8%AE%201kg&tag=kaimonostd-22",
+    whch730n: "https://www.amazon.co.jp/dp/B0HGL62XSW/?tag=kaimonostd-22",
+    whch720n: "https://www.amazon.co.jp/s?k=%E3%82%BD%E3%83%8B%E3%83%BC%20WH-CH720N&tag=kaimonostd-22"
   }
 };
