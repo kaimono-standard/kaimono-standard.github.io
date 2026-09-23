@@ -88,7 +88,7 @@ node .claude/skills/article-ideas/scripts/codex-review.mjs _ideas/<YYYY-MM-DD> -
 - 最終案の中で**ジャンルが3つ以上**に分かれる。**型**は新旧比較が1本以上入るなら入れる。**担当執筆者**は同じ人が3本を超えない
 - 最終案の少なくとも2本は、既存記事と関係のないジャンルから選ぶ
 
-`_ideas/<YYYY-MM-DD>/ideas.md` に、`references/review-rubric.md` の「最終案の書き方」の形で書き出し、ユーザーに見せる。ユーザーが選んだ案は、`rakuten-comparison-article` スキルでそのまま記事にする（型・担当・候補製品・注意点を引き継ぐ）。
+`_ideas/<YYYY-MM-DD>/ideas.md` に、`references/review-rubric.md` の「最終案の書き方」の形で書き出し、ユーザーに見せる。ユーザーが選んだ案は、`rakuten-comparison-article` スキルでそのまま記事にする（型・担当・候補製品・注意点を引き継ぐ）。複数本を順番に作るときは `article-series` スキルでキューにして回す。
 
 ## やってはいけないこと
 

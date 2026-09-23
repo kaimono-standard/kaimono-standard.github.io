@@ -7,7 +7,8 @@ import { REPO_DIR, draftDir, fail, readFacts } from "./lib.mjs";
 
 const dir = draftDir(process.argv[2]);
 const modelFlag = process.argv.indexOf("--model") > -1 ? ["-m", process.argv[process.argv.indexOf("--model") + 1]] : [];
-const facts = readFacts(dir);
+// brief（企画メモ）は書き方の方針で、事実の根拠ではないので照合に渡さない
+const { brief: _brief, ...facts } = readFacts(dir);
 // --preview: 公開前の下書き（_drafts/<slug>/preview.html）を照合する
 const articlePath = process.argv.includes("--preview") ? resolve(dir, "preview.html") : resolve(REPO_DIR, `${facts.slug}.html`);
 if (!existsSync(articlePath)) fail(`${articlePath} がありません（wire.mjs を先に実行）`);
@@ -54,7 +55,8 @@ const prompt = `あなたは事実確認担当です。次の記事本文（HTML
   - 台帳の date … 楽天市場で画像・価格・販売リンクを確認した日（「〇年〇月〇日に楽天市場で確認」「確認日」）であり、記事に記載する公開・更新日（署名の「公開・更新」、JSON-LD の datePublished / dateModified）でもある
   - rakuten.shop_is_official が true … その店が公式楽天市場店であること（「〇〇公式楽天市場店で見る」）
   - rakuten.item / rakuten.thumb … 画像と販売リンクが楽天市場の商品ページのものであること、その商品が楽天市場で販売されていること
-  - successor_evidence（新旧比較のみ）… 新型がその旧型の後継・ひとつ前のモデルであること
+  - context_facts … 記事の背景になる公的な事実（官公庁・業界団体・メーカーの説明ページ。各項目に url と quote がある）。quote の範囲で書いた記述は OK。quote を超える言い切り（「今の蛍光灯がすぐ使えなくなる」など）は NG（high）
+  - successor_evidence（新旧比較のみ）… 新型がその旧型の後継・ひとつ前のモデルであること。ただし kind が "media" のときは、メーカーが後継と発表・案内・位置づけしたと読める記述（「メーカーは後継としている」など）は NG（high）
   - editorial-rules で決まっている定型文（広告表記、出典欄の「製品仕様はメーカー公式ページ、商品画像・価格・販売リンクは楽天市場で…確認しました」、ヒーロー画像のキャプション、「Amazonの価格は各製品のAmazonのページで確認してください」）
 - 文体・構成の好みは対象外。事実性だけを見る
 

@@ -31,7 +31,7 @@ description: 買いもの標準（このリポジトリ）に楽天市場・Amaz
 | 5機種比較（既定） | `comparison`（省略可） | 5 | 「○○ おすすめ」「○○ 比較」で探す人 | `assets/exemplar.tpl.html`、`references/editorial-rules.md` |
 | 新旧比較 | `version` | 2（新型・旧型） | 新モデルが出て、型落ちが安く併売されているとき。「A B 違い」「A 型落ち」で探す人 | `assets/exemplar-version.tpl.html`、`references/editorial-rules-version.md` |
 
-新旧比較は、メーカーが新型を旧型の後継・新モデルと公式に示していて（`successor_evidence`）、旧型が楽天市場で新品として複数店舗に残っているときだけ作る。台帳の違いは `references/fact-sheet.md` の「新旧比較」を読む。手順 2〜8 は型にかかわらず同じで、スクリプトが `article_type` を見て製品数・完成例・検査項目を切り替える。
+新旧比較は、新型が旧型の後継として広く見られていて（メーカーの公式表示、またはそれがなければ互いに独立した専門メディア・大手量販店など2件以上。`successor_evidence`）、旧型が楽天市場で新品として複数店舗に残っているときだけ作る。台帳の違いは `references/fact-sheet.md` の「新旧比較」を読む。手順 2〜8 は型にかかわらず同じで、スクリプトが `article_type` を見て製品数・完成例・検査項目を切り替える。
 
 ネタ探し：既存の5機種比較の製品のうち、発売から時間がたって新型が出たものは新旧比較の候補になる。新旧比較の記事から元の5機種比較へ「関連する比較」でつなぐ。
 

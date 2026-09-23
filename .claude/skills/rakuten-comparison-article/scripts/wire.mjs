@@ -22,9 +22,10 @@ const yenOf = (key) => {
 };
 const priceDiff = (a, b) => {
   const gap = yenOf(a) - yenOf(b);
-  if (gap === 0) return "ありません（同じ価格）";
+  if (gap === 0) return "新型と旧型は同じ価格です";
   const cheaper = gap > 0 ? byKey[b] : byKey[a];
-  return `${Math.abs(gap).toLocaleString("ja-JP")}円（${cheaper.model || cheaper.name}のほうが安い）`;
+  // 文として読めるよう、どちらが安いかを主語にして言い切る（テンプレートでは「{{PRICEDIFF:a:b}}。」と書く）
+  return `${cheaper.model || cheaper.name}のほうが${Math.abs(gap).toLocaleString("ja-JP")}円安くなっています`;
 };
 
 // 1. プレースホルダ解決 → <slug>.html

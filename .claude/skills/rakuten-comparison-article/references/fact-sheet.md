@@ -88,6 +88,34 @@
 
 トップレベルに `"editor": "<id>"` を置く。id は `_editorial/editors.json` の `editors[].id`。`codex-draft.mjs` はこの人物の視点・文体・署名で下書きを書かせ、未設定なら止まる。
 
+## context_facts（背景の事実・任意）
+
+特定の製品の仕様ではない、記事の前提になる公的な事実（制度の期限、取り付けに工事が要るかどうか等）。官公庁・業界団体・メーカーの説明ページに書いてある文だけを入れる。事実照合の根拠になる。
+
+```json
+"context_facts": [
+  { "fact": "一般照明用の蛍光ランプの製造・輸出入は2027年までに段階的に廃止される。使用や在庫の売買は禁止されない", "url": "https://www.env.go.jp/content/000200659.pdf", "label": "環境省・経済産業省 資料", "quote": "…" }
+]
+```
+
+本文で使うときは、その段落の中で出典にリンクする（`<a href="url" target="_blank" rel="noopener">label</a>`）。出典欄（#sources）は製品の公式ページだけにする。
+
+## brief（企画メモ・任意）
+
+記事案（`article-ideas` の `ideas.md`）から引き継ぐ書き方の方針。`codex-draft.mjs` は台帳とは別の節として Codex に渡し、`codex-factcheck.mjs` は照合に渡さない（brief の中身は記事の事実の根拠にならない）。
+
+```json
+"brief": {
+  "angle": "蛍光灯から交換する人向け。前半で工事の要否の確かめ方、後半で5機種の比較",
+  "target_queries": ["LEDシーリングライト 比較 8畳", "蛍光灯 シーリングライト 交換 自分で"],
+  "reader": "今の照明器具を自分で付け替えたい人",
+  "must": ["直付け器具は工事が必要と明記する"],
+  "avoid": ["今の蛍光灯がすぐ使えなくなると読める書き方"]
+}
+```
+
+`must` に書いた内容を記事で事実として述べるなら、その根拠は台帳（`features` や `caution_hint`）に別に入れる。
+
 
 ## 新旧比較（article_type: "version"）
 
@@ -97,7 +125,10 @@
 - `products` は **2つだけ**。1つ目が新型、2つ目が旧型。それぞれ `release`（発売時期。メーカー公式の表記）を必ず入れる
 - `table_columns` は新旧で比べる項目。両方の `specs` に同じキーで入れる。表記ゆれは台帳の段階で揃える（「約1.0kg」と「約1kg」を混ぜない）。値が片方にしかない項目は、無いほうに `"公式仕様に記載なし"` と入れる
 - `changes`：変わった項目の一覧。`[{"item": "質量", "new": "約2.1kg", "old": "約2.4kg"}]` の形。値は `specs` と完全に一致させる（`verify.mjs` が「違い」の印の数を specs から数えて照合する）
-- `successor_evidence`：メーカーが新型を旧型の後継・新モデルと示しているページ。`{"url": "...", "label": "象印 2026年新製品ニュースリリース", "quote": "従来品EQ-SA22…"}`。無ければこの型の記事にしない
+- `successor_evidence`：新型が旧型の後継として見られている根拠。条件は `editorial-rules-version.md` の「対象にしてよい組み合わせ」
+  - 公式：`{"kind": "official", "url": "...", "label": "象印 2026年新製品ニュースリリース", "quote": "従来品EQ-SA22…"}`
+  - 世間の見方：`{"kind": "media", "url": "<専門メディアの記事>", "label": "AV Watch（2026年9月の新製品記事）", "quote": "…の後継モデル…", "supporting": [{"url": "<独立した2つ目の情報源>", "label": "...", "quote": "..."}]}`。`url` と `supporting` を合わせて互いに独立した2件以上。`url`（出典欄に載る）は専門メディアにする
+  - `kind` を省くと `official` として扱う。どちらも満たせなければこの型の記事にしない
 - slug は `<ブランド>-<新型型番>-<旧型型番>-difference`（英小文字とハイフン）。例：`zojirushi-eq-sc22-eq-sa22-difference`
 - `editor` は、型落ちとの違いを知りたい読者に近い人（最初の候補は `mie`）
 

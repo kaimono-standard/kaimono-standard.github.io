@@ -8,7 +8,8 @@ import { bylineHtml, editorById } from "./editors.mjs";
 
 const dir = draftDir(process.argv[2]);
 const modelFlag = process.argv.indexOf("--model") > -1 ? ["-m", process.argv[process.argv.indexOf("--model") + 1]] : [];
-const facts = readFacts(dir);
+// brief（企画メモ）は書き方の方針。台帳とは分けて渡し、事実の根拠にはさせない
+const { brief, ...facts } = readFacts(dir);
 
 // 記事の型：comparison（5機種比較・既定）／version（新旧比較。products は [新型, 旧型] の2つ）
 const TYPES = {
@@ -20,7 +21,10 @@ const type = TYPES[articleType];
 if (!type) fail(`article_type "${articleType}" は未対応です（${Object.keys(TYPES).join(" / ")}）`);
 const ready = facts.products.filter((p) => hasLink(p.rakuten) && p.official_url && p.specs && Object.keys(p.specs).length);
 if (facts.products.length !== type.count) fail(`この型の製品は${type.count}つ必要です（現在 ${facts.products.length}）`);
-if (articleType === "version" && !facts.successor_evidence?.url) fail("新旧比較には successor_evidence（メーカーが後継・新モデルと示すページ）が必要です");
+if (articleType === "version" && !facts.successor_evidence?.url) fail("新旧比較には successor_evidence（メーカーの後継表示か、後継として扱う独立した情報源2件以上）が必要です");
+if (articleType === "version" && facts.successor_evidence.kind === "media" && !(facts.successor_evidence.supporting || []).some((s) => s.url && s.url !== facts.successor_evidence.url)) {
+  fail("successor_evidence.kind が media のときは、supporting に独立した2つ目の情報源が必要です");
+}
 if (ready.length !== type.count) fail(`公式URL・specs・rakuten が揃っていない製品があります: ${facts.products.filter((p) => !ready.includes(p)).map((p) => p.key).join(", ")}`);
 
 const baseRules = readFileSync(resolve(SKILL_DIR, "references/editorial-rules.md"), "utf8");
@@ -62,7 +66,13 @@ ${exemplar}
 \`\`\`json
 ${JSON.stringify(facts, null, 2)}
 \`\`\`
-
+${brief ? `
+# 企画メモ（書き方の方針。事実の根拠にはしない）
+記事の切り口・想定読者・狙う検索語・避ける書き方の指示。タイトル・リード・結論の組み立てに反映する。ここに書かれた数値・時期・評価は記事に書かない（書いてよい事実は台帳にあるものだけ）。
+\`\`\`json
+${JSON.stringify(brief, null, 2)}
+\`\`\`
+` : ""}
 # 追加指示
 - 署名は次のHTMLをそのまま使う: ${byline}
 - Article の JSON-LD の author は {"@type":"Person","name":"${editor.public.name}","url":"https://kaimono-standard.echoant.com/editors.html#${editor.id}"}
