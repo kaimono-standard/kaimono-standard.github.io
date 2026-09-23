@@ -2,6 +2,66 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "electric-blanket-comparison.html",
+    "type": "商品比較",
+    "category": "寝具",
+    "updated": "2026-09-23",
+    "title": "国内メーカーの電気かけしき毛布5製品を比較。サイズ・電気代・タイマーで選ぶ",
+    "summary": "パナソニック、コイズミ、広電、山善、アイリスオーヤマの電気かけしき毛布5製品を、サイズ・消費電力・電気代・温度調節・タイマー・丸洗いで比較。",
+    "keywords": [
+      "電気毛布",
+      "電気かけしき毛布",
+      "掛け敷き",
+      "電気代",
+      "消費電力",
+      "丸洗い",
+      "パナソニック",
+      "コイズミ",
+      "広電",
+      "KODEN",
+      "山善",
+      "アイリスオーヤマ",
+      "日本メーカー"
+    ],
+    "products": [
+      {
+        "name": "パナソニック 電気かけしき毛布 DB-R31M",
+        "brand": "パナソニック Panasonic",
+        "model": "DB-R31M",
+        "anchor": "panasonic",
+        "note": "素材は表・裏ともにポリエステル65% アクリル35%"
+      },
+      {
+        "name": "コイズミ 電気掛敷毛布 KDK-75258T",
+        "brand": "コイズミ KOIZUMI 小泉成器",
+        "model": "KDK-75258T",
+        "anchor": "koizumi",
+        "note": "快眠タイマーは、2時間通電→4時間停止→2時間通電で8時間後にオフ"
+      },
+      {
+        "name": "広電（KODEN） 電気かけしき毛布 CWB551G-WM",
+        "brand": "広電 KODEN コウデン",
+        "model": "CWB551G-WM",
+        "anchor": "koden",
+        "note": "素材は凹凸フランネル、ポリエステル100％"
+      },
+      {
+        "name": "山善 フランネル電気掛敷毛布 YMK-FK45KK",
+        "brand": "山善 YAMAZEN",
+        "model": "YMK-FK45KK",
+        "anchor": "yamazen",
+        "note": "素材はポリエステル100%（両面フランネル）"
+      },
+      {
+        "name": "アイリスオーヤマ 電気かけしき毛布 EHB-FR1813B-DT",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "EHB-FR1813B-DT",
+        "anchor": "iris",
+        "note": "素材はポリエステル100％"
+      }
+    ]
+  },
+  {
     "url": "futon-dryer-comparison.html",
     "type": "商品比較",
     "category": "季節家電",
