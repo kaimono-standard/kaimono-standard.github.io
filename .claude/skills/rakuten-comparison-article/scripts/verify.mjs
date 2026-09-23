@@ -74,7 +74,9 @@ if (isVersion) {
 
 // 出典が公式ドメインか（小売・比較サイトが混ざっていないか）
 const sources = [...(html.match(/id="sources"[\s\S]*?<\/ul>/) || [""])[0].matchAll(/href="(https?:[^"]+)"/g)].map((m) => m[1]);
-const suspicious = sources.filter((u) => /kakaku\.com|amazon\.|yodobashi|biccamera|rakuten\.co\.jp|my-best|note\.com|wikipedia/.test(u));
+// 自社の楽天市場店しか一次情報がない製造・販売元（ナッツ専門店など）は、台帳で official_is_seller_store: true を付けた official_url だけ許可する
+const sellerStoreSources = new Set((facts.products || []).filter((p) => p.official_is_seller_store === true).map((p) => p.official_url));
+const suspicious = sources.filter((u) => !sellerStoreSources.has(u) && /kakaku\.com|amazon\.|yodobashi|biccamera|rakuten\.co\.jp|my-best|note\.com|wikipedia/.test(u));
 suspicious.length ? ng(`出典に一次情報でないURL: ${suspicious.join(", ")}`) : ok("出典はすべてメーカー系ドメイン");
 
 // 配線（公開時のみ）

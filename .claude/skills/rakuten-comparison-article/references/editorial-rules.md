@@ -27,7 +27,7 @@ h1 は「○○5機種を比較。軸A・軸B・軸Cで選ぶ」の型。`<title
 - 製品の説明段落は「何ができるモデルか」→「主要機能の列挙」→「補足（色数、付属品、発売時期）」の順。3文以内
 - `fit-note` は「〜人。」で終える一文。`pick_reason` を言い換える
 - `caution-note` は買う前に知るべき事実を1〜2文。`caution_hint` と `unverified`、`variant_note` から作る。欠点探しではなく「この人には向かない」「購入時にここを確認」の書き方
-- ボタン文言：`shop_is_official` が true なら「○○公式楽天市場店で見る」、選択式なら「楽天市場で色と価格を見る」、それ以外は「楽天市場で価格・在庫を見る」
+- ボタン文言：`shop_is_official` が true なら「○○公式楽天市場店で見る」、選択式なら `variant_note` に書かれた選ぶものに合わせて「楽天市場で色と価格を見る」「楽天市場でサイズと価格を見る」「楽天市場で風味と価格を見る」（何を選ぶか分からなければ「楽天市場で選択肢と価格を見る」）、それ以外は「楽天市場で価格・在庫を見る」
 - 楽天市場と Amazon は同じ重みで扱う。本文で片方だけを勧めない（「楽天市場で買うのがお得」など）。読者が使い慣れた店で買えるようにするのが目的
 - 楽天と Amazon のボタンは `<div class="shop-buttons">` で囲んで横並びにする（完成例の通り）。楽天ボタンの直後に Amazon のボタン：`<a class="amazon-button" data-amazon="key" data-fallback="{{AMAZON:key}}" rel="nofollow sponsored noopener" target="_blank" href="#">Amazonで見る</a>`。文言は常に「Amazonで見る」。Amazon の価格は書かない（PA-API 経由でないと規約違反）
 
