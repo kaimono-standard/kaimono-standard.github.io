@@ -2,6 +2,43 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "logicool-g304-x-superlight-g304-difference.html",
+    "type": "新旧比較",
+    "category": "PC周辺機器",
+    "updated": "2026-09-23",
+    "title": "ロジクール G304 X SUPERLIGHTとG304の違い。電源・重さで選ぶ",
+    "summary": "ロジクールのワイヤレスゲーミングマウスG304 X SUPERLIGHTと、ひとつ前のモデルG304の違いを、電源、重さ、接続方式、バッテリー持続時間で比較。",
+    "keywords": [
+      "G304",
+      "G304 X SUPERLIGHT",
+      "違い",
+      "型落ち",
+      "ゲーミングマウス",
+      "ワイヤレス",
+      "ロジクール",
+      "Logicool",
+      "軽量",
+      "充電式",
+      "単三電池"
+    ],
+    "products": [
+      {
+        "name": "ロジクールG G304 X SUPERLIGHT LIGHTSPEED ワイヤレス ゲーミング マウス",
+        "brand": "ロジクール Logicool ロジクールG Logitech G",
+        "model": "G304X-SL",
+        "anchor": "new",
+        "note": "2分の充電で最大3.5時間のプレイが可能（公式の特長）"
+      },
+      {
+        "name": "ロジクールG G304 LIGHTSPEED ワイヤレス ゲーミング マウス",
+        "brand": "ロジクール Logicool ロジクールG Logitech G",
+        "model": "G304",
+        "anchor": "old",
+        "note": "重さ99 gは付属バッテリー分を含む値（2018年のニュースリリース）"
+      }
+    ]
+  },
+  {
     "url": "electric-blanket-comparison.html",
     "type": "商品比較",
     "category": "寝具",

@@ -124,7 +124,9 @@ window.SITE_CONFIG = {
     ebKoizumi: "https://hb.afl.rakuten.co.jp/ichiba/57b9fe40.3116098f.57b9fe41.218e2a21/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4981747085023%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     ebKoden: "https://hb.afl.rakuten.co.jp/ichiba/57b9fe40.3116098f.57b9fe41.218e2a21/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4516748036240%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     ebYamazen: "https://hb.afl.rakuten.co.jp/ichiba/57b9fe40.3116098f.57b9fe41.218e2a21/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4550533249088%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    ebIris: "https://hb.afl.rakuten.co.jp/ichiba/57b73cab.fc9d3f8d.57b73cac.d7bbcabb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firisplaza-r%2F517281%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    ebIris: "https://hb.afl.rakuten.co.jp/ichiba/57b73cab.fc9d3f8d.57b73cac.d7bbcabb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firisplaza-r%2F517281%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    g304x: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fg304x-sl-bk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    g304: "https://hb.afl.rakuten.co.jp/ichiba/57c9a36b.cabf9efd.57c9a36c.442545da/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fg304%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   // Amazon アソシエイト（トラッキングID kaimonostd-22）。ASIN が確定している製品は /dp/<ASIN>/?tag=… に、それ以外は型番の検索結果リンク。
   amazonTag: "kaimonostd-22",
@@ -243,6 +245,8 @@ window.SITE_CONFIG = {
     ebKoizumi: "https://www.amazon.co.jp/s?k=%E3%82%B3%E3%82%A4%E3%82%BA%E3%83%9F%20%E9%9B%BB%E6%B0%97%E6%8E%9B%E6%95%B7%E6%AF%9B%E5%B8%83%20KDK-75258T&tag=kaimonostd-22",
     ebKoden: "https://www.amazon.co.jp/s?k=%E5%BA%83%E9%9B%BB%20%E9%9B%BB%E6%B0%97%E3%81%8B%E3%81%91%E3%81%97%E3%81%8D%E6%AF%9B%E5%B8%83%20CWB551G&tag=kaimonostd-22",
     ebYamazen: "https://www.amazon.co.jp/s?k=%E5%B1%B1%E5%96%84%20%E9%9B%BB%E6%B0%97%E6%8E%9B%E6%95%B7%E6%AF%9B%E5%B8%83%20YMK-FK45&tag=kaimonostd-22",
-    ebIris: "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%82%A4%E3%83%AA%E3%82%B9%E3%82%AA%E3%83%BC%E3%83%A4%E3%83%9E%20%E9%9B%BB%E6%B0%97%E3%81%8B%E3%81%91%E3%81%97%E3%81%8D%E6%AF%9B%E5%B8%83%20EHB-FR1813B&tag=kaimonostd-22"
+    ebIris: "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%82%A4%E3%83%AA%E3%82%B9%E3%82%AA%E3%83%BC%E3%83%A4%E3%83%9E%20%E9%9B%BB%E6%B0%97%E3%81%8B%E3%81%91%E3%81%97%E3%81%8D%E6%AF%9B%E5%B8%83%20EHB-FR1813B&tag=kaimonostd-22",
+    g304x: "https://www.amazon.co.jp/s?k=%E3%83%AD%E3%82%B8%E3%82%AF%E3%83%BC%E3%83%AB%20G304%20X%20SUPERLIGHT&tag=kaimonostd-22",
+    g304: "https://www.amazon.co.jp/s?k=%E3%83%AD%E3%82%B8%E3%82%AF%E3%83%BC%E3%83%AB%20G304%20LIGHTSPEED&tag=kaimonostd-22"
   }
 };
