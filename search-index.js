@@ -2,6 +2,67 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "led-ceiling-light-8jo-comparison.html",
+    "type": "商品比較",
+    "category": "照明",
+    "updated": "2026-09-23",
+    "title": "8畳用LEDシーリングライト5機種を比較。明るさ・調色・取り付けで選ぶ",
+    "summary": "パナソニック、HotaluX、アイリスオーヤマ、東芝、山善の8畳用LEDシーリングライト5機種を、明るさ・消費電力・調光・調色・サイズ・質量で比較。",
+    "keywords": [
+      "シーリングライト",
+      "LEDシーリングライト",
+      "8畳",
+      "調光",
+      "調色",
+      "蛍光灯",
+      "交換",
+      "工事不要",
+      "引掛シーリング",
+      "パナソニック",
+      "HotaluX",
+      "アイリスオーヤマ",
+      "東芝",
+      "山善"
+    ],
+    "products": [
+      {
+        "name": "パナソニック LEDシーリングライト HH-CK0825CA",
+        "brand": "パナソニック Panasonic",
+        "model": "HH-CK0825CA",
+        "anchor": "panasonic",
+        "note": "明るさアップモード時の定格消費電力は38.4W"
+      },
+      {
+        "name": "HotaluX LEDシーリングライト HLDC08401SG",
+        "brand": "HotaluX ホタルクス NEC",
+        "model": "HLDC08401SG",
+        "anchor": "hotalux",
+        "note": "エネルギー消費効率 150.8lm/W"
+      },
+      {
+        "name": "アイリスオーヤマ LEDシーリングライト 7.0シリーズ CEA8DL-7.0",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "CEA8DL-7.0",
+        "anchor": "iris",
+        "note": "発光効率 150.0lm/W"
+      },
+      {
+        "name": "東芝 LEDシーリングライト NLEH08040E-LC",
+        "brand": "東芝 TOSHIBA NVC Lighting Japan",
+        "model": "NLEH08040E-LC",
+        "anchor": "toshiba",
+        "note": "製造・販売はNVC Lighting Japan。東芝ライテック株式会社から東芝ブランドの使用許諾を得て製造・販売していると製品ページに記載"
+      },
+      {
+        "name": "山善 LEDシーリングライト 調光・調色（8畳用）LC-G08V",
+        "brand": "山善 YAMAZEN",
+        "model": "LC-G08V",
+        "anchor": "yamazen",
+        "note": "取付できる配線器具：角型引掛シーリング、丸型引掛シーリング、丸型フル引掛シーリング、フル引掛埋込ローゼット、引掛埋込ローゼット、引掛埋込ローゼット（ハンガーなし）"
+      }
+    ]
+  },
+  {
     "url": "closet-storage-case-comparison.html",
     "type": "商品比較",
     "category": "収納",
