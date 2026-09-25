@@ -2,6 +2,42 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "canon-eos-r8-mark-ii-eos-r8-difference.html",
+    "type": "新旧比較",
+    "category": "カメラ",
+    "updated": "2026-09-25",
+    "title": "キヤノン EOS R8 Mark IIとEOS R8の違い。手ブレ補正・質量で選ぶ",
+    "summary": "キヤノンのフルサイズミラーレスカメラ EOS R8 Mark IIと、ひとつ前のモデルEOS R8の違いを、手ブレ補正機構、質量、大きさ、Bluetoothで比較。メーカー公式仕様で比べます。",
+    "keywords": [
+      "ミラーレス一眼",
+      "フルサイズ",
+      "EOS R8 Mark II",
+      "EOS R8",
+      "違い",
+      "型落ち",
+      "手ブレ補正",
+      "キヤノン",
+      "Canon",
+      "ボディ"
+    ],
+    "products": [
+      {
+        "name": "キヤノン EOS R8 Mark II（ボディ）",
+        "brand": "キヤノン Canon",
+        "model": "EOS R8 Mark II",
+        "anchor": "new",
+        "note": "ドライブモードの高速連続撮影＋で最高約6.0コマ／秒（電子先幕）、最高約40コマ／秒（電子シャッター）"
+      },
+      {
+        "name": "キヤノン EOS R8（ボディ）",
+        "brand": "キヤノン Canon",
+        "model": "EOS R8",
+        "anchor": "old",
+        "note": "ドライブモードの高速連続撮影＋で最高約6.0コマ／秒（電子先幕）、最高約40コマ／秒（電子シャッター）"
+      }
+    ]
+  },
+  {
     "url": "logicool-g304-x-superlight-g304-difference.html",
     "type": "新旧比較",
     "category": "PC周辺機器",
