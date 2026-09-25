@@ -2,6 +2,64 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "oil-fan-heater-comparison.html",
+    "type": "商品比較",
+    "category": "季節家電",
+    "updated": "2026-09-25",
+    "title": "石油ファンヒーター5機種を比較。暖房のめやす・タンク容量・燃焼時消費電力で選ぶ",
+    "summary": "ダイニチ・コロナ・トヨトミの3社の石油ファンヒーター5機種を、暖房のめやす・暖房出力・タンク容量・燃料消費量・消費電力で比較。",
+    "keywords": [
+      "石油ファンヒーター",
+      "暖房",
+      "灯油",
+      "ダイニチ",
+      "コロナ",
+      "トヨトミ",
+      "木造",
+      "寒冷地",
+      "燃料消費量",
+      "タンク容量",
+      "比較"
+    ],
+    "products": [
+      {
+        "name": "ダイニチ 石油ファンヒーター NEタイプ FW-3226NE",
+        "brand": "ダイニチ Dainichi ダイニチ工業",
+        "model": "FW-3226NE",
+        "anchor": "dainichi9",
+        "note": "秒速消臭システムプレミアム"
+      },
+      {
+        "name": "コロナ 石油ファンヒーター WZシリーズ FH-WZ3626BY",
+        "brand": "コロナ CORONA",
+        "model": "FH-WZ3626BY",
+        "anchor": "corona-wz",
+        "note": "DCモーター"
+      },
+      {
+        "name": "ダイニチ 石油ファンヒーター LSタイプ FW-4726LS",
+        "brand": "ダイニチ Dainichi ダイニチ工業",
+        "model": "FW-4726LS",
+        "anchor": "dainichi12",
+        "note": "パワフル秒速消臭システム"
+      },
+      {
+        "name": "トヨトミ 石油ファンヒーター WA-N53",
+        "brand": "トヨトミ TOYOTOMI",
+        "model": "WA-N53",
+        "anchor": "toyotomi",
+        "note": "エコバーナー（ポット式）"
+      },
+      {
+        "name": "コロナ 石油ファンヒーター VXシリーズ FH-VX6726BY",
+        "brand": "コロナ CORONA",
+        "model": "FH-VX6726BY",
+        "anchor": "corona-vx",
+        "note": "プレミアム消臭「極」プラス"
+      }
+    ]
+  },
+  {
     "url": "canon-eos-r8-mark-ii-eos-r8-difference.html",
     "type": "新旧比較",
     "category": "カメラ",
