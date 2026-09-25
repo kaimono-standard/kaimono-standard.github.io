@@ -2,6 +2,63 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "vaporizing-humidifier-comparison.html",
+    "type": "商品比較",
+    "category": "季節家電",
+    "updated": "2026-09-25",
+    "title": "気化式・ハイブリッド式加湿器5機種を比較。加湿量・消費電力・フィルターの交換目安で選ぶ",
+    "summary": "パナソニック、ダイニチ、コロナ、アイリスオーヤマの気化式・ハイブリッド式加湿器5機種を、加湿量・消費電力・タンク容量・フィルターの交換目安で比較。",
+    "keywords": [
+      "加湿器",
+      "気化式",
+      "ハイブリッド式",
+      "電気代",
+      "フィルター",
+      "ダイニチ",
+      "パナソニック",
+      "コロナ",
+      "アイリスオーヤマ",
+      "比較"
+    ],
+    "products": [
+      {
+        "name": "パナソニック ヒーターレス気化式加湿機 FE-KX07D",
+        "brand": "パナソニック Panasonic",
+        "model": "FE-KX07D",
+        "anchor": "panasonic",
+        "note": "運転切替は連続運転（静か・弱・中・強）、センサー自動運転（おまかせ、「のど・肌」、おやすみ）、時間限定運転（お急ぎ・30分間限定）"
+      },
+      {
+        "name": "ダイニチ ハイブリッド式加湿器 RXTタイプ HD-RXT726",
+        "brand": "ダイニチ Dainichi ダイニチ工業",
+        "model": "HD-RXT726",
+        "anchor": "dainichi-rxt",
+        "note": "運転モードは標準、静音、eco、「のど・肌」の4つ。ターボ運転とおやすみ快適の設定もある"
+      },
+      {
+        "name": "ダイニチ ハイブリッド式加湿器 Nタイプ HD-N726",
+        "brand": "ダイニチ Dainichi ダイニチ工業",
+        "model": "HD-N726",
+        "anchor": "dainichi-n",
+        "note": "運転モードは標準、静音、eco、「のど・肌」の4つ"
+      },
+      {
+        "name": "コロナ ハイブリッド式加湿器 UF-H7226R",
+        "brand": "コロナ CORONA",
+        "model": "UF-H7226R",
+        "anchor": "corona",
+        "note": "交換用フィルターは UF-H10A"
+      },
+      {
+        "name": "アイリスオーヤマ 気化式加湿器 AHM-MVU55A",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "AHM-MVU55A",
+        "anchor": "iris",
+        "note": "ACアダプターで動く"
+      }
+    ]
+  },
+  {
     "url": "oil-fan-heater-comparison.html",
     "type": "商品比較",
     "category": "季節家電",
