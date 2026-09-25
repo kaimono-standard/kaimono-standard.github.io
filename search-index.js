@@ -2,6 +2,64 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "isofix-rotating-child-seat-comparison.html",
+    "type": "商品比較",
+    "category": "ベビー用品",
+    "updated": "2026-09-25",
+    "title": "ISOFIX固定・回転式チャイルドシート5製品を比較。車種の適合・対象身長・重さで選ぶ",
+    "summary": "ネビオ、Joie、アップリカ、コンビ、エールベベのISOFIX固定・回転式チャイルドシート5製品を、車種の適合・対象身長・固定方式・重さで比較。",
+    "keywords": [
+      "チャイルドシート",
+      "ISOFIX",
+      "回転式",
+      "R129",
+      "新生児",
+      "ネビオ",
+      "Joie",
+      "アップリカ",
+      "コンビ",
+      "エールベベ",
+      "比較"
+    ],
+    "products": [
+      {
+        "name": "ネビオ ターンピットF-TT",
+        "brand": "ネビオ Nebio",
+        "model": "ターンピットF-TT",
+        "anchor": "nebio",
+        "note": ""
+      },
+      {
+        "name": "Joie アイ・ピボット360",
+        "brand": "Joie ジョイー カトージ KATOJI",
+        "model": "アイ・ピボット360",
+        "anchor": "joie",
+        "note": "品番は38440（シェール）、38441（オーク）、38442（ダークスレート）"
+      },
+      {
+        "name": "アップリカ フラディア プラス ライト",
+        "brand": "アップリカ Aprica",
+        "model": "フラディア プラス ライト",
+        "anchor": "aprica",
+        "note": "品番は2187854（ライトネイビー）、2187855（ライトグレー）"
+      },
+      {
+        "name": "コンビ クルムーヴ R129 CA（品番118601）",
+        "brand": "コンビ Combi",
+        "model": "クルムーヴ R129 エッグショック CA",
+        "anchor": "combi",
+        "note": "品番は118601（ブラック）"
+      },
+      {
+        "name": "エールベベ クルット スライドF",
+        "brand": "エールベベ カーメイト AILEBEBE CARMATE",
+        "model": "クルット スライドF",
+        "anchor": "ailebebe",
+        "note": "品番はBF510A（オフブラック）、BF511A（オフホワイト）"
+      }
+    ]
+  },
+  {
     "url": "ceramic-fan-heater-dressing-room-comparison.html",
     "type": "商品比較",
     "category": "季節家電",
