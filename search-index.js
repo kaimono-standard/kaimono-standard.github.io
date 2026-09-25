@@ -2,6 +2,64 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "family-hot-plate-comparison.html",
+    "type": "商品比較",
+    "category": "キッチン家電",
+    "updated": "2026-09-25",
+    "title": "家族向けホットプレート5機種を比較。プレートの大きさ・枚数・お手入れで選ぶ",
+    "summary": "タイガー、象印、パナソニック、BRUNO、アイリスオーヤマの家族向けホットプレート5機種を、プレートの大きさ・枚数・お手入れ・温度調節・価格で比較。",
+    "keywords": [
+      "ホットプレート",
+      "家族",
+      "3枚プレート",
+      "たこ焼き",
+      "焼肉",
+      "象印",
+      "タイガー",
+      "パナソニック",
+      "BRUNO",
+      "アイリスオーヤマ",
+      "比較"
+    ],
+    "products": [
+      {
+        "name": "タイガー ホットプレート〈これ1台〉CRV-G301",
+        "brand": "タイガー TIGER",
+        "model": "CRV-G301",
+        "anchor": "tiger",
+        "note": "縦置きで収納できる"
+      },
+      {
+        "name": "象印 ホットプレート やきやき EA-KL30",
+        "brand": "象印 ZOJIRUSHI",
+        "model": "EA-KL30",
+        "anchor": "zojirushi",
+        "note": "2026年7月発売"
+      },
+      {
+        "name": "パナソニック ホットプレート NF-HM310",
+        "brand": "パナソニック Panasonic",
+        "model": "NF-HM310",
+        "anchor": "panasonic",
+        "note": "公式は「使いやすさを追求した中型サイズ」と説明"
+      },
+      {
+        "name": "BRUNO ホットプレート グランデサイズ BOE026",
+        "brand": "BRUNO ブルーノ",
+        "model": "BOE026",
+        "anchor": "bruno",
+        "note": "公式は「4～5人で愉しめるグランデサイズ」と説明"
+      },
+      {
+        "name": "アイリスオーヤマ ワイドホットプレート 2枚プレート SWHP-012-B",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "SWHP-012-B",
+        "anchor": "iris",
+        "note": ""
+      }
+    ]
+  },
+  {
     "url": "pressure-washer-comparison.html",
     "type": "商品比較",
     "category": "生活家電",
