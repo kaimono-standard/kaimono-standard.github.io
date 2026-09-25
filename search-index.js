@@ -2,6 +2,64 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "pressure-washer-comparison.html",
+    "type": "商品比較",
+    "category": "生活家電",
+    "updated": "2026-09-25",
+    "title": "家庭用高圧洗浄機5機種を比較。電源・給水方式・周波数で選ぶ",
+    "summary": "アイリスオーヤマ、ケルヒャー K 3、京セラ、マキタ、ケルヒャー K 2の家庭用高圧洗浄機5機種を、電源・圧力・吐出水量・質量・ホース・給水方式で比較。",
+    "keywords": [
+      "高圧洗浄機",
+      "大掃除",
+      "ケルヒャー",
+      "アイリスオーヤマ",
+      "京セラ",
+      "マキタ",
+      "コードレス",
+      "自吸",
+      "50Hz",
+      "60Hz",
+      "比較"
+    ],
+    "products": [
+      {
+        "name": "アイリスオーヤマ 高圧洗浄機 FBN-701-D",
+        "brand": "アイリスオーヤマ IRIS OHYAMA アイリス",
+        "model": "FBN-701-D",
+        "anchor": "iris",
+        "note": "取扱説明書に「水道水以外は使用しないでください」とある"
+      },
+      {
+        "name": "ケルヒャー 高圧洗浄機 K 3 サイレント プラス",
+        "brand": "ケルヒャー KARCHER Kärcher",
+        "model": "K 3 サイレント プラス",
+        "anchor": "karcher-k3",
+        "note": "水冷式モーター"
+      },
+      {
+        "name": "京セラ 高圧洗浄機 AJP-1700VGQ",
+        "brand": "京セラ KYOCERA リョービ",
+        "model": "AJP-1700VGQ",
+        "anchor": "kyocera",
+        "note": "3連プランジャポンプ"
+      },
+      {
+        "name": "マキタ 充電式高圧洗浄機 MHW080DPG2",
+        "brand": "マキタ makita Makita",
+        "model": "MHW080DPG2",
+        "anchor": "makita",
+        "note": "収納ケースが50Lの自吸タンクになる"
+      },
+      {
+        "name": "ケルヒャー 高圧洗浄機 K 2 バッテリーセット",
+        "brand": "ケルヒャー KARCHER Kärcher",
+        "model": "K 2 バッテリーセット",
+        "anchor": "karcher-k2",
+        "note": "トリガーガンに水圧インジケーター"
+      }
+    ]
+  },
+  {
     "url": "isofix-rotating-child-seat-comparison.html",
     "type": "商品比較",
     "category": "ベビー用品",
