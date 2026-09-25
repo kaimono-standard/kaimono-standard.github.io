@@ -2,6 +2,64 @@
 // products: 記事内の製品。anchor は記事内の見出し id（#anchor へ直接飛べます）。
 window.SEARCH_INDEX = [
   {
+    "url": "ceramic-fan-heater-dressing-room-comparison.html",
+    "type": "商品比較",
+    "category": "季節家電",
+    "updated": "2026-09-25",
+    "title": "脱衣所用の小型セラミックファンヒーター5機種を比較。消費電力・人感センサー・設置寸法で選ぶ",
+    "summary": "パナソニック、山善、コイズミ、シロカ、ダイニチの脱衣所向け小型セラミックファンヒーター5機種を、消費電力・人感センサー・設置寸法・タイマーで比較。",
+    "keywords": [
+      "セラミックファンヒーター",
+      "脱衣所",
+      "人感センサー",
+      "小型",
+      "電気代",
+      "パナソニック",
+      "山善",
+      "コイズミ",
+      "シロカ",
+      "ダイニチ",
+      "比較"
+    ],
+    "products": [
+      {
+        "name": "パナソニック セラミックファンヒーター DS-FB500",
+        "brand": "パナソニック Panasonic",
+        "model": "DS-FB500",
+        "anchor": "panasonic",
+        "note": "「弱」「強」は温度の切り替えで、風量は同じ"
+      },
+      {
+        "name": "山善 人感センサー付きセラミックファンヒーター DSF-TK12",
+        "brand": "山善 YAMAZEN",
+        "model": "DSF-TK12",
+        "anchor": "yamazen",
+        "note": "強弱2段階切替"
+      },
+      {
+        "name": "コイズミ 人感センサー付きセラミックファンヒーター KPH-1258",
+        "brand": "コイズミ KOIZUMI 小泉成器",
+        "model": "KPH-1258",
+        "anchor": "koizumi",
+        "note": "室温で自動調節するAUTOモード（AUTOモードの設定中は人感センサーを使えない）"
+      },
+      {
+        "name": "シロカ 人感センサー付きセラミックファンヒーター ポカCUBE SH-CF251",
+        "brand": "シロカ siroca",
+        "model": "SH-CF251",
+        "anchor": "siroca",
+        "note": "リモコン付き"
+      },
+      {
+        "name": "ダイニチ セラミックファンヒーター EF-P1200H",
+        "brand": "ダイニチ Dainichi ダイニチ工業",
+        "model": "EF-P1200H",
+        "anchor": "dainichi",
+        "note": ""
+      }
+    ]
+  },
+  {
     "url": "vaporizing-humidifier-comparison.html",
     "type": "商品比較",
     "category": "季節家電",
